@@ -6,20 +6,6 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
-/// Start searchQuery Group Code
-
-class SearchQueryGroup {
-  static String baseUrl = 'https://diqkwxzcspfoijdshesk.supabase.co/rest/v1/';
-  static Map<String, String> headers = {
-    'apikey':
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpcWt3eHpjc3Bmb2lqZHNoZXNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDg1NDE5NjEsImV4cCI6MjAyNDExNzk2MX0.ilILX7XCTzWyuBdiEAMya_OOhj61jNf5Pp0e9p14FeY',
-    'Authorization':
-        'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpcWt3eHpjc3Bmb2lqZHNoZXNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDg1NDE5NjEsImV4cCI6MjAyNDExNzk2MX0.ilILX7XCTzWyuBdiEAMya_OOhj61jNf5Pp0e9p14FeY',
-  };
-}
-
-/// End searchQuery Group Code
-
 class SearchUsersCall {
   static Future<ApiCallResponse> call({
     String? business = 'null',

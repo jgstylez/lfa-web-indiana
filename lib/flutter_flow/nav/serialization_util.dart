@@ -227,8 +227,12 @@ dynamic deserializeParam<T>(
             return CsDistributionRow(data);
           case BolProductsRow:
             return BolProductsRow(data);
+          case InCountiesRow:
+            return InCountiesRow(data);
           case CsImpactRow:
             return CsImpactRow(data);
+          case RegionsRow:
+            return RegionsRow(data);
           case BillOfLadingRow:
             return BillOfLadingRow(data);
           case DeliveryRow:

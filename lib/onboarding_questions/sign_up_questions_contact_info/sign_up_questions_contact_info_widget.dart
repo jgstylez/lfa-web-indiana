@@ -1204,191 +1204,198 @@ class _SignUpQuestionsContactInfoWidgetState
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceAround,
+                                            MainAxisAlignment.center,
                                         children: [
-                                          Expanded(
-                                            flex: 1,
-                                            child: FFButtonWidget(
-                                              onPressed: () async {
-                                                context.safePop();
-                                              },
-                                              text: 'Back',
-                                              options: FFButtonOptions(
-                                                width: 330.0,
-                                                height: 50.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .accent3,
-                                                textStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                    ),
-                                                elevation: 3.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
+                                          if (responsiveVisibility(
+                                            context: context,
+                                            phone: false,
+                                            tablet: false,
+                                            tabletLandscape: false,
+                                            desktop: false,
+                                          ))
+                                            Expanded(
+                                              flex: 1,
+                                              child: FFButtonWidget(
+                                                onPressed: () async {
+                                                  context.safePop();
+                                                },
+                                                text: 'Back',
+                                                options: FFButtonOptions(
+                                                  width: 330.0,
+                                                  height: 50.0,
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          24.0, 0.0, 24.0, 0.0),
+                                                  iconPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(0.0, 0.0,
+                                                              0.0, 0.0),
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .accent3,
+                                                  textStyle: FlutterFlowTheme
+                                                          .of(context)
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                      ),
+                                                  elevation: 3.0,
+                                                  borderSide: const BorderSide(
+                                                    color: Colors.transparent,
+                                                    width: 1.0,
+                                                  ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          24.0),
                                                 ),
-                                                borderRadius:
-                                                    BorderRadius.circular(24.0),
                                               ),
                                             ),
-                                          ),
-                                          Expanded(
-                                            flex: 1,
-                                            child: FFButtonWidget(
-                                              onPressed: (valueOrDefault<bool>(
-                                                        /* NOT RECOMMENDED */ _model
-                                                                .firstNameController
-                                                                .text ==
-                                                            'true',
-                                                        false,
-                                                      ) ||
-                                                      valueOrDefault<bool>(
-                                                        /* NOT RECOMMENDED */ _model
-                                                                .lastNameController
-                                                                .text ==
-                                                            'true',
-                                                        true,
-                                                      ) ||
-                                                      valueOrDefault<bool>(
-                                                        /* NOT RECOMMENDED */ _model
-                                                                .phoneNumberController
-                                                                .text ==
-                                                            'true',
-                                                        true,
-                                                      ) ||
-                                                      valueOrDefault<bool>(
-                                                        /* NOT RECOMMENDED */ _model
-                                                                .businessNameController
-                                                                .text ==
-                                                            'true',
-                                                        true,
-                                                      ) ||
-                                                      valueOrDefault<bool>(
-                                                        /* NOT RECOMMENDED */ _model
-                                                                .address1Controller
-                                                                .text ==
-                                                            'true',
-                                                        true,
-                                                      ) ||
-                                                      (/* NOT RECOMMENDED */ _model
-                                                              .address2Controller
+                                          FFButtonWidget(
+                                            onPressed: (valueOrDefault<bool>(
+                                                      /* NOT RECOMMENDED */ _model
+                                                              .firstNameController
                                                               .text ==
-                                                          'true') ||
-                                                      valueOrDefault<bool>(
-                                                        /* NOT RECOMMENDED */ _model
-                                                                .cityController
-                                                                .text ==
-                                                            'true',
-                                                        true,
-                                                      ) ||
-                                                      (/* NOT RECOMMENDED */ _model
-                                                              .stateController
+                                                          'true',
+                                                      false,
+                                                    ) ||
+                                                    valueOrDefault<bool>(
+                                                      /* NOT RECOMMENDED */ _model
+                                                              .lastNameController
                                                               .text ==
-                                                          'true') ||
-                                                      (/* NOT RECOMMENDED */ _model
-                                                              .zipCodeController
+                                                          'true',
+                                                      true,
+                                                    ) ||
+                                                    valueOrDefault<bool>(
+                                                      /* NOT RECOMMENDED */ _model
+                                                              .phoneNumberController
                                                               .text ==
-                                                          'true') ||
-                                                      valueOrDefault<bool>(
-                                                        _model.countyDropDownValue ==
-                                                                null ||
-                                                            _model.countyDropDownValue ==
-                                                                '',
-                                                        true,
-                                                      ) ||
-                                                      valueOrDefault<bool>(
-                                                        _model.regionDropDownValue ==
-                                                                null ||
-                                                            _model.regionDropDownValue ==
-                                                                '',
-                                                        true,
-                                                      ) ||
-                                                      !valueOrDefault<bool>(
-                                                        _model.entityDropDownValue !=
-                                                                null &&
-                                                            (_model.entityDropDownValue)!
-                                                                .isNotEmpty,
-                                                        true,
-                                                      ) ||
-                                                      (_model.bestFormOfContactDropDownValue ==
+                                                          'true',
+                                                      true,
+                                                    ) ||
+                                                    valueOrDefault<bool>(
+                                                      /* NOT RECOMMENDED */ _model
+                                                              .businessNameController
+                                                              .text ==
+                                                          'true',
+                                                      true,
+                                                    ) ||
+                                                    valueOrDefault<bool>(
+                                                      /* NOT RECOMMENDED */ _model
+                                                              .address1Controller
+                                                              .text ==
+                                                          'true',
+                                                      true,
+                                                    ) ||
+                                                    (/* NOT RECOMMENDED */ _model
+                                                            .address2Controller
+                                                            .text ==
+                                                        'true') ||
+                                                    valueOrDefault<bool>(
+                                                      /* NOT RECOMMENDED */ _model
+                                                              .cityController
+                                                              .text ==
+                                                          'true',
+                                                      true,
+                                                    ) ||
+                                                    (/* NOT RECOMMENDED */ _model
+                                                            .stateController
+                                                            .text ==
+                                                        'true') ||
+                                                    (/* NOT RECOMMENDED */ _model
+                                                            .zipCodeController
+                                                            .text ==
+                                                        'true') ||
+                                                    valueOrDefault<bool>(
+                                                      _model.countyDropDownValue ==
                                                               null ||
-                                                          _model.bestFormOfContactDropDownValue ==
-                                                              '') ||
-                                                      valueOrDefault<bool>(
-                                                        _model.bestTimeOfContactDropDownValue ==
-                                                                null ||
-                                                            _model.bestTimeOfContactDropDownValue ==
-                                                                '',
-                                                        true,
-                                                      ))
-                                                  ? null
-                                                  : () async {
-                                                      if (_model.formKey
-                                                                  .currentState ==
+                                                          _model.countyDropDownValue ==
+                                                              '',
+                                                      true,
+                                                    ) ||
+                                                    valueOrDefault<bool>(
+                                                      _model.regionDropDownValue ==
                                                               null ||
-                                                          !_model.formKey
-                                                              .currentState!
-                                                              .validate()) {
-                                                        return;
-                                                      }
-                                                      if (_model
-                                                              .countyDropDownValue ==
-                                                          null) {
-                                                        return;
-                                                      }
-                                                      if (_model
-                                                              .regionDropDownValue ==
-                                                          null) {
-                                                        return;
-                                                      }
-                                                      if (_model
-                                                              .entityDropDownValue ==
-                                                          null) {
-                                                        return;
-                                                      }
-                                                      if (_model
-                                                              .bestFormOfContactDropDownValue ==
-                                                          null) {
-                                                        return;
-                                                      }
-                                                      if (_model
-                                                              .bestTimeOfContactDropDownValue ==
-                                                          null) {
-                                                        return;
-                                                      }
-                                                      if (_model
-                                                              .entityDropDownValue
-                                                              ?.contains(
-                                                                  FFAppConstants
-                                                                      .checkFarmer) !=
-                                                          null) {
-                                                        setState(() {
-                                                          FFAppState()
-                                                              .isFarmer = true;
-                                                        });
-                                                      } else {
-                                                        setState(() {
-                                                          FFAppState()
-                                                              .isFarmer = false;
-                                                        });
-                                                      }
+                                                          _model.regionDropDownValue ==
+                                                              '',
+                                                      true,
+                                                    ) ||
+                                                    !valueOrDefault<bool>(
+                                                      _model.entityDropDownValue !=
+                                                              null &&
+                                                          (_model.entityDropDownValue)!
+                                                              .isNotEmpty,
+                                                      true,
+                                                    ) ||
+                                                    (_model.bestFormOfContactDropDownValue ==
+                                                            null ||
+                                                        _model.bestFormOfContactDropDownValue ==
+                                                            '') ||
+                                                    valueOrDefault<bool>(
+                                                      _model.bestTimeOfContactDropDownValue ==
+                                                              null ||
+                                                          _model.bestTimeOfContactDropDownValue ==
+                                                              '',
+                                                      true,
+                                                    ))
+                                                ? null
+                                                : () async {
+                                                    if (_model.formKey
+                                                                .currentState ==
+                                                            null ||
+                                                        !_model.formKey
+                                                            .currentState!
+                                                            .validate()) {
+                                                      return;
+                                                    }
+                                                    if (_model
+                                                            .countyDropDownValue ==
+                                                        null) {
+                                                      return;
+                                                    }
+                                                    if (_model
+                                                            .regionDropDownValue ==
+                                                        null) {
+                                                      return;
+                                                    }
+                                                    if (_model
+                                                            .entityDropDownValue ==
+                                                        null) {
+                                                      return;
+                                                    }
+                                                    if (_model
+                                                            .bestFormOfContactDropDownValue ==
+                                                        null) {
+                                                      return;
+                                                    }
+                                                    if (_model
+                                                            .bestTimeOfContactDropDownValue ==
+                                                        null) {
+                                                      return;
+                                                    }
+                                                    if (_model
+                                                            .entityDropDownValue
+                                                            ?.contains(
+                                                                FFAppConstants
+                                                                    .checkFarmer) !=
+                                                        null) {
+                                                      setState(() {
+                                                        FFAppState().isFarmer =
+                                                            true;
+                                                      });
+                                                    } else {
+                                                      setState(() {
+                                                        FFAppState().isFarmer =
+                                                            false;
+                                                      });
+                                                    }
 
-                                                      await ProfileTable()
-                                                          .insert({
+                                                    await ProfileTable().update(
+                                                      data: {
                                                         'phone_number': _model
                                                             .phoneNumberController
                                                             .text,
@@ -1437,46 +1444,45 @@ class _SignUpQuestionsContactInfoWidgetState
                                                             currentUserEmail,
                                                         'entity': _model
                                                             .entityDropDownValue,
-                                                      });
+                                                      },
+                                                      matchingRows: (rows) =>
+                                                          rows,
+                                                    );
 
-                                                      context.pushNamed(
-                                                          'SignUpQuestions_SDHU');
-                                                    },
-                                              text: 'Next',
-                                              options: FFButtonOptions(
-                                                width: 330.0,
-                                                height: 50.0,
-                                                padding: const EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        24.0, 0.0, 24.0, 0.0),
-                                                iconPadding:
-                                                    const EdgeInsetsDirectional
-                                                        .fromSTEB(
-                                                            0.0, 0.0, 0.0, 0.0),
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .accent1,
-                                                textStyle: FlutterFlowTheme.of(
-                                                        context)
-                                                    .titleSmall
-                                                    .override(
-                                                      fontFamily: 'Readex Pro',
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primaryText,
-                                                    ),
-                                                elevation: 3.0,
-                                                borderSide: const BorderSide(
-                                                  color: Colors.transparent,
-                                                  width: 1.0,
-                                                ),
-                                                borderRadius:
-                                                    BorderRadius.circular(24.0),
-                                                disabledColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
+                                                    context.pushNamed(
+                                                        'SignUpQuestions_SDHU');
+                                                  },
+                                            text: 'Next',
+                                            options: FFButtonOptions(
+                                              width: 300.0,
+                                              height: 50.0,
+                                              padding: const EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      24.0, 0.0, 24.0, 0.0),
+                                              iconPadding: const EdgeInsetsDirectional
+                                                  .fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .accent1,
+                                              textStyle: FlutterFlowTheme.of(
+                                                      context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                  ),
+                                              elevation: 3.0,
+                                              borderSide: const BorderSide(
+                                                color: Colors.transparent,
+                                                width: 1.0,
                                               ),
+                                              borderRadius:
+                                                  BorderRadius.circular(24.0),
+                                              disabledColor:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondaryText,
                                             ),
                                           ),
                                         ]

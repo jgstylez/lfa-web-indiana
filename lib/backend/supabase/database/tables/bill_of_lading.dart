@@ -43,4 +43,7 @@ class BillOfLadingRow extends SupabaseDataRow {
 
   String? get invoiceUrl => getField<String>('invoice_url');
   set invoiceUrl(String? value) => setField<String>('invoice_url', value);
+
+  String? get userId => getField<String>('user_id');
+  set userId(String? value) => setField<String>('user_id', value);
 }

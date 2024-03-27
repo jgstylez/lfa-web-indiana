@@ -27,7 +27,6 @@ class _Auth2ForgotPasswordWidgetState extends State<Auth2ForgotPasswordWidget>
     'containerOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
-        VisibilityEffect(duration: 1.ms),
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,

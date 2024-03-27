@@ -25,7 +25,6 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
     'containerOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
-        VisibilityEffect(duration: 1.ms),
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,

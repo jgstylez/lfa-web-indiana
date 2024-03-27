@@ -358,7 +358,10 @@ class _SearchBottomSheetRecipientWidgetState
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            _model.updatePage(() {});
+                            _model.updatePage(() {
+                              FFAppState().bolRecipient =
+                                  listViewUsersRow.businessName!;
+                            });
                             Navigator.pop(context);
                           },
                           child: Container(

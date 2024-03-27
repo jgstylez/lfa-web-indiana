@@ -26,7 +26,6 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
     'containerOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
-        VisibilityEffect(duration: 1.ms),
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,

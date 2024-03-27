@@ -23,9 +23,6 @@ class UsersRow extends SupabaseDataRow {
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
 
-  bool? get hasAdminAccess => getField<bool>('has_admin_access');
-  set hasAdminAccess(bool? value) => setField<bool>('has_admin_access', value);
-
   String? get displayName => getField<String>('display_name');
   set displayName(String? value) => setField<String>('display_name', value);
 
@@ -34,4 +31,7 @@ class UsersRow extends SupabaseDataRow {
 
   String? get photoUrl => getField<String>('photo_url');
   set photoUrl(String? value) => setField<String>('photo_url', value);
+
+  bool? get hasAdminAccess => getField<bool>('has_admin_access');
+  set hasAdminAccess(bool? value) => setField<bool>('has_admin_access', value);
 }

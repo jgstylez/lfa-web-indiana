@@ -1,3 +1,4 @@
+import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'auth2_create_widget.dart' show Auth2CreateWidget;
 import 'package:flutter/material.dart';
@@ -39,6 +40,9 @@ class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
     }
     return null;
   }
+
+  // Stores action output result for [Backend Call - Insert Row] action in createAccountButton widget.
+  ProfileRow? profileBeginning;
 
   /// Initialization and disposal methods.
 

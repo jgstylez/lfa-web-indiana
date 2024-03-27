@@ -26,7 +26,6 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
     'containerOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
-        VisibilityEffect(duration: 1.ms),
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
@@ -390,17 +389,20 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         return;
                                       }
 
-                                      await UsersTable().insert({
+                                      _model.profileBeginning =
+                                          await ProfileTable().insert({
                                         'user_id': currentUserUid,
                                         'email': currentUserEmail,
-                                        'has_admin_access': false,
                                         'photo_url':
                                             'https://diqkwxzcspfoijdshesk.supabase.co/storage/v1/object/public/images/default_profile_pic.png',
+                                        'phone_number': '',
                                       });
 
                                       context.goNamedAuth(
                                           'SignUpQuestions_ContactInfo',
                                           context.mounted);
+
+                                      setState(() {});
                                     },
                                     text: 'Create Account',
                                     options: FFButtonOptions(
