@@ -17,8 +17,6 @@ class SearchBottomSheetRecipientModel
   String? Function(BuildContext, String?)? textControllerValidator;
   Completer<List<ProfileRow>>? requestCompleter;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -27,10 +25,7 @@ class SearchBottomSheetRecipientModel
     textFieldFocusNode?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   Future waitForRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,

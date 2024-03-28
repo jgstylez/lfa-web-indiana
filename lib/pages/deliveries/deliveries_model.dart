@@ -10,8 +10,6 @@ class DeliveriesModel extends FlutterFlowModel<DeliveriesWidget> {
   // Model for deliveryList component.
   late DeliveryListModel deliveryListModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     deliveryListModel = createModel(context, () => DeliveryListModel());
@@ -22,8 +20,4 @@ class DeliveriesModel extends FlutterFlowModel<DeliveriesWidget> {
     unfocusNode.dispose();
     deliveryListModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

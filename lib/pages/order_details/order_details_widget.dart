@@ -98,7 +98,10 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                 ),
                 title: Text(
                   'DETAILS',
-                  style: FlutterFlowTheme.of(context).headlineMedium,
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Outfit',
+                        letterSpacing: 0.0,
+                      ),
                 ),
                 actions: const [],
                 centerTitle: true,
@@ -147,7 +150,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                     child: Text(
                                       'IN PROGRESS',
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ),
@@ -169,8 +176,12 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                 children: [
                                   Text(
                                     'Invoice #:',
-                                    style:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -178,7 +189,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                     child: Text(
                                       '5242124422',
                                       style: FlutterFlowTheme.of(context)
-                                          .titleLarge,
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -205,7 +220,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                     Text(
                                       'Product:',
                                       style: FlutterFlowTheme.of(context)
-                                          .labelSmall,
+                                          .labelSmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
@@ -213,7 +232,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                       child: Text(
                                         'Tomatoes',
                                         style: FlutterFlowTheme.of(context)
-                                            .titleLarge,
+                                            .titleLarge
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ],
@@ -227,8 +250,12 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                 children: [
                                   Text(
                                     'Quantity:',
-                                    style:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -236,7 +263,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                     child: Text(
                                       '100',
                                       style: FlutterFlowTheme.of(context)
-                                          .titleLarge,
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -249,8 +280,12 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                 children: [
                                   Text(
                                     'Weight:',
-                                    style:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -258,7 +293,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                     child: Text(
                                       '15 lbs',
                                       style: FlutterFlowTheme.of(context)
-                                          .titleLarge,
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -272,14 +311,22 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                             16.0, 12.0, 0.0, 0.0),
                         child: Text(
                           'Note',
-                          style: FlutterFlowTheme.of(context).labelSmall,
+                          style:
+                              FlutterFlowTheme.of(context).labelSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(16.0),
                         child: Text(
                           'Thanks for your business!',
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                       Padding(
@@ -287,7 +334,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                             16.0, 12.0, 0.0, 0.0),
                         child: Text(
                           'Entity Information',
-                          style: FlutterFlowTheme.of(context).labelSmall,
+                          style:
+                              FlutterFlowTheme.of(context).labelSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                       Padding(
@@ -329,7 +380,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                         Text(
                                           'Albert Swiss',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyLarge,
+                                              .bodyLarge
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         Padding(
                                           padding:
@@ -338,7 +393,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                           child: Text(
                                             'albert@companyname.com',
                                             style: FlutterFlowTheme.of(context)
-                                                .labelSmall,
+                                                .labelSmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],
@@ -369,7 +428,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                     Text(
                                       'Billing Address:',
                                       style: FlutterFlowTheme.of(context)
-                                          .labelSmall,
+                                          .labelSmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
@@ -377,7 +440,11 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                       child: Text(
                                         '123 Disney Way, Los Angeles CA. 90291',
                                         style: FlutterFlowTheme.of(context)
-                                            .titleSmall,
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ],
@@ -412,6 +479,7 @@ class _OrderDetailsWidgetState extends State<OrderDetailsWidget>
                                 .override(
                                   fontFamily: 'Readex Pro',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
                             borderSide: const BorderSide(

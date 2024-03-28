@@ -129,8 +129,12 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                               child: Text(
                                 'LOCAL FOOD ACCESS',
                                 textAlign: TextAlign.center,
-                                style:
-                                    FlutterFlowTheme.of(context).headlineLarge,
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineLarge
+                                    .override(
+                                      fontFamily: 'Outfit',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                             ),
                           ],
@@ -151,7 +155,10 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x33000000),
-                              offset: Offset(0.0, 2.0),
+                              offset: Offset(
+                                0.0,
+                                2.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(12.0),
@@ -167,8 +174,12 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                 Text(
                                   'Get Started',
                                   textAlign: TextAlign.center,
-                                  style:
-                                      FlutterFlowTheme.of(context).displaySmall,
+                                  style: FlutterFlowTheme.of(context)
+                                      .displaySmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -176,8 +187,12 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                   child: Text(
                                     'Create an account by entering a valid email address and password below.',
                                     textAlign: TextAlign.start,
-                                    style:
-                                        FlutterFlowTheme.of(context).labelLarge,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                                 Form(
@@ -205,7 +220,12 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                               labelText: 'Email',
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelLarge,
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -253,7 +273,12 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                                       .primaryBackground,
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            minLines: null,
                                             keyboardType:
                                                 TextInputType.emailAddress,
                                             cursorColor:
@@ -284,7 +309,12 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                               labelText: 'Password',
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelLarge,
+                                                      .labelLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -353,7 +383,12 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                               ),
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
+                                            minLines: null,
                                             cursorColor:
                                                 FlutterFlowTheme.of(context)
                                                     .primary,
@@ -408,6 +443,7 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                           .override(
                                             fontFamily: 'Readex Pro',
                                             color: Colors.white,
+                                            letterSpacing: 0.0,
                                           ),
                                       elevation: 3.0,
                                       borderSide: const BorderSide(
@@ -429,7 +465,11 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                         'Or sign up with',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
-                                            .labelLarge,
+                                            .labelLarge
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ),
@@ -479,12 +519,17 @@ class _Auth2CreateWidgetState extends State<Auth2CreateWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .accent1,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),

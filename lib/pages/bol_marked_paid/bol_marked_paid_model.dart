@@ -10,8 +10,6 @@ class BolMarkedPaidModel extends FlutterFlowModel<BolMarkedPaidWidget> {
   // Stores action output result for [Backend Call - Update Row(s)] action in markPaidButton widget.
   List<BillOfLadingRow>? newOrderDeliveryDoc;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -19,8 +17,4 @@ class BolMarkedPaidModel extends FlutterFlowModel<BolMarkedPaidWidget> {
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

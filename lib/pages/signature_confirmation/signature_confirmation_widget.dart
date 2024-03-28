@@ -62,6 +62,7 @@ class _SignatureConfirmationWidgetState
                   style: FlutterFlowTheme.of(context).headlineSmall.override(
                         fontFamily: 'Outfit',
                         color: FlutterFlowTheme.of(context).primaryText,
+                        letterSpacing: 0.0,
                       ),
                 ),
                 actions: const [],
@@ -78,7 +79,10 @@ class _SignatureConfirmationWidgetState
                 children: [
                   Text(
                     'Do you want to keep this:',
-                    style: FlutterFlowTheme.of(context).titleSmall,
+                    style: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Expanded(
                     child: Align(
@@ -144,6 +148,7 @@ class _SignatureConfirmationWidgetState
                                           .override(
                                             fontFamily: 'Readex Pro',
                                             color: Colors.white,
+                                            letterSpacing: 0.0,
                                           ),
                                       elevation: 1.0,
                                       borderSide: const BorderSide(
@@ -175,6 +180,7 @@ class _SignatureConfirmationWidgetState
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                         ),
                                     elevation: 1.0,
                                     borderSide: const BorderSide(

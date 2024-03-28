@@ -356,7 +356,11 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                         'Dashboard',
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
-                                            .displayMedium,
+                                            .displayMedium
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                     if (responsiveVisibility(
@@ -448,7 +452,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x33000000),
-                                              offset: Offset(0.0, 2.0),
+                                              offset: Offset(
+                                                0.0,
+                                                2.0,
+                                              ),
                                             )
                                           ],
                                           borderRadius:
@@ -470,10 +477,14 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                   children: [
                                                     Text(
                                                       'Entities',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -488,7 +499,13 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .labelMedium,
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -504,7 +521,13 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineLarge,
+                                                                .headlineLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ],
@@ -559,7 +582,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x33000000),
-                                              offset: Offset(0.0, 2.0),
+                                              offset: Offset(
+                                                0.0,
+                                                2.0,
+                                              ),
                                             )
                                           ],
                                           borderRadius:
@@ -581,10 +607,14 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                   children: [
                                                     Text(
                                                       'Bill of Ladings',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -599,7 +629,13 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .labelMedium,
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -615,7 +651,13 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineLarge,
+                                                                .headlineLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ],
@@ -670,7 +712,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                             BoxShadow(
                                               blurRadius: 4.0,
                                               color: Color(0x33000000),
-                                              offset: Offset(0.0, 2.0),
+                                              offset: Offset(
+                                                0.0,
+                                                2.0,
+                                              ),
                                             )
                                           ],
                                           borderRadius:
@@ -692,10 +737,14 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                   children: [
                                                     Text(
                                                       'Orders',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                     Padding(
                                                       padding:
@@ -710,7 +759,13 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .labelMedium,
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                     Padding(
@@ -726,7 +781,13 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .headlineLarge,
+                                                                .headlineLarge
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ],
@@ -793,7 +854,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                               BoxShadow(
                                                 blurRadius: 3.0,
                                                 color: Color(0x33000000),
-                                                offset: Offset(0.0, 1.0),
+                                                offset: Offset(
+                                                  0.0,
+                                                  1.0,
+                                                ),
                                               )
                                             ],
                                             borderRadius:
@@ -816,7 +880,11 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     'Recent Order Deliveries',
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .headlineSmall,
+                                                        .headlineSmall
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                 ),
                                                 Padding(
@@ -827,7 +895,12 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     'Below is an overview of deliveries recently completed.',
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .labelMedium,
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                 ),
                                                 Padding(
@@ -900,7 +973,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x2B202529),
-                                                  offset: Offset(0.0, 2.0),
+                                                  offset: Offset(
+                                                    0.0,
+                                                    2.0,
+                                                  ),
                                                 )
                                               ],
                                               borderRadius:
@@ -932,7 +1008,12 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .labelMedium,
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                   Padding(
                                                     padding:
@@ -963,7 +1044,13 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                 .center,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .headlineSmall,
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
                                                         ),
                                                         Padding(
@@ -987,6 +1074,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                         ),
@@ -1018,7 +1107,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x2B202529),
-                                                  offset: Offset(0.0, 2.0),
+                                                  offset: Offset(
+                                                    0.0,
+                                                    2.0,
+                                                  ),
                                                 )
                                               ],
                                               borderRadius:
@@ -1043,7 +1135,12 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .labelMedium,
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                   Padding(
                                                     padding:
@@ -1074,7 +1171,13 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                 .center,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .headlineSmall,
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
                                                         ),
                                                         Padding(
@@ -1098,6 +1201,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                         ),
@@ -1129,7 +1234,10 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                 BoxShadow(
                                                   blurRadius: 4.0,
                                                   color: Color(0x2B202529),
-                                                  offset: Offset(0.0, 2.0),
+                                                  offset: Offset(
+                                                    0.0,
+                                                    2.0,
+                                                  ),
                                                 )
                                               ],
                                               borderRadius:
@@ -1161,7 +1269,12 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .labelMedium,
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                   Padding(
                                                     padding:
@@ -1192,7 +1305,13 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                 .center,
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .headlineSmall,
+                                                                .headlineSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
                                                         ),
                                                         Padding(
@@ -1216,6 +1335,8 @@ class _DashboardWidgetState extends State<DashboardWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .secondaryText,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                           ),
                                                         ),

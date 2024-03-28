@@ -37,8 +37,6 @@ class SearchBottomSheetTransporterModel
   void clearSearchRecipientCacheKey(String? uniqueKey) =>
       _searchRecipientManager.clearRequest(uniqueKey);
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -51,10 +49,7 @@ class SearchBottomSheetTransporterModel
     clearSearchRecipientCache();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   Future waitForRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,

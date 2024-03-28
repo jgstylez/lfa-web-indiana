@@ -135,8 +135,6 @@ class SignUpQuestionsContactInfoModel
   String? Function(BuildContext, String?)?
       differentFarmAddressControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     firstNameControllerValidator = _firstNameControllerValidator;
@@ -183,9 +181,6 @@ class SignUpQuestionsContactInfoModel
     differentFarmAddressController?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get diffFarmAddessRBValue => diffFarmAddessRBValueController?.value;
 }

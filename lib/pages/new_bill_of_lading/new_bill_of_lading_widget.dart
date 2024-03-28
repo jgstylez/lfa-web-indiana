@@ -175,6 +175,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Outfit',
                                 color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
                               ),
                     ),
                     Padding(
@@ -380,6 +381,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .accent2,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                       ),
                                                     ),
@@ -389,21 +392,20 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                   ''
                                                           ? 'Invoice is Attached'
                                                           : 'Attach Invoice',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontSize: 24.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            fontSize: 24.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
                                                     ),
                                                   ],
                                                 ),
@@ -539,26 +541,27 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .accent2,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                       ),
                                                     ),
                                                     Text(
                                                       'Add Product to B.O.L',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontSize: 24.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            fontSize: 24.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
                                                     ),
                                                   ],
                                                 ),
@@ -635,12 +638,17 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .accent2,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                           Text(
                                             'Bill of Lading Details:',
                                             style: FlutterFlowTheme.of(context)
-                                                .headlineSmall,
+                                                .headlineSmall
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -693,7 +701,12 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                     'I will deliver product myself',
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                 ),
                                                 Padding(
@@ -723,7 +736,13 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .titleLarge,
+                                                              .titleLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                       Switch.adaptive(
@@ -777,7 +796,11 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                       title: Text(
                                         'Sender',
                                         style: FlutterFlowTheme.of(context)
-                                            .titleSmall,
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                       subtitle: Text(
                                         valueOrDefault<String>(
@@ -791,6 +814,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .accent2,
+                                              letterSpacing: 0.0,
                                               lineHeight: 1.5,
                                             ),
                                       ),
@@ -841,7 +865,11 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                         title: Text(
                                           'Recipient',
                                           style: FlutterFlowTheme.of(context)
-                                              .titleSmall,
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         subtitle: Text(
                                           valueOrDefault<String>(
@@ -855,6 +883,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .accent2,
+                                                letterSpacing: 0.0,
                                                 lineHeight: 1.5,
                                               ),
                                         ),
@@ -922,7 +951,11 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                           title: Text(
                                             'Transporter',
                                             style: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           subtitle: Text(
                                             valueOrDefault<String>(
@@ -938,6 +971,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .accent2,
+                                                  letterSpacing: 0.0,
                                                   lineHeight: 1.5,
                                                 ),
                                           ),
@@ -969,7 +1003,12 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                               text: 'Sender:   ',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                             TextSpan(
                                               text: 'Farmer',
@@ -981,11 +1020,16 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondary,
+                                                    letterSpacing: 0.0,
                                                   ),
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     if (responsiveVisibility(
@@ -1004,7 +1048,12 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                               text: 'Recipient:   ',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                             TextSpan(
                                               text: 'Search for recipient ',
@@ -1016,11 +1065,16 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondary,
+                                                    letterSpacing: 0.0,
                                                   ),
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     if (!valueOrDefault<bool>(
@@ -1043,7 +1097,12 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                               text: 'Transporter:   ',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                             TextSpan(
                                               text: 'Search for transporter',
@@ -1055,6 +1114,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondary,
+                                                    letterSpacing: 0.0,
                                                   ),
                                               mouseCursor:
                                                   SystemMouseCursors.click,
@@ -1070,7 +1130,11 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     Builder(
@@ -1146,6 +1210,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                             .primaryText,
                                                                         fontSize:
                                                                             16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w500,
                                                                       ),
@@ -1176,6 +1242,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                         .primaryText,
                                                                     fontSize:
                                                                         16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
@@ -1239,6 +1307,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                             FlutterFlowTheme.of(context).primaryText,
                                                                         fontSize:
                                                                             16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
                                                                         fontWeight:
                                                                             FontWeight.w500,
                                                                       ),
@@ -1270,6 +1340,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                         .primaryText,
                                                                     fontSize:
                                                                         16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
@@ -1297,6 +1369,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                           .primaryText,
                                                                       fontSize:
                                                                           16.0,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight.w500,
                                                                     ),
@@ -1333,6 +1407,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                       .primaryText,
                                                                   fontSize:
                                                                       16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
@@ -1364,6 +1440,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                         .primaryText,
                                                                     fontSize:
                                                                         16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
@@ -1394,6 +1472,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                         context)
                                                                     .primaryText,
                                                                 fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w500,
@@ -1417,62 +1497,64 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 12.0, 12.0, 12.0),
                                     child: FFButtonWidget(
-                                      onPressed: ((_model.uploadedFileUrl ==
-                                                      '') ||
-                                              (FFAppState().bolRecipient ==
-                                                      '') ||
-                                              (FFAppState().bolTransporter ==
-                                                      '') ||
-                                              !(FFAppState()
-                                                  .bolProducts
-                                                  .isNotEmpty))
-                                          ? null
-                                          : () async {
-                                              _model.newBillOfLadingDoc =
-                                                  await BillOfLadingTable()
-                                                      .insert({
-                                                'transporter':
-                                                    FFAppState().bolTransporter,
-                                                'sender':
-                                                    FFAppState().bolSender,
-                                                'recipient':
-                                                    FFAppState().bolRecipient,
-                                                'products': FFAppState()
-                                                    .bolProducts
-                                                    .map((e) => e.toMap())
-                                                    .toList()
-                                                    .map((e) => e.toString())
-                                                    .toList(),
-                                                'status': BillOfLadingStatus
-                                                    .In_Progress.name,
-                                                'invoice_url': FFAppState()
-                                                    .uploadedInvoice,
-                                              });
-                                              ScaffoldMessenger.of(context)
-                                                  .showSnackBar(
-                                                SnackBar(
-                                                  content: Text(
-                                                    'Bill of Lading has been sent!',
-                                                    style: TextStyle(
-                                                      color:
+                                      onPressed:
+                                          ((FFAppState()
+                                                              .bolRecipient ==
+                                                          '') ||
+                                                  (FFAppState()
+                                                              .bolTransporter ==
+                                                          '') ||
+                                                  !(FFAppState()
+                                                      .bolProducts
+                                                      .isNotEmpty))
+                                              ? null
+                                              : () async {
+                                                  _model.newBillOfLadingDoc =
+                                                      await BillOfLadingTable()
+                                                          .insert({
+                                                    'transporter': FFAppState()
+                                                        .bolTransporter,
+                                                    'sender':
+                                                        FFAppState().bolSender,
+                                                    'recipient': FFAppState()
+                                                        .bolRecipient,
+                                                    'products': FFAppState()
+                                                        .bolProducts
+                                                        .map((e) => e.toMap())
+                                                        .toList()
+                                                        .map(
+                                                            (e) => e.toString())
+                                                        .toList(),
+                                                    'status': BillOfLadingStatus
+                                                        .In_Progress.name,
+                                                    'invoice_url': FFAppState()
+                                                        .uploadedInvoice,
+                                                  });
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(
+                                                    SnackBar(
+                                                      content: Text(
+                                                        'Bill of Lading has been sent!',
+                                                        style: TextStyle(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                        ),
+                                                      ),
+                                                      duration: const Duration(
+                                                          milliseconds: 4000),
+                                                      backgroundColor:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .primaryText,
+                                                              .accent2,
                                                     ),
-                                                  ),
-                                                  duration: const Duration(
-                                                      milliseconds: 4000),
-                                                  backgroundColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .accent2,
-                                                ),
-                                              );
+                                                  );
 
-                                              context.pushNamed('userHomePage');
+                                                  context.pushNamed(
+                                                      'userHomePage');
 
-                                              setState(() {});
-                                            },
+                                                  setState(() {});
+                                                },
                                       text: 'Send B.O.L.',
                                       options: FFButtonOptions(
                                         width: double.infinity,
@@ -1492,6 +1574,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         elevation: 2.0,
@@ -1541,6 +1624,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .alternate,
+                                                      letterSpacing: 0.0,
                                                     ),
                                             elevation: 0.0,
                                             borderSide: const BorderSide(

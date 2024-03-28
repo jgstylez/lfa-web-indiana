@@ -35,8 +35,6 @@ class BstransModel extends FlutterFlowModel<BstransWidget> {
   void clearSearchTransporterCacheKey(String? uniqueKey) =>
       _searchTransporterManager.clearRequest(uniqueKey);
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -49,10 +47,7 @@ class BstransModel extends FlutterFlowModel<BstransWidget> {
     clearSearchTransporterCache();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   Future waitForRequestCompleted({
     double minWait = 0,
     double maxWait = double.infinity,

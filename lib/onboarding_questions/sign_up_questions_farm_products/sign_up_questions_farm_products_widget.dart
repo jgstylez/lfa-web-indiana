@@ -100,7 +100,11 @@ class _SignUpQuestionsFarmProductsWidgetState
                                             'Farm Products',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
-                                                .displayMedium,
+                                                .displayMedium
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],
@@ -127,7 +131,12 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -158,7 +167,12 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                 'What do you produce?',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -176,10 +190,20 @@ class _SignUpQuestionsFarmProductsWidgetState
                                               decoration: InputDecoration(
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleSmall,
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
@@ -238,7 +262,13 @@ class _SignUpQuestionsFarmProductsWidgetState
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              minLines: null,
                                               validator: _model
                                                   .productsOfferedTextFieldControllerValidator
                                                   .asValidator(context),
@@ -255,7 +285,12 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                 'How long have you been producing the above product offerings?',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -288,6 +323,7 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryText,
+                                                    letterSpacing: 0.0,
                                                   ),
                                               hintText: 'Please select...',
                                               icon: Icon(
@@ -327,7 +363,12 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                 'Where are your product offerings typically marketed or sold?',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -345,10 +386,20 @@ class _SignUpQuestionsFarmProductsWidgetState
                                               decoration: InputDecoration(
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleSmall,
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
@@ -407,7 +458,13 @@ class _SignUpQuestionsFarmProductsWidgetState
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              minLines: null,
                                               validator: _model
                                                   .whereSoldTextFieldControllerValidator
                                                   .asValidator(context),
@@ -424,7 +481,12 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                 'Which of your product offerings are you interested in supplying as part of the IN LFPA program? And what quantity can you provide?',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -442,10 +504,20 @@ class _SignUpQuestionsFarmProductsWidgetState
                                               decoration: InputDecoration(
                                                 labelStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .titleSmall,
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                 enabledBorder:
                                                     OutlineInputBorder(
                                                   borderSide: BorderSide(
@@ -504,7 +576,13 @@ class _SignUpQuestionsFarmProductsWidgetState
                                               ),
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
+                                              minLines: null,
                                               validator: _model
                                                   .productQuantityTextFieldControllerValidator
                                                   .asValidator(context),
@@ -521,7 +599,12 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                 'Do you have any certifications (Organic, Certified Naturally Grown, GAP, etc)',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -543,10 +626,20 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                 optionHeight: 32.0,
                                                 textStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .labelMedium,
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                 selectedTextStyle:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                 textPadding:
                                                     const EdgeInsetsDirectional
                                                         .fromSTEB(0.0, 0.0,
@@ -579,7 +672,12 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                 'How many years have you been farming?',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -612,6 +710,7 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryText,
+                                                    letterSpacing: 0.0,
                                                   ),
                                               hintText: 'Please select...',
                                               icon: Icon(
@@ -651,7 +750,12 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                 'Do you farm full or part-time?',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -681,6 +785,7 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondaryText,
+                                                    letterSpacing: 0.0,
                                                   ),
                                               hintText: 'Please select...',
                                               icon: Icon(
@@ -755,6 +860,8 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                       elevation: 3.0,
                                                       borderSide: const BorderSide(
@@ -903,6 +1010,8 @@ class _SignUpQuestionsFarmProductsWidgetState
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primaryText,
+                                                                letterSpacing:
+                                                                    0.0,
                                                               ),
                                                       elevation: 3.0,
                                                       borderSide: const BorderSide(

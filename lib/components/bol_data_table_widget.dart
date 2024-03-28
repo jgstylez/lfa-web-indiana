@@ -51,7 +51,10 @@ class _BolDataTableWidgetState extends State<BolDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Status',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
             ),
@@ -60,7 +63,10 @@ class _BolDataTableWidgetState extends State<BolDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Sender',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
             ),
@@ -69,7 +75,10 @@ class _BolDataTableWidgetState extends State<BolDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Recipient',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
             ),
@@ -78,7 +87,10 @@ class _BolDataTableWidgetState extends State<BolDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Created',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               onSort: onSortChanged,
@@ -94,19 +106,31 @@ class _BolDataTableWidgetState extends State<BolDataTableWidget> {
             cells: [
               Text(
                 'BOL Status',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Text(
                 'Business Name',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Text(
                 'Business Name',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Text(
                 'Date Created',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
             ].map((c) => DataCell(c)).toList(),
           ),

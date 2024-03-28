@@ -101,7 +101,10 @@ class _BstransWidgetState extends State<BstransWidget>
               ),
               Text(
                 'Search for Transporter',
-                style: FlutterFlowTheme.of(context).titleSmall,
+                style: FlutterFlowTheme.of(context).titleSmall.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               InkWell(
                 splashColor: Colors.transparent,
@@ -144,7 +147,11 @@ class _BstransWidgetState extends State<BstransWidget>
                       textController: _model.textController!,
                       options: options.toList(),
                       onSelected: onSelected,
-                      textStyle: FlutterFlowTheme.of(context).bodyMedium,
+                      textStyle:
+                          FlutterFlowTheme.of(context).bodyMedium.override(
+                                fontFamily: 'Readex Pro',
+                                letterSpacing: 0.0,
+                              ),
                       textHighlightStyle: const TextStyle(),
                       elevation: 4.0,
                       optionBackgroundColor:
@@ -188,8 +195,16 @@ class _BstransWidgetState extends State<BstransWidget>
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: 'Search for business or owner',
-                        labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                        hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).alternate,
@@ -244,7 +259,11 @@ class _BstransWidgetState extends State<BstransWidget>
                               )
                             : null,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                      minLines: null,
                       keyboardType: TextInputType.name,
                       cursorColor: FlutterFlowTheme.of(context).tertiary,
                       validator:
@@ -274,6 +293,7 @@ class _BstransWidgetState extends State<BstransWidget>
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Readex Pro',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
                     borderSide: const BorderSide(
@@ -307,6 +327,7 @@ class _BstransWidgetState extends State<BstransWidget>
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Readex Pro',
                           color: FlutterFlowTheme.of(context).secondaryText,
+                          letterSpacing: 0.0,
                         ),
                   ),
                 ),
@@ -427,6 +448,7 @@ class _BstransWidgetState extends State<BstransWidget>
                                                           context)
                                                       .primaryText,
                                                   fontSize: 16.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),
@@ -449,6 +471,7 @@ class _BstransWidgetState extends State<BstransWidget>
                                                           context)
                                                       .secondaryText,
                                                   fontSize: 14.0,
+                                                  letterSpacing: 0.0,
                                                   fontWeight: FontWeight.w500,
                                                 ),
                                           ),

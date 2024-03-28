@@ -212,7 +212,11 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                           widget.displayName,
                           'Display Name',
                         ),
-                        style: FlutterFlowTheme.of(context).displaySmall,
+                        style:
+                            FlutterFlowTheme.of(context).displaySmall.override(
+                                  fontFamily: 'Outfit',
+                                  letterSpacing: 0.0,
+                                ),
                       ),
                     ),
                     Padding(
@@ -223,6 +227,7 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                         style: FlutterFlowTheme.of(context).labelLarge.override(
                               fontFamily: 'Readex Pro',
                               color: FlutterFlowTheme.of(context).primaryText,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ),
@@ -231,7 +236,11 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                           const EdgeInsetsDirectional.fromSTEB(24.0, 4.0, 0.0, 0.0),
                       child: Text(
                         'Your Account',
-                        style: FlutterFlowTheme.of(context).labelMedium,
+                        style:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                       ),
                     ),
                     Padding(
@@ -255,7 +264,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                               BoxShadow(
                                 blurRadius: 3.0,
                                 color: Color(0x33000000),
-                                offset: Offset(0.0, 1.0),
+                                offset: Offset(
+                                  0.0,
+                                  1.0,
+                                ),
                               )
                             ],
                             borderRadius: BorderRadius.circular(8.0),
@@ -280,8 +292,12 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Edit Profile',
-                                    style:
-                                        FlutterFlowTheme.of(context).labelLarge,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                                 Expanded(
@@ -324,7 +340,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                               BoxShadow(
                                 blurRadius: 3.0,
                                 color: Color(0x33000000),
-                                offset: Offset(0.0, 1.0),
+                                offset: Offset(
+                                  0.0,
+                                  1.0,
+                                ),
                               )
                             ],
                             borderRadius: BorderRadius.circular(8.0),
@@ -349,8 +368,12 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Delete Account',
-                                    style:
-                                        FlutterFlowTheme.of(context).labelLarge,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                                 Expanded(
@@ -375,7 +398,11 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                           const EdgeInsetsDirectional.fromSTEB(24.0, 16.0, 0.0, 0.0),
                       child: Text(
                         'App Settings',
-                        style: FlutterFlowTheme.of(context).labelMedium,
+                        style:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                       ),
                     ),
                     Padding(
@@ -391,7 +418,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
-                              offset: Offset(0.0, 1.0),
+                              offset: Offset(
+                                0.0,
+                                1.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(8.0),
@@ -416,8 +446,12 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Support',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelLarge,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                               Expanded(
@@ -449,7 +483,10 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             BoxShadow(
                               blurRadius: 3.0,
                               color: Color(0x33000000),
-                              offset: Offset(0.0, 1.0),
+                              offset: Offset(
+                                0.0,
+                                1.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(8.0),
@@ -474,8 +511,12 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Terms of Service',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelLarge,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelLarge
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                               Expanded(
@@ -517,7 +558,11 @@ class _Auth2ProfileWidgetState extends State<Auth2ProfileWidget>
                             iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 0.0, 0.0),
                             color: FlutterFlowTheme.of(context).accent1,
-                            textStyle: FlutterFlowTheme.of(context).bodyLarge,
+                            textStyle:
+                                FlutterFlowTheme.of(context).bodyLarge.override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
                             elevation: 0.0,
                             borderSide: BorderSide(
                               color: FlutterFlowTheme.of(context).alternate,

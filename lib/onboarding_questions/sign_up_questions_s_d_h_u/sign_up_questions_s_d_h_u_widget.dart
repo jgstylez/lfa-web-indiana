@@ -69,7 +69,7 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Expanded(
-                        flex: 1,
+                        flex: 2,
                         child: Align(
                           alignment: const AlignmentDirectional(-1.0, -1.0),
                           child: SingleChildScrollView(
@@ -90,7 +90,11 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                           'Socially Disadvantaged / \nHistorically Underserved',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
-                                              .displayMedium,
+                                              .displayMedium
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -115,7 +119,12 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ),
@@ -148,7 +157,11 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                           child: Text(
                                             'Do you identfy as BIPOC (Black, Indigenous, and people of color)?',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                         Padding(
@@ -165,10 +178,18 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                             optionHeight: 32.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium,
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             selectedTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             buttonPosition:
                                                 RadioButtonPosition.left,
                                             direction: Axis.horizontal,
@@ -192,7 +213,11 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                           child: Text(
                                             'Do you identfy as a Socially Disadvantaged Farmer as defined above?',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                         Padding(
@@ -209,10 +234,18 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                             optionHeight: 32.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium,
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             selectedTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             buttonPosition:
                                                 RadioButtonPosition.left,
                                             direction: Axis.horizontal,
@@ -236,7 +269,11 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                           child: Text(
                                             'Do you identfy as a Historically Underserved Farmer as defined above?',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                         Padding(
@@ -253,10 +290,18 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                             optionHeight: 32.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium,
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             selectedTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             buttonPosition:
                                                 RadioButtonPosition.left,
                                             direction: Axis.horizontal,
@@ -284,7 +329,12 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                               'What\'s your ethnicity?',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -311,10 +361,18 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                             optionHeight: 32.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium,
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             selectedTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             buttonPosition:
                                                 RadioButtonPosition.left,
                                             direction: Axis.vertical,
@@ -352,11 +410,21 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
                                                     borderSide: BorderSide(
@@ -417,7 +485,13 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .additionalTextFieldControllerValidator
                                                     .asValidator(context),
@@ -455,17 +529,17 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .accent3,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                            ),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     elevation: 3.0,
                                                     borderSide: const BorderSide(
                                                       color: Colors.transparent,
@@ -580,17 +654,17 @@ class _SignUpQuestionsSDHUWidgetState extends State<SignUpQuestionsSDHUWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .accent1,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                            ),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     elevation: 3.0,
                                                     borderSide: const BorderSide(
                                                       color: Colors.transparent,

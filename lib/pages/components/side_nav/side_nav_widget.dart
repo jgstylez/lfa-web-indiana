@@ -65,7 +65,10 @@ class _SideNavWidgetState extends State<SideNavWidget> {
               BoxShadow(
                 blurRadius: 4.0,
                 color: Color(0x33000000),
-                offset: Offset(0.0, 2.0),
+                offset: Offset(
+                  0.0,
+                  2.0,
+                ),
               )
             ],
             borderRadius: BorderRadius.circular(12.0),
@@ -89,7 +92,12 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                       Expanded(
                         child: Text(
                           'LOCAL\nFOOD\nACCESS',
-                          style: FlutterFlowTheme.of(context).displaySmall,
+                          style: FlutterFlowTheme.of(context)
+                              .displaySmall
+                              .override(
+                                fontFamily: 'Outfit',
+                                letterSpacing: 0.0,
+                              ),
                         ),
                       ),
                     ],
@@ -120,7 +128,12 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                               16.0, 12.0, 0.0, 0.0),
                           child: Text(
                             'Platform Navigation',
-                            style: FlutterFlowTheme.of(context).labelMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ),
                       MouseRegion(
@@ -183,7 +196,11 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                       child: Text(
                                         'Dashboard',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ],
@@ -257,7 +274,11 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                       child: Text(
                                         'Entities',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ],
@@ -331,7 +352,11 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                       child: Text(
                                         'Bill of Ladings',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ],
@@ -405,7 +430,11 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                       child: Text(
                                         'Orders',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ],
@@ -427,7 +456,12 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                               16.0, 0.0, 0.0, 0.0),
                           child: Text(
                             'Settings',
-                            style: FlutterFlowTheme.of(context).labelMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .labelMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                           ),
                         ),
                       const Spacer(),
@@ -496,7 +530,11 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                         child: Text(
                                           'New Delivery',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -565,7 +603,11 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                         child: Text(
                                           'Notifications',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -596,6 +638,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .tertiary,
+                                                    letterSpacing: 0.0,
                                                   ),
                                             ),
                                           ),
@@ -677,7 +720,12 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                               'Case Study',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -790,6 +838,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryText,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -866,6 +915,7 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                                       : FlutterFlowTheme.of(
                                                               context)
                                                           .secondaryText,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -938,7 +988,12 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                               children: [
                                 Text(
                                   FFAppState().displayName,
-                                  style: FlutterFlowTheme.of(context).bodyLarge,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyLarge
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
@@ -946,7 +1001,11 @@ class _SideNavWidgetState extends State<SideNavWidget> {
                                   child: Text(
                                     currentUserEmail,
                                     style: FlutterFlowTheme.of(context)
-                                        .labelMedium,
+                                        .labelMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                               ],

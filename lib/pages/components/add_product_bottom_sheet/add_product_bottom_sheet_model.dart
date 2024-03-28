@@ -37,8 +37,6 @@ class AddProductBottomSheetModel
   TextEditingController? shortMsgTFController;
   String? Function(BuildContext, String?)? shortMsgTFControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     titleTextFieldControllerValidator = _titleTextFieldControllerValidator;
@@ -58,8 +56,4 @@ class AddProductBottomSheetModel
     shortMsgTFFocusNode?.dispose();
     shortMsgTFController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

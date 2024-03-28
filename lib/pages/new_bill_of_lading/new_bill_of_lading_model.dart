@@ -17,8 +17,6 @@ class NewBillOfLadingModel extends FlutterFlowModel<NewBillOfLadingWidget> {
   // Stores action output result for [Backend Call - Insert Row] action in SendButton widget.
   BillOfLadingRow? newBillOfLadingDoc;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -26,8 +24,4 @@ class NewBillOfLadingModel extends FlutterFlowModel<NewBillOfLadingWidget> {
   void dispose() {
     unfocusNode.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

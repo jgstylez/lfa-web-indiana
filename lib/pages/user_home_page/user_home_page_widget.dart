@@ -90,7 +90,12 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                               Text(
                                 'LOCAL FOOD ACCESS',
                                 textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).titleSmall,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                               InkWell(
                                 splashColor: Colors.transparent,
@@ -137,7 +142,11 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                               textAlign: TextAlign.start,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .titleLarge,
+                                                      .titleLarge
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -176,6 +185,7 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                 .override(
                                   fontFamily: 'Readex Pro',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                             elevation: 0.0,
                             borderSide: const BorderSide(
@@ -238,7 +248,12 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .titleSmall,
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -294,7 +309,12 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .titleSmall,
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -349,7 +369,11 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                             'Deliveries',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],
@@ -398,7 +422,11 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                             'Invoices',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],

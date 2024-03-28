@@ -51,7 +51,10 @@ class _OrdersDataTableWidgetState extends State<OrdersDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Status',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
             ),
@@ -60,7 +63,10 @@ class _OrdersDataTableWidgetState extends State<OrdersDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Sender',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
             ),
@@ -69,7 +75,10 @@ class _OrdersDataTableWidgetState extends State<OrdersDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Recipient',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
             ),
@@ -78,7 +87,10 @@ class _OrdersDataTableWidgetState extends State<OrdersDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'County',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               onSort: onSortChanged,
@@ -88,7 +100,10 @@ class _OrdersDataTableWidgetState extends State<OrdersDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Region',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               onSort: onSortChanged,
@@ -104,23 +119,38 @@ class _OrdersDataTableWidgetState extends State<OrdersDataTableWidget> {
             cells: [
               Text(
                 'Order Status',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Text(
                 'Business Name',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Text(
                 'Business Name',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Text(
                 'County',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Text(
                 'Region',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
             ].map((c) => DataCell(c)).toList(),
           ),
