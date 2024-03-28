@@ -349,8 +349,7 @@ class _Auth2LoginWidgetState extends State<Auth2LoginWidget>
                                       }
 
                                       context.goNamedAuth(
-                                          'SignUpQuestions_ContactInfo',
-                                          context.mounted);
+                                          'userHomePage', context.mounted);
                                     },
                                     text: 'Sign In',
                                     options: FFButtonOptions(

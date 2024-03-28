@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:async';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -180,10 +181,7 @@ class _SearchBottomSheetRecipientWidgetState
                         () => setState(() {}),
                       ),
                       onFieldSubmitted: (_) async {
-                        setState(() {
-                          _model.clearSearchRecipientCache();
-                          _model.requestCompleted = false;
-                        });
+                        setState(() => _model.requestCompleter = null);
                         await _model.waitForRequestCompleted();
                       },
                       autofocus: true,
@@ -255,10 +253,7 @@ class _SearchBottomSheetRecipientWidgetState
                 padding: const EdgeInsetsDirectional.fromSTEB(12.0, 0.0, 0.0, 0.0),
                 child: FFButtonWidget(
                   onPressed: () async {
-                    setState(() {
-                      _model.clearSearchRecipientCache();
-                      _model.requestCompleted = false;
-                    });
+                    setState(() => _model.requestCompleter = null);
                     await _model.waitForRequestCompleted();
                   },
                   text: 'Search',
@@ -312,18 +307,13 @@ class _SearchBottomSheetRecipientWidgetState
             ],
           ),
         Expanded(
-          child: FutureBuilder<List<UsersRow>>(
-            future: _model
-                .searchRecipient(
-              requestFn: () => UsersTable().queryRows(
-                queryFn: (q) => q,
-                limit: 20,
-              ),
-            )
-                .then((result) {
-              _model.requestCompleted = true;
-              return result;
-            }),
+          child: FutureBuilder<List<ProfileRow>>(
+            future: (_model.requestCompleter ??= Completer<List<ProfileRow>>()
+                  ..complete(ProfileTable().queryRows(
+                    queryFn: (q) => q,
+                    limit: 20,
+                  )))
+                .future,
             builder: (context, snapshot) {
               // Customize what your widget looks like when it's loading.
               if (!snapshot.hasData) {
@@ -339,13 +329,14 @@ class _SearchBottomSheetRecipientWidgetState
                   ),
                 );
               }
-              List<UsersRow> listViewUsersRowList = snapshot.data!;
+              List<ProfileRow> listViewProfileRowList = snapshot.data!;
               return ListView.builder(
                 padding: EdgeInsets.zero,
                 scrollDirection: Axis.vertical,
-                itemCount: listViewUsersRowList.length,
+                itemCount: listViewProfileRowList.length,
                 itemBuilder: (context, listViewIndex) {
-                  final listViewUsersRow = listViewUsersRowList[listViewIndex];
+                  final listViewProfileRow =
+                      listViewProfileRowList[listViewIndex];
                   return Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -360,7 +351,7 @@ class _SearchBottomSheetRecipientWidgetState
                           onTap: () async {
                             _model.updatePage(() {
                               FFAppState().bolRecipient =
-                                  listViewUsersRow.businessName!;
+                                  listViewProfileRow.businessName!;
                             });
                             Navigator.pop(context);
                           },
@@ -393,7 +384,7 @@ class _SearchBottomSheetRecipientWidgetState
                                         borderRadius:
                                             BorderRadius.circular(40.0),
                                         child: Image.network(
-                                          'https://picsum.photos/seed/386/600',
+                                          listViewProfileRow.photoUrl!,
                                           width: 60.0,
                                           height: 60.0,
                                           fit: BoxFit.cover,
@@ -413,7 +404,7 @@ class _SearchBottomSheetRecipientWidgetState
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
-                                              listViewUsersRow.businessName,
+                                              listViewProfileRow.businessName,
                                               'business',
                                             ),
                                             style: FlutterFlowTheme.of(context)
@@ -435,7 +426,7 @@ class _SearchBottomSheetRecipientWidgetState
                                                   12.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
-                                              listViewUsersRow.displayName,
+                                              listViewProfileRow.displayName,
                                               'name',
                                             ),
                                             style: FlutterFlowTheme.of(context)

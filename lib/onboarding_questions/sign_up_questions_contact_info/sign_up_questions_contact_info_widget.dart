@@ -1,6 +1,7 @@
 import '/auth/supabase_auth/auth_util.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -960,89 +961,6 @@ class _SignUpQuestionsContactInfoWidgetState
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
                                           8.0, 0.0, 8.0, 0.0),
-                                      child: SizedBox(
-                                        width: 330.0,
-                                        child: TextFormField(
-                                          controller: _model
-                                              .differentFarmAddressController,
-                                          focusNode: _model
-                                              .differentFarmAddressFocusNode,
-                                          autofocus: true,
-                                          textCapitalization:
-                                              TextCapitalization.words,
-                                          obscureText: false,
-                                          decoration: InputDecoration(
-                                            labelText:
-                                                'Farm Address (if different)',
-                                            labelStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .labelMedium,
-                                            alignLabelWithHint: true,
-                                            hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .titleSmall,
-                                            enabledBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondary,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
-                                            ),
-                                            focusedBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
-                                            ),
-                                            errorBorder: OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
-                                            ),
-                                            focusedErrorBorder:
-                                                OutlineInputBorder(
-                                              borderSide: BorderSide(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .error,
-                                                width: 1.0,
-                                              ),
-                                              borderRadius:
-                                                  BorderRadius.circular(24.0),
-                                            ),
-                                            filled: true,
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondary,
-                                            contentPadding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    24.0, 12.0, 24.0, 12.0),
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                          keyboardType:
-                                              TextInputType.streetAddress,
-                                          validator: _model
-                                              .differentFarmAddressControllerValidator
-                                              .asValidator(context),
-                                        ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          8.0, 0.0, 8.0, 0.0),
                                       child: FlutterFlowDropDown<String>(
                                         controller: _model
                                                 .regionDropDownValueController ??=
@@ -1197,6 +1115,192 @@ class _SignUpQuestionsContactInfoWidgetState
                                         isSearchable: false,
                                         isMultiSelect: false,
                                       ),
+                                    ),
+                                    Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              const AlignmentDirectional(0.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    24.0, 0.0, 0.0, 0.0),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.min,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Padding(
+                                                  padding: const EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 0.0, 8.0),
+                                                  child: Text(
+                                                    'Do you have a different Farm Address',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium,
+                                                  ),
+                                                ),
+                                                Align(
+                                                  alignment:
+                                                      const AlignmentDirectional(
+                                                          -1.0, -1.0),
+                                                  child: FlutterFlowRadioButton(
+                                                    options:
+                                                        ['Yes', 'No'].toList(),
+                                                    onChanged: (val) =>
+                                                        setState(() {}),
+                                                    controller: _model
+                                                            .diffFarmAddessRBValueController ??=
+                                                        FormFieldController<
+                                                            String>('No'),
+                                                    optionHeight: 32.0,
+                                                    textStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .labelMedium,
+                                                    selectedTextStyle:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .bodyMedium,
+                                                    textPadding:
+                                                        const EdgeInsetsDirectional
+                                                            .fromSTEB(0.0, 0.0,
+                                                                20.0, 0.0),
+                                                    buttonPosition:
+                                                        RadioButtonPosition
+                                                            .left,
+                                                    direction: Axis.horizontal,
+                                                    radioButtonColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .accent1,
+                                                    inactiveRadioButtonColor:
+                                                        FlutterFlowTheme.of(
+                                                                context)
+                                                            .primaryText,
+                                                    toggleable: false,
+                                                    horizontalAlignment:
+                                                        WrapAlignment.start,
+                                                    verticalAlignment:
+                                                        WrapCrossAlignment
+                                                            .start,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        if (_model.diffFarmAddessRBValue ==
+                                            'Yes')
+                                          Padding(
+                                            padding:
+                                                const EdgeInsetsDirectional.fromSTEB(
+                                                    8.0, 0.0, 8.0, 0.0),
+                                            child: SizedBox(
+                                              width: 330.0,
+                                              child: TextFormField(
+                                                controller: _model
+                                                    .differentFarmAddressController,
+                                                focusNode: _model
+                                                    .differentFarmAddressFocusNode,
+                                                autofocus: true,
+                                                textCapitalization:
+                                                    TextCapitalization.words,
+                                                obscureText: false,
+                                                decoration: InputDecoration(
+                                                  labelText:
+                                                      'Farm Address (if different)',
+                                                  labelStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .labelMedium,
+                                                  alignLabelWithHint: true,
+                                                  hintStyle:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmall,
+                                                  enabledBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            24.0),
+                                                  ),
+                                                  focusedBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            24.0),
+                                                  ),
+                                                  errorBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            24.0),
+                                                  ),
+                                                  focusedErrorBorder:
+                                                      OutlineInputBorder(
+                                                    borderSide: BorderSide(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .error,
+                                                      width: 1.0,
+                                                    ),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            24.0),
+                                                  ),
+                                                  filled: true,
+                                                  fillColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .secondary,
+                                                  contentPadding:
+                                                      const EdgeInsetsDirectional
+                                                          .fromSTEB(24.0, 12.0,
+                                                              24.0, 12.0),
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium,
+                                                keyboardType:
+                                                    TextInputType.streetAddress,
+                                                validator: _model
+                                                    .differentFarmAddressControllerValidator
+                                                    .asValidator(context),
+                                              ),
+                                            ),
+                                          ),
+                                      ]
+                                          .divide(const SizedBox(width: 0.0))
+                                          .around(const SizedBox(width: 0.0)),
                                     ),
                                     Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
@@ -1377,6 +1481,12 @@ class _SignUpQuestionsContactInfoWidgetState
                                                         null) {
                                                       return;
                                                     }
+                                                    FFAppState().update(() {
+                                                      FFAppState().bolSender =
+                                                          _model
+                                                              .businessNameController
+                                                              .text;
+                                                    });
                                                     if (_model
                                                             .entityDropDownValue
                                                             ?.contains(
@@ -1394,60 +1504,53 @@ class _SignUpQuestionsContactInfoWidgetState
                                                       });
                                                     }
 
-                                                    await ProfileTable().update(
-                                                      data: {
-                                                        'phone_number': _model
-                                                            .phoneNumberController
-                                                            .text,
-                                                        'first_name': _model
-                                                            .firstNameController
-                                                            .text,
-                                                        'last_name': _model
-                                                            .lastNameController
-                                                            .text,
-                                                        'display_name':
-                                                            '${_model.firstNameController.text} ${_model.lastNameController.text}',
-                                                        'business_name': _model
-                                                            .businessNameController
-                                                            .text,
-                                                        'business_address': _model
-                                                            .differentFarmAddressController
-                                                            .text,
-                                                        'county': _model
-                                                            .countyDropDownValue,
-                                                        'photo_url':
-                                                            'https://diqkwxzcspfoijdshesk.supabase.co/storage/v1/object/public/images/default_profile_pic.png',
-                                                        'region': _model
-                                                            .regionDropDownValue,
-                                                        'best_contact_form': _model
-                                                            .bestFormOfContactDropDownValue,
-                                                        'best_contact_time': _model
-                                                            .bestTimeOfContactDropDownValue,
-                                                        'address': _model
-                                                            .address1Controller
-                                                            .text,
-                                                        'address_optional': _model
-                                                            .address2Controller
-                                                            .text,
-                                                        'city': _model
-                                                            .cityController
-                                                            .text,
-                                                        'state': _model
-                                                            .stateController
-                                                            .text,
-                                                        'zip_code': _model
-                                                            .zipCodeController
-                                                            .text,
-                                                        'user_id':
-                                                            currentUserUid,
-                                                        'email':
-                                                            currentUserEmail,
-                                                        'entity': _model
-                                                            .entityDropDownValue,
-                                                      },
-                                                      matchingRows: (rows) =>
-                                                          rows,
-                                                    );
+                                                    await ProfileTable()
+                                                        .insert({
+                                                      'phone_number': _model
+                                                          .phoneNumberController
+                                                          .text,
+                                                      'first_name': _model
+                                                          .firstNameController
+                                                          .text,
+                                                      'last_name': _model
+                                                          .lastNameController
+                                                          .text,
+                                                      'display_name':
+                                                          '${_model.firstNameController.text} ${_model.lastNameController.text}',
+                                                      'business_name': _model
+                                                          .businessNameController
+                                                          .text,
+                                                      'business_address': _model
+                                                          .differentFarmAddressController
+                                                          .text,
+                                                      'county': _model
+                                                          .countyDropDownValue,
+                                                      'photo_url':
+                                                          'https://diqkwxzcspfoijdshesk.supabase.co/storage/v1/object/public/images/default_profile_pic.png',
+                                                      'region': _model
+                                                          .regionDropDownValue,
+                                                      'best_contact_form': _model
+                                                          .bestFormOfContactDropDownValue,
+                                                      'best_contact_time': _model
+                                                          .bestTimeOfContactDropDownValue,
+                                                      'address': _model
+                                                          .address1Controller
+                                                          .text,
+                                                      'address_optional': _model
+                                                          .address2Controller
+                                                          .text,
+                                                      'city': _model
+                                                          .cityController.text,
+                                                      'state': _model
+                                                          .stateController.text,
+                                                      'zip_code': _model
+                                                          .zipCodeController
+                                                          .text,
+                                                      'user_id': currentUserUid,
+                                                      'email': currentUserEmail,
+                                                      'entity': _model
+                                                          .entityDropDownValue,
+                                                    });
 
                                                     context.pushNamed(
                                                         'SignUpQuestions_SDHU');

@@ -11,6 +11,7 @@ import '/pages/components/search_bottom_sheet_recipient/search_bottom_sheet_reci
 import '/pages/components/search_bottom_sheet_transporter/search_bottom_sheet_transporter_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -113,6 +114,13 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
   void initState() {
     super.initState();
     _model = createModel(context, () => NewBillOfLadingModel());
+
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        FFAppState().bolSender = '';
+      });
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -287,6 +295,26 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                         return;
                                       }
                                     }
+
+                                    FFAppState().update(() {
+                                      FFAppState().uploadedInvoice =
+                                          _model.uploadedFileUrl;
+                                    });
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Invoice uploaded',
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: const Duration(milliseconds: 2100),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .accent2,
+                                      ),
+                                    );
                                   },
                                   child: Material(
                                     color: Colors.transparent,
@@ -356,7 +384,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                       ),
                                                     ),
                                                     Text(
-                                                      _model.uploadedFileUrl !=
+                                                      FFAppState()
+                                                                      .uploadedInvoice !=
                                                                   ''
                                                           ? 'Invoice is Attached'
                                                           : 'Attach Invoice',
@@ -380,7 +409,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                 ),
                                               ),
                                             ),
-                                            if (_model.uploadedFileUrl != '')
+                                            if (_model.uploadedFileUrl == '')
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -390,7 +419,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                       BorderRadius.circular(
                                                           8.0),
                                                   child: Image.network(
-                                                    _model.uploadedFileUrl,
+                                                    FFAppState()
+                                                        .uploadedInvoice,
                                                     width: 50.0,
                                                     height: 50.0,
                                                     fit: BoxFit.cover,
@@ -750,7 +780,10 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                             .titleSmall,
                                       ),
                                       subtitle: Text(
-                                        FFAppState().bolSender,
+                                        valueOrDefault<String>(
+                                          FFAppState().bolSender,
+                                          'Business Name',
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -847,41 +880,40 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           if (_model.deliverSwitchValue!) {
-                                            setState(() {});
-                                          } else {
-                                            setState(() {});
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                              barrierColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () => _model
-                                                          .unfocusNode
-                                                          .canRequestFocus
-                                                      ? FocusScope.of(context)
-                                                          .requestFocus(_model
-                                                              .unfocusNode)
-                                                      : FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        const SearchBottomSheetTransporterWidget(),
-                                                  ),
-                                                );
-                                              },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            setState(() {
+                                              FFAppState().bolTransporter = '';
+                                            });
                                           }
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .tertiary,
+                                            barrierColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .tertiary,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () => _model.unfocusNode
+                                                        .canRequestFocus
+                                                    ? FocusScope.of(context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode)
+                                                    : FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      const SearchBottomSheetTransporterWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
                                         },
                                         child: ListTile(
                                           leading: const Icon(
@@ -1385,48 +1417,62 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 12.0, 12.0, 12.0),
                                     child: FFButtonWidget(
-                                      onPressed: () async {
-                                        _model.newBillOfLadingDoc =
-                                            await BillOfLadingTable().insert({
-                                          'transporter':
-                                              FFAppState().bolTransporter,
-                                          'sender': FFAppState().bolSender,
-                                          'recipient':
-                                              FFAppState().bolRecipient,
-                                          'products': FFAppState()
-                                              .bolProducts
-                                              .map((e) => e.toMap())
-                                              .toList()
-                                              .map((e) => e.toString())
-                                              .toList(),
-                                          'status': BillOfLadingStatus
-                                              .In_Progress.name,
-                                          'invoice_url':
-                                              FFAppState().uploadedInvoice,
-                                        });
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Bill of Lading has been sent!',
-                                              style: TextStyle(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                              ),
-                                            ),
-                                            duration:
-                                                const Duration(milliseconds: 4000),
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .accent2,
-                                          ),
-                                        );
+                                      onPressed: ((_model.uploadedFileUrl ==
+                                                      '') ||
+                                              (FFAppState().bolRecipient ==
+                                                      '') ||
+                                              (FFAppState().bolTransporter ==
+                                                      '') ||
+                                              !(FFAppState()
+                                                  .bolProducts
+                                                  .isNotEmpty))
+                                          ? null
+                                          : () async {
+                                              _model.newBillOfLadingDoc =
+                                                  await BillOfLadingTable()
+                                                      .insert({
+                                                'transporter':
+                                                    FFAppState().bolTransporter,
+                                                'sender':
+                                                    FFAppState().bolSender,
+                                                'recipient':
+                                                    FFAppState().bolRecipient,
+                                                'products': FFAppState()
+                                                    .bolProducts
+                                                    .map((e) => e.toMap())
+                                                    .toList()
+                                                    .map((e) => e.toString())
+                                                    .toList(),
+                                                'status': BillOfLadingStatus
+                                                    .In_Progress.name,
+                                                'invoice_url': FFAppState()
+                                                    .uploadedInvoice,
+                                              });
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
+                                                SnackBar(
+                                                  content: Text(
+                                                    'Bill of Lading has been sent!',
+                                                    style: TextStyle(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primaryText,
+                                                    ),
+                                                  ),
+                                                  duration: const Duration(
+                                                      milliseconds: 4000),
+                                                  backgroundColor:
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .accent2,
+                                                ),
+                                              );
 
-                                        context.pushNamed('userHomePage');
+                                              context.pushNamed('userHomePage');
 
-                                        setState(() {});
-                                      },
+                                              setState(() {});
+                                            },
                                       text: 'Send B.O.L.',
                                       options: FFButtonOptions(
                                         width: double.infinity,
@@ -1455,6 +1501,9 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(24.0),
+                                        disabledColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
                                       ),
                                     ),
                                   ),

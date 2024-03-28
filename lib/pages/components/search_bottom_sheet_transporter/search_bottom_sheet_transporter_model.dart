@@ -22,20 +22,20 @@ class SearchBottomSheetTransporterModel
 
   /// Query cache managers for this widget.
 
-  final _searchTransporterManager = FutureRequestManager<List<UsersRow>>();
-  Future<List<UsersRow>> searchTransporter({
+  final _searchRecipientManager = FutureRequestManager<List<ProfileRow>>();
+  Future<List<ProfileRow>> searchRecipient({
     String? uniqueQueryKey,
     bool? overrideCache,
-    required Future<List<UsersRow>> Function() requestFn,
+    required Future<List<ProfileRow>> Function() requestFn,
   }) =>
-      _searchTransporterManager.performRequest(
+      _searchRecipientManager.performRequest(
         uniqueQueryKey: uniqueQueryKey,
         overrideCache: overrideCache,
         requestFn: requestFn,
       );
-  void clearSearchTransporterCache() => _searchTransporterManager.clear();
-  void clearSearchTransporterCacheKey(String? uniqueKey) =>
-      _searchTransporterManager.clearRequest(uniqueKey);
+  void clearSearchRecipientCache() => _searchRecipientManager.clear();
+  void clearSearchRecipientCacheKey(String? uniqueKey) =>
+      _searchRecipientManager.clearRequest(uniqueKey);
 
   /// Initialization and disposal methods.
 
@@ -48,7 +48,7 @@ class SearchBottomSheetTransporterModel
 
     /// Dispose query cache managers for this widget.
 
-    clearSearchTransporterCache();
+    clearSearchRecipientCache();
   }
 
   /// Action blocks are added here.

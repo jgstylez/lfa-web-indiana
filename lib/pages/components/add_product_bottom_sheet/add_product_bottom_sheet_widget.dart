@@ -93,7 +93,7 @@ class _AddProductBottomSheetWidgetState
             ),
             Form(
               key: _model.formKey,
-              autovalidateMode: AutovalidateMode.always,
+              autovalidateMode: AutovalidateMode.disabled,
               child: Padding(
                 padding:
                     const EdgeInsetsDirectional.fromSTEB(16.0, 50.0, 16.0, 100.0),
@@ -332,6 +332,11 @@ class _AddProductBottomSheetWidgetState
                                               ''))
                                   ? null
                                   : () async {
+                                      if (_model.formKey.currentState == null ||
+                                          !_model.formKey.currentState!
+                                              .validate()) {
+                                        return;
+                                      }
                                       setState(() {
                                         FFAppState()
                                             .addToBolProducts(BolProductStruct(

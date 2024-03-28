@@ -6,15 +6,12 @@ export 'api_manager.dart' show ApiCallResponse;
 
 const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
-class SearchUsersCall {
-  static Future<ApiCallResponse> call({
-    String? business = 'null',
-    String? name = 'null',
-  }) async {
+class SearchUserCall {
+  static Future<ApiCallResponse> call() async {
     return ApiManager.instance.makeApiCall(
-      callName: 'searchUsers',
+      callName: 'searchUser',
       apiUrl:
-          'https://diqkwxzcspfoijdshesk.supabase.co/rest/v1/users?select=display_name,business_name',
+          'https://diqkwxzcspfoijdshesk.supabase.co/rest/v1/profile?select=business_name,display_name',
       callType: ApiCallType.GET,
       headers: {
         'apikey':
@@ -22,14 +19,11 @@ class SearchUsersCall {
         'Authorization':
             'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpcWt3eHpjc3Bmb2lqZHNoZXNrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDg1NDE5NjEsImV4cCI6MjAyNDExNzk2MX0.ilILX7XCTzWyuBdiEAMya_OOhj61jNf5Pp0e9p14FeY',
       },
-      params: {
-        'display_name': name,
-        'business_name': business,
-      },
+      params: {},
       returnBody: true,
       encodeBodyUtf8: false,
       decodeUtf8: false,
-      cache: true,
+      cache: false,
       alwaysAllowBody: false,
     );
   }

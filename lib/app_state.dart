@@ -21,6 +21,9 @@ class FFAppState extends ChangeNotifier {
       _isFarmer = prefs.getBool('ff_isFarmer') ?? _isFarmer;
     });
     _safeInit(() {
+      _bolSender = prefs.getString('ff_bolSender') ?? _bolSender;
+    });
+    _safeInit(() {
       _avatar = prefs.getString('ff_avatar') ?? _avatar;
     });
     _safeInit(() {
@@ -76,6 +79,7 @@ class FFAppState extends ChangeNotifier {
   String get bolSender => _bolSender;
   set bolSender(String value) {
     _bolSender = value;
+    prefs.setString('ff_bolSender', value);
   }
 
   String _bolTransporter = '';

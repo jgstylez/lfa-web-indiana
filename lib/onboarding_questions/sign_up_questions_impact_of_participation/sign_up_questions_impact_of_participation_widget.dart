@@ -109,7 +109,7 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                             alignment:
                                                 const AlignmentDirectional(0.0, -1.0),
                                             child: Text(
-                                              ' Indiana has made the commitment to keeping local food local by taking an approach that benefits both small-medium sized farmers and food insecure communities. The IN LFPA Project has been designed to remove the variety of barriers, from logistics to infrastructure, to business management, that smaller farms run by producers from socially disadvantaged communities have when they attempt to scale up or participate in larger markets. We hope that this project will create viable farms and sustainable markets.',
+                                              'Indiana has made the commitment to keeping local food local by taking an approach that benefits both small-medium sized farmers and food insecure communities. \n\nThe IN LFPA Project has been designed to remove the variety of barriers, from logistics to infrastructure, to business management, that smaller farms run by producers from socially disadvantaged communities have when they attempt to scale up or participate in larger markets. We hope that this project will create viable farms and sustainable markets.',
                                               textAlign: TextAlign.start,
                                               style:
                                                   FlutterFlowTheme.of(context)

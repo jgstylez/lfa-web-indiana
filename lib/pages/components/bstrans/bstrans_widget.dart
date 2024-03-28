@@ -7,21 +7,19 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'search_bottom_sheet_transporter_model.dart';
-export 'search_bottom_sheet_transporter_model.dart';
+import 'bstrans_model.dart';
+export 'bstrans_model.dart';
 
-class SearchBottomSheetTransporterWidget extends StatefulWidget {
-  const SearchBottomSheetTransporterWidget({super.key});
+class BstransWidget extends StatefulWidget {
+  const BstransWidget({super.key});
 
   @override
-  State<SearchBottomSheetTransporterWidget> createState() =>
-      _SearchBottomSheetTransporterWidgetState();
+  State<BstransWidget> createState() => _BstransWidgetState();
 }
 
-class _SearchBottomSheetTransporterWidgetState
-    extends State<SearchBottomSheetTransporterWidget>
+class _BstransWidgetState extends State<BstransWidget>
     with TickerProviderStateMixin {
-  late SearchBottomSheetTransporterModel _model;
+  late BstransModel _model;
 
   final animationsMap = {
     'containerOnPageLoadAnimation': AnimationInfo(
@@ -54,7 +52,7 @@ class _SearchBottomSheetTransporterWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => SearchBottomSheetTransporterModel());
+    _model = createModel(context, () => BstransModel());
 
     _model.textController ??= TextEditingController();
 
@@ -102,7 +100,7 @@ class _SearchBottomSheetTransporterWidgetState
                 ),
               ),
               Text(
-                'Search for Recipient',
+                'Search for Transporter',
                 style: FlutterFlowTheme.of(context).titleSmall,
               ),
               InkWell(
@@ -177,14 +175,14 @@ class _SearchBottomSheetTransporterWidgetState
                       onChanged: (_) => EasyDebounce.debounce(
                         '_model.textController',
                         const Duration(milliseconds: 100),
-                        () => setState(() {}),
+                        () async {
+                          setState(() {
+                            _model.clearSearchTransporterCache();
+                            _model.requestCompleted = false;
+                          });
+                          await _model.waitForRequestCompleted();
+                        },
                       ),
-                      onFieldSubmitted: (_) async {
-                        setState(() {
-                          _model.clearSearchRecipientCache();
-                          _model.requestCompleted = false;
-                        });
-                      },
                       autofocus: true,
                       textInputAction: TextInputAction.search,
                       obscureText: false,
@@ -230,6 +228,11 @@ class _SearchBottomSheetTransporterWidgetState
                             ? InkWell(
                                 onTap: () async {
                                   _model.textController?.clear();
+                                  setState(() {
+                                    _model.clearSearchTransporterCache();
+                                    _model.requestCompleted = false;
+                                  });
+                                  await _model.waitForRequestCompleted();
                                   setState(() {});
                                 },
                                 child: Icon(
@@ -255,9 +258,10 @@ class _SearchBottomSheetTransporterWidgetState
                 child: FFButtonWidget(
                   onPressed: () async {
                     setState(() {
-                      _model.clearSearchRecipientCache();
+                      _model.clearSearchTransporterCache();
                       _model.requestCompleted = false;
                     });
+                    await _model.waitForRequestCompleted();
                   },
                   text: 'Search',
                   options: FFButtonOptions(
@@ -310,10 +314,10 @@ class _SearchBottomSheetTransporterWidgetState
             ],
           ),
         Expanded(
-          child: FutureBuilder<List<ProfileRow>>(
+          child: FutureBuilder<List<UsersRow>>(
             future: _model
-                .searchRecipient(
-              requestFn: () => ProfileTable().queryRows(
+                .searchTransporter(
+              requestFn: () => UsersTable().queryRows(
                 queryFn: (q) => q,
                 limit: 20,
               ),
@@ -337,14 +341,13 @@ class _SearchBottomSheetTransporterWidgetState
                   ),
                 );
               }
-              List<ProfileRow> listViewProfileRowList = snapshot.data!;
+              List<UsersRow> listViewUsersRowList = snapshot.data!;
               return ListView.builder(
                 padding: EdgeInsets.zero,
                 scrollDirection: Axis.vertical,
-                itemCount: listViewProfileRowList.length,
+                itemCount: listViewUsersRowList.length,
                 itemBuilder: (context, listViewIndex) {
-                  final listViewProfileRow =
-                      listViewProfileRowList[listViewIndex];
+                  final listViewUsersRow = listViewUsersRowList[listViewIndex];
                   return Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
@@ -359,7 +362,7 @@ class _SearchBottomSheetTransporterWidgetState
                           onTap: () async {
                             _model.updatePage(() {
                               FFAppState().bolTransporter =
-                                  listViewProfileRow.businessName!;
+                                  listViewUsersRow.businessName!;
                             });
                             Navigator.pop(context);
                           },
@@ -392,7 +395,7 @@ class _SearchBottomSheetTransporterWidgetState
                                         borderRadius:
                                             BorderRadius.circular(40.0),
                                         child: Image.network(
-                                          listViewProfileRow.photoUrl!,
+                                          listViewUsersRow.photoUrl!,
                                           width: 60.0,
                                           height: 60.0,
                                           fit: BoxFit.cover,
@@ -412,7 +415,7 @@ class _SearchBottomSheetTransporterWidgetState
                                                   12.0, 0.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
-                                              listViewProfileRow.businessName,
+                                              listViewUsersRow.businessName,
                                               'business',
                                             ),
                                             style: FlutterFlowTheme.of(context)
@@ -434,7 +437,7 @@ class _SearchBottomSheetTransporterWidgetState
                                                   12.0, 4.0, 0.0, 0.0),
                                           child: Text(
                                             valueOrDefault<String>(
-                                              listViewProfileRow.displayName,
+                                              listViewUsersRow.displayName,
                                               'name',
                                             ),
                                             style: FlutterFlowTheme.of(context)
