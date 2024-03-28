@@ -510,7 +510,7 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                 ),
                                 FutureBuilder<List<ProfileRow>>(
                                   future: ProfileTable().queryRows(
-                                    queryFn: (q) => q,
+                                    queryFn: (q) => q.order('business_name'),
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
@@ -543,7 +543,7 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                         return Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 16.0, 0.0),
+                                                  0.0, 0.0, 16.0, 2.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,

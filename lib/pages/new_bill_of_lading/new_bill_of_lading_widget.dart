@@ -238,7 +238,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                     final selectedMedia =
                                         await selectMediaWithSourceBottomSheet(
                                       context: context,
-                                      storageFolderPath: 'users/invoice',
+                                      storageFolderPath: 'bol_invoices',
                                       maxWidth: 1500.00,
                                       maxHeight: 1500.00,
                                       imageQuality: 90,
@@ -274,7 +274,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
 
                                         downloadUrls =
                                             await uploadSupabaseStorageFiles(
-                                          bucketName: 'invoices',
+                                          bucketName: _model.uploadedFileUrl,
                                           selectedFiles: selectedMedia,
                                         );
                                       } finally {
@@ -782,7 +782,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                       subtitle: Text(
                                         valueOrDefault<String>(
                                           FFAppState().bolSender,
-                                          'Business Name',
+                                          'Business Sender',
                                         ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium

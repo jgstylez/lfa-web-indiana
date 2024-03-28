@@ -2,7 +2,9 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'view_entity_details_model.dart';
 export 'view_entity_details_model.dart';
 
@@ -45,6 +47,8 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Align(
       alignment: const AlignmentDirectional(1.0, -1.0),
       child: Container(
@@ -111,8 +115,10 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
                       ),
-                      child: Image.network(
-                        'https://picsum.photos/seed/386/600',
+                      child: CachedNetworkImage(
+                        fadeInDuration: const Duration(milliseconds: 500),
+                        fadeOutDuration: const Duration(milliseconds: 500),
+                        imageUrl: FFAppState().avatar,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -129,7 +135,10 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                   Text(
-                    'John Doe',
+                    valueOrDefault<String>(
+                      widget.entityProfile?.displayName,
+                      'name',
+                    ),
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                 ],
@@ -143,7 +152,10 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                   Text(
-                    'In Progress',
+                    valueOrDefault<String>(
+                      widget.entityProfile?.businessName,
+                      'business',
+                    ),
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                 ],
@@ -161,7 +173,10 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                   ),
                   Expanded(
                     child: Text(
-                      '123 County Road 150 Marbury AL 36051',
+                      valueOrDefault<String>(
+                        widget.entityProfile?.businessAddress,
+                        'biz_address',
+                      ),
                       textAlign: TextAlign.end,
                       style: FlutterFlowTheme.of(context).bodyLarge,
                     ),
@@ -182,7 +197,22 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                   Expanded(
                     flex: 1,
                     child: Text(
-                      '123 County Road 150 Marbury AL 36051',
+                      '${valueOrDefault<String>(
+                        widget.entityProfile?.address,
+                        'address1',
+                      )} ${valueOrDefault<String>(
+                        widget.entityProfile?.addressOptional,
+                        'address2',
+                      )} ${valueOrDefault<String>(
+                        widget.entityProfile?.city,
+                        'city',
+                      )}, ${valueOrDefault<String>(
+                        widget.entityProfile?.state,
+                        'state',
+                      )} ${valueOrDefault<String>(
+                        widget.entityProfile?.zipCode,
+                        'zip',
+                      )}',
                       textAlign: TextAlign.end,
                       style: FlutterFlowTheme.of(context).bodyLarge,
                     ),
@@ -198,7 +228,10 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                   Text(
-                    '(555) 555-5555',
+                    valueOrDefault<String>(
+                      widget.entityProfile?.phoneNumber,
+                      'phone',
+                    ),
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                 ],
@@ -212,7 +245,10 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                   Text(
-                    'Allen',
+                    valueOrDefault<String>(
+                      widget.entityProfile?.county,
+                      'county',
+                    ),
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                 ],
@@ -226,7 +262,10 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                   Text(
-                    'Central',
+                    valueOrDefault<String>(
+                      widget.entityProfile?.region,
+                      'region',
+                    ),
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                 ],
@@ -240,7 +279,10 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                   Text(
-                    'Farmer',
+                    valueOrDefault<String>(
+                      widget.entityProfile?.entity.first,
+                      'entity',
+                    ),
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                 ],
@@ -254,7 +296,14 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                   Text(
-                    'March 18, 2024',
+                    valueOrDefault<String>(
+                      dateTimeFormat(
+                        'yMMMd',
+                        widget.entityProfile?.createdAt,
+                        locale: FFLocalizations.of(context).languageCode,
+                      ),
+                      'joined',
+                    ),
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                 ],
@@ -264,14 +313,51 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Admin:',
+                    'Best to Contact:',
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                   Text(
-                    'No',
+                    valueOrDefault<String>(
+                      widget.entityProfile?.bestContactTime,
+                      'contact_time',
+                    ),
                     style: FlutterFlowTheme.of(context).bodyLarge,
                   ),
                 ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Best Form of Contact:',
+                    style: FlutterFlowTheme.of(context).bodyLarge,
+                  ),
+                  Text(
+                    valueOrDefault<String>(
+                      widget.entityProfile?.bestContactForm,
+                      'contact_form',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge,
+                  ),
+                ],
+              ),
+              Opacity(
+                opacity: 0.0,
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'Admin:',
+                      style: FlutterFlowTheme.of(context).bodyLarge,
+                    ),
+                    Text(
+                      'No',
+                      style: FlutterFlowTheme.of(context).bodyLarge,
+                    ),
+                  ],
+                ),
               ),
               const Spacer(),
               Padding(
