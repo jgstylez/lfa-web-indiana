@@ -50,7 +50,10 @@ class _EntityTableWidgetState extends State<EntityTableWidget> {
             BoxShadow(
               blurRadius: 3.0,
               color: Color(0x33000000),
-              offset: Offset(0.0, 1.0),
+              offset: Offset(
+                0.0,
+                1.0,
+              ),
             )
           ],
           borderRadius: BorderRadius.circular(8.0),
@@ -90,14 +93,21 @@ class _EntityTableWidgetState extends State<EntityTableWidget> {
                         child: Text(
                           'Owner',
                           textAlign: TextAlign.start,
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                     Expanded(
                       flex: 2,
                       child: Text(
                         'Business',
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
                       ),
                     ),
                     if (responsiveVisibility(
@@ -110,7 +120,11 @@ class _EntityTableWidgetState extends State<EntityTableWidget> {
                         child: Text(
                           'Entity',
                           textAlign: TextAlign.start,
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                     if (responsiveVisibility(
@@ -123,21 +137,31 @@ class _EntityTableWidgetState extends State<EntityTableWidget> {
                         child: Text(
                           'Joined',
                           textAlign: TextAlign.start,
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                     Expanded(
                       flex: 1,
                       child: Text(
                         'County',
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
                       ),
                     ),
                     Expanded(
                       flex: 1,
                       child: Text(
                         'Region',
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
                       ),
                     ),
                   ],
@@ -168,7 +192,10 @@ class _EntityTableWidgetState extends State<EntityTableWidget> {
                             BoxShadow(
                               blurRadius: 0.0,
                               color: FlutterFlowTheme.of(context).alternate,
-                              offset: const Offset(0.0, 1.0),
+                              offset: const Offset(
+                                0.0,
+                                1.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(0.0),
@@ -188,8 +215,12 @@ class _EntityTableWidgetState extends State<EntityTableWidget> {
                                   flex: 1,
                                   child: Text(
                                     'Laura Kieth',
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                               Expanded(
@@ -197,8 +228,12 @@ class _EntityTableWidgetState extends State<EntityTableWidget> {
                                 child: Text(
                                   'MarketLink Hub',
                                   textAlign: TextAlign.start,
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                               if (responsiveVisibility(
@@ -211,8 +246,12 @@ class _EntityTableWidgetState extends State<EntityTableWidget> {
                                   child: Text(
                                     'Food Hub',
                                     textAlign: TextAlign.start,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                               if (responsiveVisibility(
@@ -225,24 +264,36 @@ class _EntityTableWidgetState extends State<EntityTableWidget> {
                                   child: Text(
                                     'Jan. 30th, 2024',
                                     textAlign: TextAlign.start,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                               Expanded(
                                 flex: 1,
                                 child: Text(
                                   'Adams',
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                               Expanded(
                                 flex: 1,
                                 child: Text(
                                   'Northeast',
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                             ],

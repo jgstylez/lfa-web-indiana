@@ -17,8 +17,6 @@ class OrdersModel extends FlutterFlowModel<OrdersWidget> {
   String? statusDropDownValue;
   FormFieldController<String>? statusDropDownValueController;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     sideNavModel = createModel(context, () => SideNavModel());
@@ -29,8 +27,4 @@ class OrdersModel extends FlutterFlowModel<OrdersWidget> {
     unfocusNode.dispose();
     sideNavModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

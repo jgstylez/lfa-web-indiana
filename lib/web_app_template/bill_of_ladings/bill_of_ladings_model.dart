@@ -14,8 +14,6 @@ class BillOfLadingsModel extends FlutterFlowModel<BillOfLadingsWidget> {
   String? statusDropDownValue;
   FormFieldController<String>? statusDropDownValueController;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     sideNavModel = createModel(context, () => SideNavModel());
@@ -26,8 +24,4 @@ class BillOfLadingsModel extends FlutterFlowModel<BillOfLadingsWidget> {
     unfocusNode.dispose();
     sideNavModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

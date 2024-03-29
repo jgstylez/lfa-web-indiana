@@ -11,8 +11,6 @@ class Auth2CreateProfileModel
   // Model for editProfile_auth_2 component.
   late EditProfileAuth2Model editProfileAuth2Model;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     editProfileAuth2Model = createModel(context, () => EditProfileAuth2Model());
@@ -23,8 +21,4 @@ class Auth2CreateProfileModel
     unfocusNode.dispose();
     editProfileAuth2Model.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

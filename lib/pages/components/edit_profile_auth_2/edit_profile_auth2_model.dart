@@ -19,8 +19,6 @@ class EditProfileAuth2Model extends FlutterFlowModel<EditProfileAuth2Widget> {
   TextEditingController? myBioController;
   String? Function(BuildContext, String?)? myBioControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -32,8 +30,4 @@ class EditProfileAuth2Model extends FlutterFlowModel<EditProfileAuth2Widget> {
     myBioFocusNode?.dispose();
     myBioController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

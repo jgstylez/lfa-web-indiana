@@ -70,7 +70,11 @@ class _DeliveriesWidgetState extends State<DeliveriesWidget> {
                   children: [
                     Text(
                       'DELIVERIES',
-                      style: FlutterFlowTheme.of(context).headlineMedium,
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Outfit',
+                                letterSpacing: 0.0,
+                              ),
                     ),
                     Padding(
                       padding:

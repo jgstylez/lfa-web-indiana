@@ -115,11 +115,6 @@ class SignUpQuestionsContactInfoModel
   // State field(s) for CountyDropDown widget.
   String? countyDropDownValue;
   FormFieldController<String>? countyDropDownValueController;
-  // State field(s) for differentFarmAddress widget.
-  FocusNode? differentFarmAddressFocusNode;
-  TextEditingController? differentFarmAddressController;
-  String? Function(BuildContext, String?)?
-      differentFarmAddressControllerValidator;
   // State field(s) for RegionDropDown widget.
   String? regionDropDownValue;
   FormFieldController<String>? regionDropDownValueController;
@@ -132,8 +127,13 @@ class SignUpQuestionsContactInfoModel
   // State field(s) for BestTimeOfContactDropDown widget.
   String? bestTimeOfContactDropDownValue;
   FormFieldController<String>? bestTimeOfContactDropDownValueController;
-
-  /// Initialization and disposal methods.
+  // State field(s) for diffFarmAddessRB widget.
+  FormFieldController<String>? diffFarmAddessRBValueController;
+  // State field(s) for differentFarmAddress widget.
+  FocusNode? differentFarmAddressFocusNode;
+  TextEditingController? differentFarmAddressController;
+  String? Function(BuildContext, String?)?
+      differentFarmAddressControllerValidator;
 
   @override
   void initState(BuildContext context) {
@@ -181,7 +181,6 @@ class SignUpQuestionsContactInfoModel
     differentFarmAddressController?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
+  /// Additional helper methods.
+  String? get diffFarmAddessRBValue => diffFarmAddessRBValueController?.value;
 }

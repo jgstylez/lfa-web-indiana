@@ -61,7 +61,10 @@ class _NotifySettingsWidgetState extends State<NotifySettingsWidget> {
               ),
               title: Text(
                 'SETTINGS',
-                style: FlutterFlowTheme.of(context).headlineSmall,
+                style: FlutterFlowTheme.of(context).headlineSmall.override(
+                      fontFamily: 'Outfit',
+                      letterSpacing: 0.0,
+                    ),
               ),
               actions: const [],
               centerTitle: true,
@@ -83,7 +86,11 @@ class _NotifySettingsWidgetState extends State<NotifySettingsWidget> {
                             const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 0.0),
                         child: Text(
                           'Choose what notifcations you want to recieve below and we will update the settings.',
-                          style: FlutterFlowTheme.of(context).labelMedium,
+                          style:
+                              FlutterFlowTheme.of(context).labelMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                     ),
@@ -101,6 +108,7 @@ class _NotifySettingsWidgetState extends State<NotifySettingsWidget> {
                     'Push Notifications',
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
                           lineHeight: 2.0,
                         ),
                   ),
@@ -109,6 +117,7 @@ class _NotifySettingsWidgetState extends State<NotifySettingsWidget> {
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Readex Pro',
                           color: const Color(0xFF8B97A2),
+                          letterSpacing: 0.0,
                         ),
                   ),
                   tileColor: FlutterFlowTheme.of(context).primary,
@@ -129,6 +138,7 @@ class _NotifySettingsWidgetState extends State<NotifySettingsWidget> {
                   'Email Notifications',
                   style: FlutterFlowTheme.of(context).bodyLarge.override(
                         fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
                         lineHeight: 2.0,
                       ),
                 ),
@@ -137,6 +147,7 @@ class _NotifySettingsWidgetState extends State<NotifySettingsWidget> {
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Readex Pro',
                         color: const Color(0xFF8B97A2),
+                        letterSpacing: 0.0,
                       ),
                 ),
                 tileColor: FlutterFlowTheme.of(context).primary,
@@ -156,6 +167,7 @@ class _NotifySettingsWidgetState extends State<NotifySettingsWidget> {
                   'Location Services',
                   style: FlutterFlowTheme.of(context).bodyLarge.override(
                         fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
                         lineHeight: 2.0,
                       ),
                 ),
@@ -164,6 +176,7 @@ class _NotifySettingsWidgetState extends State<NotifySettingsWidget> {
                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                         fontFamily: 'Readex Pro',
                         color: const Color(0xFF8B97A2),
+                        letterSpacing: 0.0,
                       ),
                 ),
                 tileColor: FlutterFlowTheme.of(context).primary,
@@ -191,6 +204,7 @@ class _NotifySettingsWidgetState extends State<NotifySettingsWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Readex Pro',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
                     borderSide: const BorderSide(

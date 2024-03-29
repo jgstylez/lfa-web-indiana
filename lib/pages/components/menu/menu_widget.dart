@@ -101,11 +101,17 @@ class _MenuWidgetState extends State<MenuWidget> {
                 children: [
                   Text(
                     FFAppState().displayName,
-                    style: FlutterFlowTheme.of(context).titleLarge,
+                    style: FlutterFlowTheme.of(context).titleLarge.override(
+                          fontFamily: 'Outfit',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
                     currentUserEmail,
-                    style: FlutterFlowTheme.of(context).bodyMedium,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   InkWell(
                     splashColor: Colors.transparent,
@@ -120,6 +126,7 @@ class _MenuWidgetState extends State<MenuWidget> {
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
                             color: FlutterFlowTheme.of(context).secondaryText,
+                            letterSpacing: 0.0,
                           ),
                     ),
                   ),
@@ -144,7 +151,10 @@ class _MenuWidgetState extends State<MenuWidget> {
               ),
               title: Text(
                 'Dashboard',
-                style: FlutterFlowTheme.of(context).titleMedium,
+                style: FlutterFlowTheme.of(context).titleMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios,
@@ -170,7 +180,10 @@ class _MenuWidgetState extends State<MenuWidget> {
             ),
             title: Text(
               'Entities',
-              style: FlutterFlowTheme.of(context).titleMedium,
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
             ),
             trailing: Icon(
               Icons.arrow_forward_ios,
@@ -195,7 +208,10 @@ class _MenuWidgetState extends State<MenuWidget> {
             ),
             title: Text(
               'Bill of Ladings',
-              style: FlutterFlowTheme.of(context).titleMedium,
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
             ),
             trailing: Icon(
               Icons.arrow_forward_ios,
@@ -222,7 +238,10 @@ class _MenuWidgetState extends State<MenuWidget> {
               ),
               title: Text(
                 'Orders',
-                style: FlutterFlowTheme.of(context).titleMedium,
+                style: FlutterFlowTheme.of(context).titleMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios,
@@ -248,7 +267,10 @@ class _MenuWidgetState extends State<MenuWidget> {
             ),
             title: Text(
               'New Delivery',
-              style: FlutterFlowTheme.of(context).titleMedium,
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
             ),
             trailing: Icon(
               Icons.arrow_forward_ios,
@@ -273,7 +295,10 @@ class _MenuWidgetState extends State<MenuWidget> {
             ),
             title: Text(
               'Notifications',
-              style: FlutterFlowTheme.of(context).titleMedium,
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
             ),
             trailing: Icon(
               Icons.arrow_forward_ios,
@@ -305,7 +330,10 @@ class _MenuWidgetState extends State<MenuWidget> {
               ),
               title: Text(
                 'Case Study',
-                style: FlutterFlowTheme.of(context).titleMedium,
+                style: FlutterFlowTheme.of(context).titleMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               trailing: Icon(
                 Icons.arrow_forward_ios,

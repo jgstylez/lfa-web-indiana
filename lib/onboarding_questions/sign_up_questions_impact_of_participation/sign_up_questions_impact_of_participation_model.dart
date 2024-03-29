@@ -22,8 +22,6 @@ class SignUpQuestionsImpactOfParticipationModel
     return null;
   }
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     impactTextFieldControllerValidator = _impactTextFieldControllerValidator;
@@ -35,8 +33,4 @@ class SignUpQuestionsImpactOfParticipationModel
     impactTextFieldFocusNode?.dispose();
     impactTextFieldController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

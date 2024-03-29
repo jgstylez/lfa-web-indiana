@@ -100,7 +100,10 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                 ),
                 title: Text(
                   'DETAILS',
-                  style: FlutterFlowTheme.of(context).headlineMedium,
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Outfit',
+                        letterSpacing: 0.0,
+                      ),
                 ),
                 actions: const [],
                 centerTitle: true,
@@ -129,7 +132,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                             16.0, 12.0, 0.0, 0.0),
                         child: Text(
                           'Entity Information',
-                          style: FlutterFlowTheme.of(context).labelSmall,
+                          style:
+                              FlutterFlowTheme.of(context).labelSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                       Padding(
@@ -170,7 +177,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                         Text(
                                           'Albert Swiss',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyLarge,
+                                              .bodyLarge
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         Padding(
                                           padding:
@@ -179,7 +190,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                           child: Text(
                                             'albert@companyname.com',
                                             style: FlutterFlowTheme.of(context)
-                                                .labelSmall,
+                                                .labelSmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],
@@ -197,7 +212,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                             16.0, 0.0, 16.0, 0.0),
                         child: Text(
                           'Address:',
-                          style: FlutterFlowTheme.of(context).labelSmall,
+                          style:
+                              FlutterFlowTheme.of(context).labelSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                       Padding(
@@ -205,7 +224,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                             16.0, 8.0, 16.0, 24.0),
                         child: Text(
                           '123 Disney Way, Los Angeles CA. 90291',
-                          style: FlutterFlowTheme.of(context).titleSmall,
+                          style:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                       Padding(
@@ -213,7 +236,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                             16.0, 0.0, 16.0, 0.0),
                         child: Text(
                           'Status',
-                          style: FlutterFlowTheme.of(context).labelSmall,
+                          style:
+                              FlutterFlowTheme.of(context).labelSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                       Padding(
@@ -237,7 +264,12 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                   12.0, 0.0, 12.0, 0.0),
                               child: Text(
                                 'PENDING RECEIPT',
-                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                             ),
                           ),
@@ -256,8 +288,12 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                 children: [
                                   Text(
                                     'Invoice #:',
-                                    style:
-                                        FlutterFlowTheme.of(context).labelSmall,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelSmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
@@ -265,7 +301,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                     child: Text(
                                       '5242124422',
                                       style: FlutterFlowTheme.of(context)
-                                          .titleLarge,
+                                          .titleLarge
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ],
@@ -297,7 +337,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                         Text(
                                           'Product:',
                                           style: FlutterFlowTheme.of(context)
-                                              .labelSmall,
+                                              .labelSmall
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         Padding(
                                           padding:
@@ -306,7 +350,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                           child: Text(
                                             'Tomatoes',
                                             style: FlutterFlowTheme.of(context)
-                                                .titleLarge,
+                                                .titleLarge
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],
@@ -322,7 +370,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                       Text(
                                         'Quantity:',
                                         style: FlutterFlowTheme.of(context)
-                                            .labelSmall,
+                                            .labelSmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -330,7 +382,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                         child: Text(
                                           '100',
                                           style: FlutterFlowTheme.of(context)
-                                              .titleLarge,
+                                              .titleLarge
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -345,7 +401,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                       Text(
                                         'Weight:',
                                         style: FlutterFlowTheme.of(context)
-                                            .labelSmall,
+                                            .labelSmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                       Padding(
                                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -353,7 +413,11 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                         child: Text(
                                           '15 lbs',
                                           style: FlutterFlowTheme.of(context)
-                                              .titleLarge,
+                                              .titleLarge
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -367,7 +431,12 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                 16.0, 12.0, 0.0, 0.0),
                             child: Text(
                               'Message:',
-                              style: FlutterFlowTheme.of(context).labelSmall,
+                              style: FlutterFlowTheme.of(context)
+                                  .labelSmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                           ),
                           Padding(
@@ -375,7 +444,12 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                 16.0, 8.0, 16.0, 0.0),
                             child: Text(
                               'Thanks for your business!',
-                              style: FlutterFlowTheme.of(context).titleLarge,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleLarge
+                                  .override(
+                                    fontFamily: 'Outfit',
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                           ),
                         ],
@@ -408,6 +482,7 @@ class _BolMarkedReceivedWidgetState extends State<BolMarkedReceivedWidget>
                                 .override(
                                   fontFamily: 'Readex Pro',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                             elevation: 3.0,
                             borderSide: const BorderSide(

@@ -50,7 +50,10 @@ class _PickupListWidgetState extends State<PickupListWidget> {
             BoxShadow(
               blurRadius: 3.0,
               color: Color(0x33000000),
-              offset: Offset(0.0, 1.0),
+              offset: Offset(
+                0.0,
+                1.0,
+              ),
             )
           ],
           borderRadius: BorderRadius.circular(8.0),
@@ -100,7 +103,10 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                       flex: 2,
                       child: Text(
                         'Recipient',
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
                       ),
                     ),
                     if (responsiveVisibility(
@@ -115,7 +121,11 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                         child: Text(
                           'Sender',
                           textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                     if (responsiveVisibility(
@@ -128,7 +138,11 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                         child: Text(
                           'Created',
                           textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                     Expanded(
@@ -136,7 +150,10 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                       child: Text(
                         'Status',
                         textAlign: TextAlign.center,
-                        style: FlutterFlowTheme.of(context).bodyMedium,
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
                       ),
                     ),
                     if (responsiveVisibility(
@@ -149,7 +166,11 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                         child: Text(
                           'Invoice',
                           textAlign: TextAlign.center,
-                          style: FlutterFlowTheme.of(context).bodyMedium,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ),
                   ],
@@ -184,7 +205,10 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                             BoxShadow(
                               blurRadius: 0.0,
                               color: FlutterFlowTheme.of(context).alternate,
-                              offset: const Offset(0.0, 1.0),
+                              offset: const Offset(
+                                0.0,
+                                1.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(0.0),
@@ -205,7 +229,11 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                                     Text(
                                       'MarketLink Hub',
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                     if (responsiveVisibility(
                                       context: context,
@@ -220,7 +248,11 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                                         child: Text(
                                           'Entity',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodySmall,
+                                              .bodySmall
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                   ],
@@ -242,7 +274,11 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                                       'Sender',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                 ),
@@ -256,8 +292,12 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                                   child: Text(
                                     'Jan. 30th, 2023',
                                     textAlign: TextAlign.center,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                               Expanded(
@@ -281,7 +321,11 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                                         child: Text(
                                           'Paid',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -298,8 +342,12 @@ class _PickupListWidgetState extends State<PickupListWidget> {
                                   child: Text(
                                     'Invoice ID',
                                     textAlign: TextAlign.center,
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                             ],

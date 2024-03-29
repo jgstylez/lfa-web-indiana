@@ -56,8 +56,6 @@ class SignUpQuestionsProductDistributionModel
   List<String>? servicesCheckboxGroupValues;
   FormFieldController<List<String>>? servicesCheckboxGroupValueController;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     transportTextFieldControllerValidator =
@@ -80,8 +78,4 @@ class SignUpQuestionsProductDistributionModel
     handlingSystemTextFieldFocusNode?.dispose();
     handlingSystemTextFieldController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

@@ -81,13 +81,18 @@ class _SignUpQuestionsBlkLoamWidgetState
                                   Expanded(
                                     flex: 1,
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 50.0, 0.0, 50.0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              0.0, 50.0, 0.0, 50.0),
                                       child: Text(
                                         'Black LOAM \nLocal Food Access \nDirectory',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
-                                            .displayMedium,
+                                            .displayMedium
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ),
@@ -105,14 +110,20 @@ class _SignUpQuestionsBlkLoamWidgetState
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
                                           Align(
-                                            alignment: const AlignmentDirectional(
-                                                -1.0, -1.0),
+                                            alignment:
+                                                const AlignmentDirectional(
+                                                    -1.0, -1.0),
                                             child: Text(
                                               'The directory will allow you to promote your farm directly to consumers or to wholesale buyers. People who want to buy directly from farmers will be able to search for farms in a specific area and by which products they offer. You will have control over what information is made public and can even choose to include photos or a link to your farm\'s website or social media. BLA staff will be available to help you with the Directory platform and can help you make changes to your farm\'s profile page.',
                                               textAlign: TextAlign.start,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -122,7 +133,8 @@ class _SignUpQuestionsBlkLoamWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment:
+                                    const AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       50.0, 0.0, 50.0, 0.0),
@@ -148,17 +160,20 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  12.0),
+                                                              .fromSTEB(0.0,
+                                                              0.0, 0.0, 12.0),
                                                       child: Text(
                                                         'Would you like to learn more about participating in the Black LOAM Access (BLA) Local Food Directory?',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ),
@@ -208,10 +223,10 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                                       Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0,
-                                                                            12.0),
+                                                                        0.0,
+                                                                        12.0,
+                                                                        0.0,
+                                                                        12.0),
                                                                     child: Text(
                                                                       'Occupation (check any that apply):',
                                                                       textAlign:
@@ -219,13 +234,20 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                                               .start,
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMedium,
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Readex Pro',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
                                                                     ),
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                  padding:
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -261,7 +283,13 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                                             .secondaryText,
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyMedium,
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     checkboxBorderRadius:
                                                                         BorderRadius.circular(
                                                                             4.0),
@@ -302,21 +330,28 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                                       Padding(
                                                                     padding: const EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            0.0,
-                                                                            12.0,
-                                                                            0.0,
-                                                                            12.0),
+                                                                        0.0,
+                                                                        12.0,
+                                                                        0.0,
+                                                                        12.0),
                                                                     child: Text(
                                                                       'If you checked \"Farmer,\" please specify:',
                                                                       style: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .bodyMedium,
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Readex Pro',
+                                                                            letterSpacing:
+                                                                                0.0,
+                                                                          ),
                                                                     ),
                                                                   ),
                                                                 ),
                                                                 Padding(
-                                                                  padding: const EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                                  padding:
+                                                                      const EdgeInsetsDirectional
+                                                                          .fromSTEB(
                                                                           0.0,
                                                                           0.0,
                                                                           0.0,
@@ -350,7 +385,13 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                                             .secondaryText,
                                                                     textStyle: FlutterFlowTheme.of(
                                                                             context)
-                                                                        .bodyMedium,
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          letterSpacing:
+                                                                              0.0,
+                                                                        ),
                                                                     checkboxBorderRadius:
                                                                         BorderRadius.circular(
                                                                             4.0),
@@ -372,17 +413,20 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0,
-                                                                  12.0),
+                                                              .fromSTEB(0.0,
+                                                              12.0, 0.0, 12.0),
                                                       child: Text(
                                                         'While you\'re here...',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .displaySmall,
+                                                                .displaySmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ),
@@ -393,17 +437,20 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0,
-                                                                  12.0),
+                                                              .fromSTEB(0.0,
+                                                              12.0, 0.0, 12.0),
                                                       child: Text(
                                                         'Sign up or change your subscription settings for Black Loam Access (BLA) publications and event notices.',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ),
@@ -414,17 +461,20 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0,
-                                                                  12.0),
+                                                              .fromSTEB(0.0,
+                                                              12.0, 0.0, 12.0),
                                                       child: Text(
                                                         'Please select which publications you\'d like to receive:',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ),
@@ -432,7 +482,7 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
-                                                                0.0, 24.0),
+                                                            0.0, 24.0),
                                                     child:
                                                         FlutterFlowCheckboxGroup(
                                                       options: const [
@@ -466,7 +516,13 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                       textStyle:
                                                           FlutterFlowTheme.of(
                                                                   context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                       checkboxBorderRadius:
                                                           BorderRadius.circular(
                                                               4.0),
@@ -482,17 +538,20 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0,
-                                                                  12.0),
+                                                              .fromSTEB(0.0,
+                                                              12.0, 0.0, 12.0),
                                                       child: Text(
                                                         'Check if you would like to receive notice about events and resources for:',
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ),
@@ -527,10 +586,14 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                         FlutterFlowTheme.of(
                                                                 context)
                                                             .secondaryText,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     checkboxBorderRadius:
                                                         BorderRadius.circular(
                                                             4.0),
@@ -540,15 +603,13 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                   ),
                                                   Container(
                                                     height: 100.0,
-                                                    decoration: const BoxDecoration(),
+                                                    decoration:
+                                                        const BoxDecoration(),
                                                     child: Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  8.0,
-                                                                  32.0,
-                                                                  8.0,
-                                                                  32.0),
+                                                              .fromSTEB(8.0,
+                                                              32.0, 8.0, 32.0),
                                                       child: TextFormField(
                                                         controller: _model
                                                             .additionalNotesController,
@@ -563,11 +624,23 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .labelMedium,
+                                                                  .labelMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Readex Pro',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                           hintStyle:
                                                               FlutterFlowTheme.of(
                                                                       context)
-                                                                  .titleSmall,
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Readex Pro',
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                  ),
                                                           enabledBorder:
                                                               OutlineInputBorder(
                                                             borderSide:
@@ -632,16 +705,23 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                           contentPadding:
                                                               const EdgeInsetsDirectional
                                                                   .fromSTEB(
-                                                                      24.0,
-                                                                      12.0,
-                                                                      24.0,
-                                                                      12.0),
+                                                                  24.0,
+                                                                  12.0,
+                                                                  24.0,
+                                                                  12.0),
                                                         ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                         maxLines: 3,
+                                                        minLines: null,
                                                         validator: _model
                                                             .additionalNotesControllerValidator
                                                             .asValidator(
@@ -655,9 +735,8 @@ class _SignUpQuestionsBlkLoamWidgetState
                                           ],
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 50.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 0.0, 0.0, 50.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             crossAxisAlignment:
@@ -675,27 +754,28 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
+                                                            24.0, 0.0),
                                                     iconPadding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .accent3,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                            ),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide:
+                                                        const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -755,27 +835,28 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
+                                                            24.0, 0.0),
                                                     iconPadding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .accent1,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                            ),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide:
+                                                        const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -789,7 +870,8 @@ class _SignUpQuestionsBlkLoamWidgetState
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(const SizedBox(width: 24.0)),
+                                            ].divide(
+                                                const SizedBox(width: 24.0)),
                                           ),
                                         ),
                                       ],
@@ -815,7 +897,8 @@ class _SignUpQuestionsBlkLoamWidgetState
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Align(
-                                alignment: const AlignmentDirectional(-1.0, -1.0),
+                                alignment:
+                                    const AlignmentDirectional(-1.0, -1.0),
                                 child: Container(
                                   width: 100.0,
                                   height: 1200.0,
@@ -833,13 +916,15 @@ class _SignUpQuestionsBlkLoamWidgetState
                                         .secondaryBackground,
                                     image: DecorationImage(
                                       fit: BoxFit.cover,
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment:
+                                          const AlignmentDirectional(0.0, 0.0),
                                       image: Image.network(
-                                        'https://diqkwxzcspfoijdshesk.supabase.co/storage/v1/object/public/images/lfa-blkloam-bg.jpg',
+                                        'https://hvnzublzljmybszdaeho.supabase.co/storage/v1/object/public/images/lfa-blkloam-bg.jpg',
                                       ).image,
                                     ),
                                   ),
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment:
+                                      const AlignmentDirectional(0.0, 0.0),
                                 ),
                               ),
                             ],

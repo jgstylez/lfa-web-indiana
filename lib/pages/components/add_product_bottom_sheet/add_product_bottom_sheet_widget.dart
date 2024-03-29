@@ -1,3 +1,4 @@
+import '/backend/schema/structs/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -92,7 +93,7 @@ class _AddProductBottomSheetWidgetState
             ),
             Form(
               key: _model.formKey,
-              autovalidateMode: AutovalidateMode.always,
+              autovalidateMode: AutovalidateMode.disabled,
               child: Padding(
                 padding:
                     const EdgeInsetsDirectional.fromSTEB(16.0, 50.0, 16.0, 100.0),
@@ -109,6 +110,7 @@ class _AddProductBottomSheetWidgetState
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Readex Pro',
                               color: FlutterFlowTheme.of(context).secondaryText,
+                              letterSpacing: 0.0,
                             ),
                       ),
                     ),
@@ -120,8 +122,16 @@ class _AddProductBottomSheetWidgetState
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: 'Product Title',
-                        labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                        hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).alternate,
@@ -153,7 +163,11 @@ class _AddProductBottomSheetWidgetState
                         filled: true,
                         fillColor: FlutterFlowTheme.of(context).secondary,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                      minLines: null,
                       validator: _model.titleTextFieldControllerValidator
                           .asValidator(context),
                     ),
@@ -168,10 +182,18 @@ class _AddProductBottomSheetWidgetState
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'Quantity',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -203,7 +225,13 @@ class _AddProductBottomSheetWidgetState
                               filled: true,
                               fillColor: FlutterFlowTheme.of(context).secondary,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: TextInputType.number,
                             validator: _model
                                 .quantityTextFieldControllerValidator
@@ -221,10 +249,18 @@ class _AddProductBottomSheetWidgetState
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: 'Weight (lbs)',
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).labelMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                               enabledBorder: UnderlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).alternate,
@@ -256,7 +292,13 @@ class _AddProductBottomSheetWidgetState
                               filled: true,
                               fillColor: FlutterFlowTheme.of(context).secondary,
                             ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                            minLines: null,
                             keyboardType: const TextInputType.numberWithOptions(
                                 decimal: true),
                             validator: _model.weightTextFieldControllerValidator
@@ -276,8 +318,16 @@ class _AddProductBottomSheetWidgetState
                       obscureText: false,
                       decoration: InputDecoration(
                         labelText: 'Message (optional)',
-                        labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                        hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                        labelStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
+                        hintStyle:
+                            FlutterFlowTheme.of(context).labelMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  letterSpacing: 0.0,
+                                ),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(
                             color: FlutterFlowTheme.of(context).alternate,
@@ -309,7 +359,11 @@ class _AddProductBottomSheetWidgetState
                         filled: true,
                         fillColor: FlutterFlowTheme.of(context).secondary,
                       ),
-                      style: FlutterFlowTheme.of(context).bodyMedium,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                      minLines: null,
                       validator: _model.shortMsgTFControllerValidator
                           .asValidator(context),
                     ),
@@ -331,7 +385,25 @@ class _AddProductBottomSheetWidgetState
                                               ''))
                                   ? null
                                   : () async {
-                                      setState(() {});
+                                      if (_model.formKey.currentState == null ||
+                                          !_model.formKey.currentState!
+                                              .validate()) {
+                                        return;
+                                      }
+                                      setState(() {
+                                        FFAppState()
+                                            .addToBolProducts(BolProductStruct(
+                                          productTitle: _model
+                                              .titleTextFieldController.text,
+                                          quantity: int.tryParse(_model
+                                              .quantityTextFieldController
+                                              .text),
+                                          weight: double.tryParse(_model
+                                              .weightTextFieldController.text),
+                                          message:
+                                              _model.shortMsgTFController.text,
+                                        ));
+                                      });
                                       var confirmDialogResponse =
                                           await showDialog<bool>(
                                                 context: context,
@@ -386,6 +458,7 @@ class _AddProductBottomSheetWidgetState
                                     .override(
                                       fontFamily: 'Readex Pro',
                                       color: Colors.white,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
                                 borderSide: const BorderSide(
@@ -422,6 +495,7 @@ class _AddProductBottomSheetWidgetState
                                     .override(
                                       fontFamily: 'Readex Pro',
                                       color: Colors.white,
+                                      letterSpacing: 0.0,
                                     ),
                                 elevation: 3.0,
                                 borderSide: BorderSide(

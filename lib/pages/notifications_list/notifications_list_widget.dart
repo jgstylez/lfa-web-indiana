@@ -67,7 +67,10 @@ class _NotificationsListWidgetState extends State<NotificationsListWidget> {
                 ),
                 title: Text(
                   'NOTIFICATIONS',
-                  style: FlutterFlowTheme.of(context).headlineMedium,
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Outfit',
+                        letterSpacing: 0.0,
+                      ),
                 ),
                 actions: [
                   Opacity(
@@ -119,7 +122,10 @@ class _NotificationsListWidgetState extends State<NotificationsListWidget> {
                             BoxShadow(
                               blurRadius: 0.0,
                               color: FlutterFlowTheme.of(context).secondary,
-                              offset: const Offset(0.0, 1.0),
+                              offset: const Offset(
+                                0.0,
+                                1.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(0.0),
@@ -144,8 +150,12 @@ class _NotificationsListWidgetState extends State<NotificationsListWidget> {
                                       12.0, 0.0, 0.0, 0.0),
                                   child: Text(
                                     'Notification message',
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyLarge,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyLarge
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                               ),
@@ -154,8 +164,12 @@ class _NotificationsListWidgetState extends State<NotificationsListWidget> {
                                     12.0, 0.0, 0.0, 0.0),
                                 child: Text(
                                   'Mar 8, 2022',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Readex Pro',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                             ],

@@ -89,7 +89,10 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
               child: Text(
                 'Adjust the content below to update your profile.',
                 textAlign: TextAlign.start,
-                style: FlutterFlowTheme.of(context).labelLarge,
+                style: FlutterFlowTheme.of(context).labelLarge.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
             ),
           ),
@@ -163,7 +166,10 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   iconPadding:
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).primaryBackground,
-                  textStyle: FlutterFlowTheme.of(context).bodyMedium,
+                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                   elevation: 1.0,
                   borderSide: BorderSide(
                     color: FlutterFlowTheme.of(context).alternate,
@@ -184,12 +190,19 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
               obscureText: false,
               decoration: InputDecoration(
                 labelText: 'Full Name',
-                labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
                 hintText: 'Your full name...',
-                hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
                 errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Readex Pro',
                       color: FlutterFlowTheme.of(context).error,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -224,7 +237,11 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 contentPadding:
                     const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+              minLines: null,
               cursorColor: FlutterFlowTheme.of(context).primary,
               validator:
                   _model.yourNameControllerValidator.asValidator(context),
@@ -239,7 +256,10 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
               onChanged: (val) => setState(() => _model.roleValue = val),
               width: double.infinity,
               height: 44.0,
-              textStyle: FlutterFlowTheme.of(context).bodyMedium,
+              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
               hintText: 'Entity',
               icon: Icon(
                 Icons.keyboard_arrow_down_rounded,
@@ -266,12 +286,19 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
               obscureText: false,
               decoration: InputDecoration(
                 labelText: 'About Me',
-                labelStyle: FlutterFlowTheme.of(context).labelMedium,
+                labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
                 hintText: 'A little about you...',
-                hintStyle: FlutterFlowTheme.of(context).labelMedium,
+                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
                 errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Readex Pro',
                       color: FlutterFlowTheme.of(context).error,
+                      letterSpacing: 0.0,
                     ),
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
@@ -306,9 +333,13 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                 contentPadding:
                     const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium,
+              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
               textAlign: TextAlign.start,
               maxLines: 3,
+              minLines: null,
               cursorColor: FlutterFlowTheme.of(context).primary,
               validator: _model.myBioControllerValidator.asValidator(context),
             ),
@@ -336,6 +367,7 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                         style: FlutterFlowTheme.of(context).titleSmall.override(
                               fontFamily: 'Readex Pro',
                               color: FlutterFlowTheme.of(context).info,
+                              letterSpacing: 0.0,
                             ),
                       ),
                       duration: const Duration(milliseconds: 4000),
@@ -352,7 +384,10 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   iconPadding:
                       const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                   color: FlutterFlowTheme.of(context).accent1,
-                  textStyle: FlutterFlowTheme.of(context).titleSmall,
+                  textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                   elevation: 3.0,
                   borderSide: const BorderSide(
                     color: Colors.transparent,
