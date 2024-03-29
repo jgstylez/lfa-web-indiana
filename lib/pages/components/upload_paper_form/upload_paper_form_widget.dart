@@ -95,7 +95,10 @@ class _UploadPaperFormWidgetState extends State<UploadPaperFormWidget> {
             BoxShadow(
               blurRadius: 7.0,
               color: Color(0x2F1D2429),
-              offset: Offset(0.0, 3.0),
+              offset: Offset(
+                0.0,
+                3.0,
+              ),
             )
           ],
           borderRadius: BorderRadius.circular(8.0),
@@ -125,6 +128,7 @@ class _UploadPaperFormWidgetState extends State<UploadPaperFormWidget> {
                             fontFamily: 'Plus Jakarta Sans',
                             color: FlutterFlowTheme.of(context).primaryText,
                             fontSize: 16.0,
+                            letterSpacing: 0.0,
                             fontWeight: FontWeight.w500,
                           ),
                     ),

@@ -93,7 +93,11 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                         'Entities',
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
-                                            .displayMedium,
+                                            .displayMedium
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                     if (responsiveVisibility(
@@ -180,7 +184,11 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                         child: Text(
                                           'Filter By: ',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                       Align(
@@ -205,16 +213,25 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                             height: 50.0,
                                             searchHintTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium,
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             searchTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
                                                       fontSize: 12.0,
+                                                      letterSpacing: 0.0,
                                                     ),
                                             hintText: 'Entity',
                                             searchHintText:
@@ -268,16 +285,25 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                             height: 50.0,
                                             searchHintTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium,
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             searchTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
                                                       fontSize: 12.0,
+                                                      letterSpacing: 0.0,
                                                     ),
                                             hintText: 'County',
                                             searchHintText:
@@ -331,16 +357,25 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                             height: 50.0,
                                             searchHintTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium,
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             searchTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'Readex Pro',
                                                       fontSize: 12.0,
+                                                      letterSpacing: 0.0,
                                                     ),
                                             hintText: 'Region',
                                             searchHintText:
@@ -444,7 +479,12 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                                 'Entity',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           Expanded(
@@ -453,7 +493,12 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                               'Business',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                           Expanded(
@@ -462,7 +507,12 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                               'Owner',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                           if (responsiveVisibility(
@@ -476,7 +526,12 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                                 'Region',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           if (responsiveVisibility(
@@ -490,7 +545,12 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                                 'County',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           Opacity(
@@ -510,7 +570,7 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                 ),
                                 FutureBuilder<List<ProfileRow>>(
                                   future: ProfileTable().queryRows(
-                                    queryFn: (q) => q,
+                                    queryFn: (q) => q.order('business_name'),
                                   ),
                                   builder: (context, snapshot) {
                                     // Customize what your widget looks like when it's loading.
@@ -543,7 +603,7 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                         return Padding(
                                           padding:
                                               const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 16.0, 0.0),
+                                                  0.0, 0.0, 16.0, 2.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -612,7 +672,13 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                     Expanded(
@@ -626,7 +692,13 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                     Expanded(
@@ -640,7 +712,13 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                     if (responsiveVisibility(
@@ -659,7 +737,13 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                     if (responsiveVisibility(
@@ -678,7 +762,13 @@ class _EntitiesWidgetState extends State<EntitiesWidget> {
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                     Icon(

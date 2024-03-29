@@ -60,6 +60,7 @@ class _GoogleSignInButtonWidgetState extends State<GoogleSignInButtonWidget> {
           textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                 fontFamily: 'Readex Pro',
                 color: FlutterFlowTheme.of(context).primaryText,
+                letterSpacing: 0.0,
               ),
           elevation: 0.0,
           borderSide: BorderSide(

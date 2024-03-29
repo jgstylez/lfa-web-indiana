@@ -127,6 +127,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                           fontFamily: 'Outfit',
                           color: Colors.white,
                           fontSize: 22.0,
+                          letterSpacing: 0.0,
                         ),
                   ),
                   Padding(
@@ -177,8 +178,12 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                               labelColor: FlutterFlowTheme.of(context).accent2,
                               unselectedLabelColor:
                                   FlutterFlowTheme.of(context).secondaryText,
-                              labelStyle:
-                                  FlutterFlowTheme.of(context).titleMedium,
+                              labelStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                               unselectedLabelStyle: const TextStyle(),
                               indicatorColor:
                                   FlutterFlowTheme.of(context).accent2,
@@ -247,7 +252,11 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                         'Contact Info',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyLarge,
+                                            .bodyLarge
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                     Form(
@@ -285,11 +294,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -361,7 +380,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController1Validator
                                                     .asValidator(context),
@@ -387,11 +408,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -463,7 +494,9 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primaryText,
+                                                      letterSpacing: 0.0,
                                                     ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController2Validator
                                                     .asValidator(context),
@@ -489,11 +522,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -558,7 +601,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController3Validator
                                                     .asValidator(context),
@@ -585,11 +634,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -654,7 +713,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController4Validator
                                                     .asValidator(context),
@@ -680,11 +745,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -749,7 +824,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController5Validator
                                                     .asValidator(context),
@@ -776,11 +857,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -845,7 +936,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController6Validator
                                                     .asValidator(context),
@@ -871,11 +968,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -940,7 +1047,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController7Validator
                                                     .asValidator(context),
@@ -966,11 +1079,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -1035,7 +1158,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController8Validator
                                                     .asValidator(context),
@@ -1061,11 +1190,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -1130,7 +1269,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController9Validator
                                                     .asValidator(context),
@@ -1156,11 +1301,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -1225,7 +1380,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController10Validator
                                                     .asValidator(context),
@@ -1252,11 +1413,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -1321,7 +1492,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController11Validator
                                                     .asValidator(context),
@@ -1347,11 +1524,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -1416,7 +1603,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController12Validator
                                                     .asValidator(context),
@@ -1442,11 +1635,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -1511,7 +1714,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController13Validator
                                                     .asValidator(context),
@@ -1538,11 +1747,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -1607,7 +1826,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController14Validator
                                                     .asValidator(context),
@@ -1634,11 +1859,21 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .labelMedium,
+                                                          .labelMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   enabledBorder:
                                                       UnderlineInputBorder(
                                                     borderSide: BorderSide(
@@ -1703,7 +1938,13 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
+                                                minLines: null,
                                                 validator: _model
                                                     .textController15Validator
                                                     .asValidator(context),
@@ -1742,6 +1983,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color: Colors.white,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
                                                     borderSide: const BorderSide(
@@ -1786,6 +2028,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .accent2,
+                                                        letterSpacing: 0.0,
                                                       ),
                                             ),
                                           ),
@@ -1797,7 +2040,12 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                               'Do you identfy as BIPOC (Black, Indigenous, and people of color)?',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyLarge,
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                           FlutterFlowRadioButton(
@@ -1810,10 +2058,18 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                             optionHeight: 32.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium,
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             selectedTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             buttonPosition:
                                                 RadioButtonPosition.left,
                                             direction: Axis.horizontal,
@@ -1837,7 +2093,12 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                               'Do you identfy as a Socially Disadvantaged Farmer as defined above?',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyLarge,
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                           FlutterFlowRadioButton(
@@ -1850,10 +2111,18 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                             optionHeight: 32.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium,
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             selectedTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             buttonPosition:
                                                 RadioButtonPosition.left,
                                             direction: Axis.horizontal,
@@ -1877,7 +2146,12 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                               'Do you identfy as a Socially Disadvantaged Farmer as defined above?',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyLarge,
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                           FlutterFlowRadioButton(
@@ -1890,10 +2164,18 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                             optionHeight: 32.0,
                                             textStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelMedium,
+                                                    .labelMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             selectedTextStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .bodyMedium,
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Readex Pro',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             buttonPosition:
                                                 RadioButtonPosition.left,
                                             direction: Axis.horizontal,
@@ -1920,7 +2202,12 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   'Ethnicity:',
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyLarge,
+                                                      .bodyLarge
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                 ),
                                               ),
                                               Padding(
@@ -1942,7 +2229,12 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .bodyMedium,
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                   hintText: 'Ethnicity',
                                                   icon: Icon(
                                                     Icons
@@ -2006,6 +2298,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                           fontFamily:
                                                               'Readex Pro',
                                                           color: Colors.white,
+                                                          letterSpacing: 0.0,
                                                         ),
                                                     elevation: 3.0,
                                                     borderSide: const BorderSide(
@@ -2041,6 +2334,7 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .accent2,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                         ),
@@ -2051,7 +2345,11 @@ class _UserProfileWidgetState extends State<UserProfileWidget>
                                           child: Text(
                                             'Do you identfy as BIPOC (Black, Indigenous, and people of color)?',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyLarge,
+                                                .bodyLarge
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],

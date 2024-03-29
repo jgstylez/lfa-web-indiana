@@ -20,8 +20,6 @@ class EntitiesModel extends FlutterFlowModel<EntitiesWidget> {
   String? regionDropDownValue;
   FormFieldController<String>? regionDropDownValueController;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     sideNavModel = createModel(context, () => SideNavModel());
@@ -32,8 +30,4 @@ class EntitiesModel extends FlutterFlowModel<EntitiesWidget> {
     unfocusNode.dispose();
     sideNavModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

@@ -67,6 +67,7 @@ class _CaseStudyWidgetState extends State<CaseStudyWidget> {
                       fontFamily: 'Outfit',
                       color: Colors.white,
                       fontSize: 22.0,
+                      letterSpacing: 0.0,
                     ),
               ),
               actions: const [],

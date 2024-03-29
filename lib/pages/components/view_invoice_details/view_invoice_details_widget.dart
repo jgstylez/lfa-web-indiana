@@ -92,7 +92,11 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                     child: Text(
                       'Invoice Details',
                       textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).headlineSmall,
+                      style:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                fontFamily: 'Outfit',
+                                letterSpacing: 0.0,
+                              ),
                     ),
                   ),
                 ],
@@ -104,11 +108,20 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                   Text(
                     'ID#:',
                     textAlign: TextAlign.start,
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    '100000000',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    valueOrDefault<String>(
+                      widget.bolInfo?.id.toString(),
+                      'inv_id',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -118,11 +131,20 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                 children: [
                   Text(
                     'Status:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'In Progress',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    valueOrDefault<String>(
+                      widget.bolInfo?.status,
+                      'status',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -132,11 +154,21 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                 children: [
                   Text(
                     'Sent Out:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'March 18, 2024',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    dateTimeFormat(
+                      'yMMMd',
+                      widget.bolInfo!.createdAt,
+                      locale: FFLocalizations.of(context).languageCode,
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -146,11 +178,20 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                 children: [
                   Text(
                     'Sender:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'Yellow Road Farms',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    valueOrDefault<String>(
+                      widget.bolInfo?.sender,
+                      'sender',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -160,25 +201,20 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                 children: [
                   Text(
                     'Recipient:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'Brown Food Storage',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Received On:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
-                  ),
-                  Text(
-                    'March 18, 2024',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    valueOrDefault<String>(
+                      widget.bolInfo?.recipient,
+                      'recipient',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -187,12 +223,44 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    'Paid On:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    'Received:',
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'March 18, 2024',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    valueOrDefault<String>(
+                      widget.bolInfo?.markedReceived?.toString(),
+                      'received',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                ],
+              ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    'Paid:',
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
+                  ),
+                  Text(
+                    valueOrDefault<String>(
+                      widget.bolInfo?.markedPaid?.toString(),
+                      'paid',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -205,7 +273,10 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                     flex: 1,
                     child: Text(
                       'Products:',
-                      style: FlutterFlowTheme.of(context).bodyLarge,
+                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
                     ),
                   ),
                   Expanded(
@@ -274,6 +345,7 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                                                             context)
                                                         .primaryText,
                                                     fontSize: 14.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -284,7 +356,12 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                                                 'Qty: ',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                             Padding(
@@ -294,7 +371,12 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                                                 'Weight: ',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                             Padding(
@@ -304,7 +386,12 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                                                 'Message: ',
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -317,9 +404,16 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                             ),
                           ),
                         Text(
-                          'Hello World',
+                          valueOrDefault<String>(
+                            widget.bolInfo?.products.first,
+                            'products',
+                          ),
                           textAlign: TextAlign.end,
-                          style: FlutterFlowTheme.of(context).bodyLarge,
+                          style:
+                              FlutterFlowTheme.of(context).bodyLarge.override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                         ),
                       ],
                     ),
@@ -350,6 +444,7 @@ class _ViewInvoiceDetailsWidgetState extends State<ViewInvoiceDetailsWidget> {
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Readex Pro',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
                         borderSide: const BorderSide(

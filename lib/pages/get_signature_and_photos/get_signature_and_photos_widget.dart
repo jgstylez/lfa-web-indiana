@@ -67,7 +67,11 @@ class _GetSignatureAndPhotosWidgetState
                   children: [
                     Text(
                       'UPLOAD',
-                      style: FlutterFlowTheme.of(context).headlineMedium,
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Outfit',
+                                letterSpacing: 0.0,
+                              ),
                     ),
                     Padding(
                       padding:
@@ -122,7 +126,12 @@ class _GetSignatureAndPhotosWidgetState
                             ),
                             title: Text(
                               'Recipient',
-                              style: FlutterFlowTheme.of(context).titleSmall,
+                              style: FlutterFlowTheme.of(context)
+                                  .titleSmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                             subtitle: Text(
                               'Business Name | Display Name',
@@ -131,6 +140,7 @@ class _GetSignatureAndPhotosWidgetState
                                   .override(
                                     fontFamily: 'Readex Pro',
                                     color: FlutterFlowTheme.of(context).accent2,
+                                    letterSpacing: 0.0,
                                     lineHeight: 1.5,
                                   ),
                             ),
@@ -180,7 +190,10 @@ class _GetSignatureAndPhotosWidgetState
                                   BoxShadow(
                                     blurRadius: 7.0,
                                     color: Color(0x2F1D2429),
-                                    offset: Offset(0.0, 3.0),
+                                    offset: Offset(
+                                      0.0,
+                                      3.0,
+                                    ),
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(8.0),
@@ -223,6 +236,7 @@ class _GetSignatureAndPhotosWidgetState
                                                             context)
                                                         .primaryText,
                                                     fontSize: 16.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -324,7 +338,10 @@ class _GetSignatureAndPhotosWidgetState
                                   BoxShadow(
                                     blurRadius: 7.0,
                                     color: Color(0x2F1D2429),
-                                    offset: Offset(0.0, 3.0),
+                                    offset: Offset(
+                                      0.0,
+                                      3.0,
+                                    ),
                                   )
                                 ],
                                 borderRadius: BorderRadius.circular(8.0),
@@ -368,6 +385,7 @@ class _GetSignatureAndPhotosWidgetState
                                                             context)
                                                         .primaryText,
                                                     fontSize: 16.0,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w500,
                                                   ),
                                             ),
@@ -466,6 +484,7 @@ class _GetSignatureAndPhotosWidgetState
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
                                     borderSide: const BorderSide(

@@ -10,8 +10,6 @@ class PickupModel extends FlutterFlowModel<PickupWidget> {
   // Model for pickupList component.
   late PickupListModel pickupListModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     pickupListModel = createModel(context, () => PickupListModel());
@@ -22,8 +20,4 @@ class PickupModel extends FlutterFlowModel<PickupWidget> {
     unfocusNode.dispose();
     pickupListModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

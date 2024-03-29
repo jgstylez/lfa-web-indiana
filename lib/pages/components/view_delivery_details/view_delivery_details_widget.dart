@@ -92,7 +92,11 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                     child: Text(
                       'Delivery Details',
                       textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).headlineSmall,
+                      style:
+                          FlutterFlowTheme.of(context).headlineSmall.override(
+                                fontFamily: 'Outfit',
+                                letterSpacing: 0.0,
+                              ),
                     ),
                   ),
                 ],
@@ -104,11 +108,20 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                   Text(
                     'ID#:',
                     textAlign: TextAlign.start,
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    '100000000',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    valueOrDefault<String>(
+                      widget.deliveryInfo?.deliveryId.toString(),
+                      'delivery_id',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -118,11 +131,20 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                 children: [
                   Text(
                     'Status:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'In Progress',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    valueOrDefault<String>(
+                      widget.deliveryInfo?.status,
+                      'status',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -132,11 +154,20 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                 children: [
                   Text(
                     'Transporter:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'Yellow Road Farms',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    valueOrDefault<String>(
+                      widget.deliveryInfo?.transporter,
+                      'transporter',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -146,11 +177,20 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                 children: [
                   Text(
                     'Sender:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'Yellow Road Farms',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    valueOrDefault<String>(
+                      widget.deliveryInfo?.sender,
+                      'sender',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -160,11 +200,20 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                 children: [
                   Text(
                     'Recipient:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'Brown Food Storage',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    valueOrDefault<String>(
+                      widget.deliveryInfo?.recipient,
+                      'recipient',
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -174,11 +223,21 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                 children: [
                   Text(
                     'Started On:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'March 18, 2024',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    dateTimeFormat(
+                      'yMMMd',
+                      widget.deliveryInfo!.createdAt,
+                      locale: FFLocalizations.of(context).languageCode,
+                    ),
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -188,11 +247,17 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                 children: [
                   Text(
                     'Region:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
-                    'March 18, 2024',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    'Central',
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -202,11 +267,17 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                 children: [
                   Text(
                     'County:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Text(
                     'Allen',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ],
               ),
@@ -217,12 +288,15 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                 children: [
                   Text(
                     'Product:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
-                      'https://picsum.photos/seed/893/600',
+                      widget.deliveryInfo!.productImage!,
                       width: 100.0,
                       height: 80.0,
                       fit: BoxFit.fill,
@@ -237,12 +311,15 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                 children: [
                   Text(
                     'Signature:',
-                    style: FlutterFlowTheme.of(context).bodyLarge,
+                    style: FlutterFlowTheme.of(context).bodyLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   ClipRRect(
                     borderRadius: BorderRadius.circular(8.0),
                     child: Image.network(
-                      'https://picsum.photos/seed/893/600',
+                      widget.deliveryInfo!.signatureImage!,
                       width: 100.0,
                       height: 80.0,
                       fit: BoxFit.fill,
@@ -274,6 +351,7 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Readex Pro',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                         elevation: 3.0,
                         borderSide: const BorderSide(

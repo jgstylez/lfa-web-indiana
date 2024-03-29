@@ -86,8 +86,6 @@ class UserProfileModel extends FlutterFlowModel<UserProfileWidget> {
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     editProfileAuth2Model = createModel(context, () => EditProfileAuth2Model());
@@ -144,10 +142,7 @@ class UserProfileModel extends FlutterFlowModel<UserProfileWidget> {
     textController15?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get radioButtonValue1 => radioButtonValueController1?.value;
   String? get radioButtonValue2 => radioButtonValueController2?.value;
   String? get radioButtonValue3 => radioButtonValueController3?.value;

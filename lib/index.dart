@@ -63,3 +63,4 @@ export '/pages/bol_marked_received/bol_marked_received_widget.dart'
     show BolMarkedReceivedWidget;
 export '/case_study/case_study_widget.dart' show CaseStudyWidget;
 export '/pages/pickup/pickup_widget.dart' show PickupWidget;
+export '/pages/lfa/lfa_widget.dart' show LfaWidget;

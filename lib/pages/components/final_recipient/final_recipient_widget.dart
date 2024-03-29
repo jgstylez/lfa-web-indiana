@@ -54,7 +54,10 @@ class _FinalRecipientWidgetState extends State<FinalRecipientWidget> {
               child: Text(
                 'Are you the\nfinal recipient?',
                 textAlign: TextAlign.center,
-                style: FlutterFlowTheme.of(context).headlineLarge,
+                style: FlutterFlowTheme.of(context).headlineLarge.override(
+                      fontFamily: 'Outfit',
+                      letterSpacing: 0.0,
+                    ),
               ),
             ),
             Padding(
@@ -83,6 +86,7 @@ class _FinalRecipientWidgetState extends State<FinalRecipientWidget> {
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
                                 color: Colors.white,
+                                letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
                       borderSide: const BorderSide(
@@ -112,6 +116,7 @@ class _FinalRecipientWidgetState extends State<FinalRecipientWidget> {
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Readex Pro',
                                 color: FlutterFlowTheme.of(context).tertiary,
+                                letterSpacing: 0.0,
                               ),
                       elevation: 3.0,
                       borderSide: const BorderSide(

@@ -89,7 +89,11 @@ class _SignUpQuestionsTechnicalAssistanceWidgetState
                                           'Technical Assistance',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
-                                              .displayMedium,
+                                              .displayMedium
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ],
@@ -113,7 +117,12 @@ class _SignUpQuestionsTechnicalAssistanceWidgetState
                                                 textAlign: TextAlign.start,
                                                 style:
                                                     FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                               ),
                                             ),
                                           ],
@@ -155,7 +164,13 @@ class _SignUpQuestionsTechnicalAssistanceWidgetState
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ),
@@ -176,7 +191,13 @@ class _SignUpQuestionsTechnicalAssistanceWidgetState
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   ),
@@ -213,10 +234,14 @@ class _SignUpQuestionsTechnicalAssistanceWidgetState
                                                         FlutterFlowTheme.of(
                                                                 context)
                                                             .secondaryText,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .bodyMedium,
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     checkboxBorderRadius:
                                                         BorderRadius.circular(
                                                             4.0),
@@ -258,11 +283,23 @@ class _SignUpQuestionsTechnicalAssistanceWidgetState
                                                             labelStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .labelMedium,
+                                                                    .labelMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .titleSmall,
+                                                                    .titleSmall
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Readex Pro',
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                    ),
                                                             enabledBorder:
                                                                 OutlineInputBorder(
                                                               borderSide:
@@ -334,7 +371,14 @@ class _SignUpQuestionsTechnicalAssistanceWidgetState
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
+                                                          minLines: null,
                                                           validator: _model
                                                               .otherControllerValidator
                                                               .asValidator(
@@ -384,6 +428,7 @@ class _SignUpQuestionsTechnicalAssistanceWidgetState
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primary,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(
@@ -454,6 +499,7 @@ class _SignUpQuestionsTechnicalAssistanceWidgetState
                                                             FlutterFlowTheme.of(
                                                                     context)
                                                                 .primaryText,
+                                                        letterSpacing: 0.0,
                                                       ),
                                                   elevation: 3.0,
                                                   borderSide: const BorderSide(

@@ -90,7 +90,11 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                     child: Text(
                                       'Orders',
                                       style: FlutterFlowTheme.of(context)
-                                          .displayMedium,
+                                          .displayMedium
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                   if (responsiveVisibility(
@@ -175,7 +179,11 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                         child: Text(
                                           'Filter By: ',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                       if (responsiveVisibility(
@@ -194,7 +202,11 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                           height: 50.0,
                                           textStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyMedium,
+                                                  .bodyMedium
+                                                  .override(
+                                                    fontFamily: 'Readex Pro',
+                                                    letterSpacing: 0.0,
+                                                  ),
                                           hintText: 'Entity',
                                           icon: Icon(
                                             Icons.keyboard_arrow_down_rounded,
@@ -231,7 +243,11 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                         width: 150.0,
                                         height: 50.0,
                                         textStyle: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                         hintText: 'Status',
                                         icon: Icon(
                                           Icons.keyboard_arrow_down_rounded,
@@ -306,7 +322,12 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                               'Transporter',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         if (responsiveVisibility(
@@ -320,7 +341,12 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                               'Sender',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         Expanded(
@@ -328,7 +354,11 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                           child: Text(
                                             'Recipient',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                         Expanded(
@@ -336,7 +366,11 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                           child: Text(
                                             'Status',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                         if (responsiveVisibility(
@@ -350,7 +384,12 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                               'Final Recipient',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         Opacity(
@@ -468,7 +507,13 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                     if (responsiveVisibility(
@@ -487,7 +532,13 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                     Expanded(
@@ -501,17 +552,33 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                     Expanded(
                                                       flex: 1,
                                                       child: Text(
-                                                        'Status',
+                                                        valueOrDefault<String>(
+                                                          listViewDeliveryRow
+                                                              .status,
+                                                          'status',
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                     if (responsiveVisibility(
@@ -530,7 +597,13 @@ class _OrdersWidgetState extends State<OrdersWidget> {
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .bodyMedium,
+                                                              .bodyMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Readex Pro',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                     Icon(

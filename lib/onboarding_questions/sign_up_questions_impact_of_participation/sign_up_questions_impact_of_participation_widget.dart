@@ -82,13 +82,17 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                     Expanded(
                                       flex: 1,
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 20.0),
+                                        padding: const EdgeInsetsDirectional
+                                            .fromSTEB(0.0, 0.0, 0.0, 20.0),
                                         child: Text(
                                           'Impact of Participation',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
-                                              .displayMedium,
+                                              .displayMedium
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
@@ -107,13 +111,19 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                         children: [
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, -1.0),
+                                                const AlignmentDirectional(
+                                                    0.0, -1.0),
                                             child: Text(
-                                              ' Indiana has made the commitment to keeping local food local by taking an approach that benefits both small-medium sized farmers and food insecure communities. The IN LFPA Project has been designed to remove the variety of barriers, from logistics to infrastructure, to business management, that smaller farms run by producers from socially disadvantaged communities have when they attempt to scale up or participate in larger markets. We hope that this project will create viable farms and sustainable markets.',
+                                              'Indiana has made the commitment to keeping local food local by taking an approach that benefits both small-medium sized farmers and food insecure communities. \n\nThe IN LFPA Project has been designed to remove the variety of barriers, from logistics to infrastructure, to business management, that smaller farms run by producers from socially disadvantaged communities have when they attempt to scale up or participate in larger markets. We hope that this project will create viable farms and sustainable markets.',
                                               textAlign: TextAlign.start,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -123,7 +133,8 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, -1.0),
+                                alignment:
+                                    const AlignmentDirectional(0.0, -1.0),
                                 child: Form(
                                   key: _model.formKey,
                                   autovalidateMode: AutovalidateMode.disabled,
@@ -133,24 +144,28 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Align(
-                                          alignment:
-                                              const AlignmentDirectional(-1.0, -1.0),
+                                          alignment: const AlignmentDirectional(
+                                              -1.0, -1.0),
                                           child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    30.0, 12.0, 30.0, 0.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(
+                                                30.0, 12.0, 30.0, 0.0),
                                             child: Text(
                                               'How will participating in the IN LFPA program and receiving a pre-season contract impact you and your operation?',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  8.0, 0.0, 8.0, 0.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                           child: TextFormField(
                                             controller: _model
                                                 .impactTextFieldController,
@@ -161,10 +176,20 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                             decoration: InputDecoration(
                                               labelStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .labelMedium,
+                                                      .labelMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               hintStyle:
                                                   FlutterFlowTheme.of(context)
-                                                      .titleSmall,
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                               enabledBorder: OutlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
@@ -212,21 +237,25 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                                       .secondary,
                                               contentPadding:
                                                   const EdgeInsetsDirectional
-                                                      .fromSTEB(24.0, 12.0,
-                                                          24.0, 12.0),
+                                                      .fromSTEB(
+                                                      24.0, 12.0, 24.0, 12.0),
                                             ),
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                             maxLines: 5,
+                                            minLines: null,
                                             validator: _model
                                                 .impactTextFieldControllerValidator
                                                 .asValidator(context),
                                           ),
                                         ),
                                         Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  10.0, 24.0, 10.0, 24.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(10.0, 24.0, 10.0, 24.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
@@ -244,27 +273,28 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
+                                                            24.0, 0.0),
                                                     iconPadding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .accent3,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primary,
-                                                            ),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide:
+                                                        const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -316,27 +346,28 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                                     padding:
                                                         const EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
-                                                                24.0, 0.0),
+                                                            24.0, 0.0),
                                                     iconPadding:
                                                         const EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
+                                                            .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .accent1,
-                                                    textStyle:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleSmall
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Readex Pro',
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .primaryText,
-                                                            ),
+                                                    textStyle: FlutterFlowTheme
+                                                            .of(context)
+                                                        .titleSmall
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                     elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide:
+                                                        const BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -350,7 +381,8 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                                   ),
                                                 ),
                                               ),
-                                            ].divide(const SizedBox(width: 24.0)),
+                                            ].divide(
+                                                const SizedBox(width: 24.0)),
                                           ),
                                         ),
                                       ].divide(const SizedBox(height: 20.0)),
@@ -375,7 +407,8 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(-1.0, -1.0),
+                                  alignment:
+                                      const AlignmentDirectional(-1.0, -1.0),
                                   child: Container(
                                     width: 100.0,
                                     height: 1200.0,
@@ -397,11 +430,12 @@ class _SignUpQuestionsImpactOfParticipationWidgetState
                                       image: DecorationImage(
                                         fit: BoxFit.fill,
                                         image: Image.network(
-                                          'https://diqkwxzcspfoijdshesk.supabase.co/storage/v1/object/public/images/lfa-impact-bg.jpg',
+                                          'https://hvnzublzljmybszdaeho.supabase.co/storage/v1/object/public/images/lfa-impact-bg.jpg',
                                         ).image,
                                       ),
                                     ),
-                                    alignment: const AlignmentDirectional(0.0, 0.0),
+                                    alignment:
+                                        const AlignmentDirectional(0.0, 0.0),
                                     child: const Align(
                                       alignment:
                                           AlignmentDirectional(-1.0, -1.0),

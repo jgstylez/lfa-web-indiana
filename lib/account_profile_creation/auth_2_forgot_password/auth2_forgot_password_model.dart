@@ -12,8 +12,6 @@ class Auth2ForgotPasswordModel
   TextEditingController? emailAddressController;
   String? Function(BuildContext, String?)? emailAddressControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -23,8 +21,4 @@ class Auth2ForgotPasswordModel
     emailAddressFocusNode?.dispose();
     emailAddressController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

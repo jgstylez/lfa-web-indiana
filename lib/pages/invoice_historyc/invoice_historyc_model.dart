@@ -10,8 +10,6 @@ class InvoiceHistorycModel extends FlutterFlowModel<InvoiceHistorycWidget> {
   // Model for invoiceHistoryComp component.
   late InvoiceHistoryCompModel invoiceHistoryCompModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     invoiceHistoryCompModel =
@@ -23,8 +21,4 @@ class InvoiceHistorycModel extends FlutterFlowModel<InvoiceHistorycWidget> {
     unfocusNode.dispose();
     invoiceHistoryCompModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

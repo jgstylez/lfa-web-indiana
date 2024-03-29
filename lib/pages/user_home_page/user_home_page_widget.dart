@@ -90,7 +90,12 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                               Text(
                                 'LOCAL FOOD ACCESS',
                                 textAlign: TextAlign.center,
-                                style: FlutterFlowTheme.of(context).titleSmall,
+                                style: FlutterFlowTheme.of(context)
+                                    .titleSmall
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                               InkWell(
                                 splashColor: Colors.transparent,
@@ -137,7 +142,11 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                               textAlign: TextAlign.start,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .titleLarge,
+                                                      .titleLarge
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ),
@@ -145,7 +154,7 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: Image.network(
-                                            'https://diqkwxzcspfoijdshesk.supabase.co/storage/v1/object/public/images/deliveries.png',
+                                            'https://hvnzublzljmybszdaeho.supabase.co/storage/v1/object/public/images/deliveries.png',
                                             width: 125.0,
                                             fit: BoxFit.fitHeight,
                                           ),
@@ -176,6 +185,7 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                 .override(
                                   fontFamily: 'Readex Pro',
                                   color: Colors.white,
+                                  letterSpacing: 0.0,
                                 ),
                             elevation: 0.0,
                             borderSide: const BorderSide(
@@ -219,9 +229,8 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 12.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0.0, 0.0, 0.0, 12.0),
                                             child: FaIcon(
                                               FontAwesomeIcons.truck,
                                               color:
@@ -232,13 +241,19 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(
+                                                    0.0, 0.0),
                                             child: Text(
                                               'New Delivery',
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .titleSmall,
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -274,9 +289,8 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 12.0),
+                                            padding: const EdgeInsetsDirectional
+                                                .fromSTEB(0.0, 0.0, 0.0, 12.0),
                                             child: FaIcon(
                                               FontAwesomeIcons
                                                   .fileInvoiceDollar,
@@ -288,13 +302,19 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                           ),
                                           Align(
                                             alignment:
-                                                const AlignmentDirectional(0.0, 0.0),
+                                                const AlignmentDirectional(
+                                                    0.0, 0.0),
                                             child: Text(
                                               'Pickup',
                                               textAlign: TextAlign.center,
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .titleSmall,
+                                                      .titleSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                           ),
                                         ],
@@ -332,9 +352,8 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 12.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 0.0, 0.0, 12.0),
                                           child: Icon(
                                             Icons.location_pin,
                                             color: FlutterFlowTheme.of(context)
@@ -343,13 +362,17 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                           ),
                                         ),
                                         Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                          alignment: const AlignmentDirectional(
+                                              0.0, 0.0),
                                           child: Text(
                                             'Deliveries',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],
@@ -381,9 +404,8 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 12.0),
+                                          padding: const EdgeInsetsDirectional
+                                              .fromSTEB(0.0, 0.0, 0.0, 12.0),
                                           child: Icon(
                                             Icons.work_history_rounded,
                                             color: FlutterFlowTheme.of(context)
@@ -392,13 +414,17 @@ class _UserHomePageWidgetState extends State<UserHomePageWidget> {
                                           ),
                                         ),
                                         Align(
-                                          alignment:
-                                              const AlignmentDirectional(0.0, 0.0),
+                                          alignment: const AlignmentDirectional(
+                                              0.0, 0.0),
                                           child: Text(
                                             'Invoices',
                                             textAlign: TextAlign.center,
                                             style: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       ],

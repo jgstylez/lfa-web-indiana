@@ -1,3 +1,4 @@
+import '/backend/schema/enums/enums.dart';
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -10,6 +11,7 @@ import '/pages/components/search_bottom_sheet_recipient/search_bottom_sheet_reci
 import '/pages/components/search_bottom_sheet_transporter/search_bottom_sheet_transporter_widget.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
@@ -113,6 +115,13 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
     super.initState();
     _model = createModel(context, () => NewBillOfLadingModel());
 
+    // On page load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        FFAppState().bolSender = '';
+      });
+    });
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -166,6 +175,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Outfit',
                                 color: FlutterFlowTheme.of(context).primaryText,
+                                letterSpacing: 0.0,
                               ),
                     ),
                     Padding(
@@ -229,7 +239,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                     final selectedMedia =
                                         await selectMediaWithSourceBottomSheet(
                                       context: context,
-                                      storageFolderPath: 'users/invoice',
+                                      storageFolderPath: 'bol_invoices',
                                       maxWidth: 1500.00,
                                       maxHeight: 1500.00,
                                       imageQuality: 90,
@@ -265,7 +275,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
 
                                         downloadUrls =
                                             await uploadSupabaseStorageFiles(
-                                          bucketName: 'invoices',
+                                          bucketName: _model.uploadedFileUrl,
                                           selectedFiles: selectedMedia,
                                         );
                                       } finally {
@@ -286,6 +296,26 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                         return;
                                       }
                                     }
+
+                                    FFAppState().update(() {
+                                      FFAppState().uploadedInvoice =
+                                          _model.uploadedFileUrl;
+                                    });
+                                    ScaffoldMessenger.of(context).showSnackBar(
+                                      SnackBar(
+                                        content: Text(
+                                          'Invoice uploaded',
+                                          style: TextStyle(
+                                            color: FlutterFlowTheme.of(context)
+                                                .primaryText,
+                                          ),
+                                        ),
+                                        duration: const Duration(milliseconds: 2100),
+                                        backgroundColor:
+                                            FlutterFlowTheme.of(context)
+                                                .accent2,
+                                      ),
+                                    );
                                   },
                                   child: Material(
                                     color: Colors.transparent,
@@ -351,35 +381,37 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .accent2,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                       ),
                                                     ),
                                                     Text(
-                                                      _model.uploadedFileUrl !=
+                                                      FFAppState()
+                                                                      .uploadedInvoice !=
                                                                   ''
                                                           ? 'Invoice is Attached'
                                                           : 'Attach Invoice',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontSize: 24.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            fontSize: 24.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
                                                     ),
                                                   ],
                                                 ),
                                               ),
                                             ),
-                                            if (_model.uploadedFileUrl != '')
+                                            if (_model.uploadedFileUrl == '')
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
@@ -389,7 +421,8 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                       BorderRadius.circular(
                                                           8.0),
                                                   child: Image.network(
-                                                    _model.uploadedFileUrl,
+                                                    FFAppState()
+                                                        .uploadedInvoice,
                                                     width: 50.0,
                                                     height: 50.0,
                                                     fit: BoxFit.cover,
@@ -508,26 +541,27 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                   color: FlutterFlowTheme.of(
                                                                           context)
                                                                       .accent2,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                 ),
                                                       ),
                                                     ),
                                                     Text(
                                                       'Add Product to B.O.L',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .headlineSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontSize: 24.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .headlineSmall
+                                                          .override(
+                                                            fontFamily:
+                                                                'Outfit',
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primaryText,
+                                                            fontSize: 24.0,
+                                                            letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight.w500,
+                                                          ),
                                                     ),
                                                   ],
                                                 ),
@@ -604,12 +638,17 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .accent2,
+                                                  letterSpacing: 0.0,
                                                 ),
                                           ),
                                           Text(
                                             'Bill of Lading Details:',
                                             style: FlutterFlowTheme.of(context)
-                                                .headlineSmall,
+                                                .headlineSmall
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ],
                                       ),
@@ -662,7 +701,12 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                     'I will deliver product myself',
                                                     style: FlutterFlowTheme.of(
                                                             context)
-                                                        .bodyMedium,
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Readex Pro',
+                                                          letterSpacing: 0.0,
+                                                        ),
                                                   ),
                                                 ),
                                                 Padding(
@@ -692,7 +736,13 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
-                                                              .titleLarge,
+                                                              .titleLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Outfit',
+                                                                letterSpacing:
+                                                                    0.0,
+                                                              ),
                                                         ),
                                                       ),
                                                       Switch.adaptive(
@@ -746,10 +796,17 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                       title: Text(
                                         'Sender',
                                         style: FlutterFlowTheme.of(context)
-                                            .titleSmall,
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                       subtitle: Text(
-                                        FFAppState().bolSender,
+                                        valueOrDefault<String>(
+                                          FFAppState().bolSender,
+                                          'Business Sender',
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .labelMedium
                                             .override(
@@ -757,6 +814,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .accent2,
+                                              letterSpacing: 0.0,
                                               lineHeight: 1.5,
                                             ),
                                       ),
@@ -807,7 +865,11 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                         title: Text(
                                           'Recipient',
                                           style: FlutterFlowTheme.of(context)
-                                              .titleSmall,
+                                              .titleSmall
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                         subtitle: Text(
                                           valueOrDefault<String>(
@@ -821,6 +883,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .accent2,
+                                                letterSpacing: 0.0,
                                                 lineHeight: 1.5,
                                               ),
                                         ),
@@ -846,41 +909,40 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
                                           if (_model.deliverSwitchValue!) {
-                                            setState(() {});
-                                          } else {
-                                            setState(() {});
-                                            await showModalBottomSheet(
-                                              isScrollControlled: true,
-                                              backgroundColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                              barrierColor:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                              enableDrag: false,
-                                              context: context,
-                                              builder: (context) {
-                                                return GestureDetector(
-                                                  onTap: () => _model
-                                                          .unfocusNode
-                                                          .canRequestFocus
-                                                      ? FocusScope.of(context)
-                                                          .requestFocus(_model
-                                                              .unfocusNode)
-                                                      : FocusScope.of(context)
-                                                          .unfocus(),
-                                                  child: Padding(
-                                                    padding:
-                                                        MediaQuery.viewInsetsOf(
-                                                            context),
-                                                    child:
-                                                        const SearchBottomSheetTransporterWidget(),
-                                                  ),
-                                                );
-                                              },
-                                            ).then(
-                                                (value) => safeSetState(() {}));
+                                            setState(() {
+                                              FFAppState().bolTransporter = '';
+                                            });
                                           }
+                                          await showModalBottomSheet(
+                                            isScrollControlled: true,
+                                            backgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .tertiary,
+                                            barrierColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .tertiary,
+                                            enableDrag: false,
+                                            context: context,
+                                            builder: (context) {
+                                              return GestureDetector(
+                                                onTap: () => _model.unfocusNode
+                                                        .canRequestFocus
+                                                    ? FocusScope.of(context)
+                                                        .requestFocus(
+                                                            _model.unfocusNode)
+                                                    : FocusScope.of(context)
+                                                        .unfocus(),
+                                                child: Padding(
+                                                  padding:
+                                                      MediaQuery.viewInsetsOf(
+                                                          context),
+                                                  child:
+                                                      const SearchBottomSheetTransporterWidget(),
+                                                ),
+                                              );
+                                            },
+                                          ).then(
+                                              (value) => safeSetState(() {}));
                                         },
                                         child: ListTile(
                                           leading: const Icon(
@@ -889,7 +951,11 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                           title: Text(
                                             'Transporter',
                                             style: FlutterFlowTheme.of(context)
-                                                .titleSmall,
+                                                .titleSmall
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                           subtitle: Text(
                                             valueOrDefault<String>(
@@ -905,6 +971,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .accent2,
+                                                  letterSpacing: 0.0,
                                                   lineHeight: 1.5,
                                                 ),
                                           ),
@@ -936,7 +1003,12 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                               text: 'Sender:   ',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                             TextSpan(
                                               text: 'Farmer',
@@ -948,11 +1020,16 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondary,
+                                                    letterSpacing: 0.0,
                                                   ),
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     if (responsiveVisibility(
@@ -971,7 +1048,12 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                               text: 'Recipient:   ',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                             TextSpan(
                                               text: 'Search for recipient ',
@@ -983,11 +1065,16 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondary,
+                                                    letterSpacing: 0.0,
                                                   ),
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     if (!valueOrDefault<bool>(
@@ -1010,7 +1097,12 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                               text: 'Transporter:   ',
                                               style:
                                                   FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                             ),
                                             TextSpan(
                                               text: 'Search for transporter',
@@ -1022,6 +1114,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .secondary,
+                                                    letterSpacing: 0.0,
                                                   ),
                                               mouseCursor:
                                                   SystemMouseCursors.click,
@@ -1037,143 +1130,107 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
-                                    Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Container(
-                                          width: double.infinity,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            borderRadius:
-                                                BorderRadius.circular(12.0),
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
+                                    Builder(
+                                      builder: (context) {
+                                        final bolProductsList =
+                                            FFAppState().bolProducts.toList();
+                                        return Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: List.generate(
+                                              bolProductsList.length,
+                                              (bolProductsListIndex) {
+                                            final bolProductsListItem =
+                                                bolProductsList[
+                                                    bolProductsListIndex];
+                                            return Container(
+                                              width: double.infinity,
+                                              decoration: BoxDecoration(
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                borderRadius:
+                                                    BorderRadius.circular(12.0),
+                                                border: Border.all(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
                                                       .secondary,
-                                            ),
-                                          ),
-                                          child: Padding(
-                                            padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 0.0, 12.0, 12.0),
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Padding(
-                                                  padding: const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 12.0, 0.0, 12.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      RichText(
-                                                        textScaler:
-                                                            MediaQuery.of(
-                                                                    context)
-                                                                .textScaler,
-                                                        text: TextSpan(
-                                                          children: [
-                                                            TextSpan(
-                                                              text:
-                                                                  'Product:   ',
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyLarge
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Plus Jakarta Sans',
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primaryText,
-                                                                    fontSize:
-                                                                        16.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
-                                                                  ),
-                                                            ),
-                                                            TextSpan(
-                                                              text: 'Tomatoes',
-                                                              style: TextStyle(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .accent2,
-                                                              ),
-                                                            )
-                                                          ],
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
-                                                      ),
-                                                      InkWell(
-                                                        splashColor:
-                                                            Colors.transparent,
-                                                        focusColor:
-                                                            Colors.transparent,
-                                                        hoverColor:
-                                                            Colors.transparent,
-                                                        highlightColor:
-                                                            Colors.transparent,
-                                                        onTap: () async {
-                                                          setState(() {});
-                                                        },
-                                                        child: FaIcon(
-                                                          FontAwesomeIcons
-                                                              .trashAlt,
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent1,
-                                                          size: 18.0,
-                                                        ),
-                                                      ),
-                                                    ],
-                                                  ),
                                                 ),
-                                                Row(
+                                              ),
+                                              child: Padding(
+                                                padding: const EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        12.0, 0.0, 12.0, 12.0),
+                                                child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
+                                                  mainAxisAlignment:
+                                                      MainAxisAlignment.center,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
                                                   children: [
                                                     Padding(
                                                       padding:
                                                           const EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
+                                                                  12.0,
                                                                   0.0,
-                                                                  20.0,
-                                                                  0.0),
-                                                      child: RichText(
-                                                        textScaler:
-                                                            MediaQuery.of(
-                                                                    context)
-                                                                .textScaler,
-                                                        text: TextSpan(
-                                                          children: [
-                                                            TextSpan(
-                                                              text: 'Qty:   ',
+                                                                  12.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceBetween,
+                                                        children: [
+                                                          RichText(
+                                                            textScaler:
+                                                                MediaQuery.of(
+                                                                        context)
+                                                                    .textScaler,
+                                                            text: TextSpan(
+                                                              children: [
+                                                                TextSpan(
+                                                                  text:
+                                                                      'Product:   ',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
+                                                                TextSpan(
+                                                                  text: valueOrDefault<
+                                                                      String>(
+                                                                    bolProductsListItem
+                                                                        .productTitle,
+                                                                    'title',
+                                                                  ),
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent2,
+                                                                  ),
+                                                                )
+                                                              ],
                                                               style: FlutterFlowTheme
                                                                       .of(context)
                                                                   .bodyLarge
@@ -1185,45 +1242,160 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                         .primaryText,
                                                                     fontSize:
                                                                         16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
                                                                     fontWeight:
                                                                         FontWeight
                                                                             .w500,
                                                                   ),
                                                             ),
-                                                            TextSpan(
-                                                              text: '25',
-                                                              style: TextStyle(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .accent2,
-                                                              ),
-                                                            )
-                                                          ],
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyLarge
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Plus Jakarta Sans',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
-                                                              ),
-                                                        ),
+                                                          ),
+                                                          InkWell(
+                                                            splashColor: Colors
+                                                                .transparent,
+                                                            focusColor: Colors
+                                                                .transparent,
+                                                            hoverColor: Colors
+                                                                .transparent,
+                                                            highlightColor:
+                                                                Colors
+                                                                    .transparent,
+                                                            onTap: () async {
+                                                              setState(() {});
+                                                            },
+                                                            child: FaIcon(
+                                                              FontAwesomeIcons
+                                                                  .trashAlt,
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .accent1,
+                                                              size: 18.0,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
-                                                    RichText(
-                                                      textScaler:
-                                                          MediaQuery.of(context)
-                                                              .textScaler,
-                                                      text: TextSpan(
-                                                        children: [
-                                                          TextSpan(
-                                                            text: 'Weight:   ',
+                                                    Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Padding(
+                                                          padding:
+                                                              const EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      20.0,
+                                                                      0.0),
+                                                          child: RichText(
+                                                            textScaler:
+                                                                MediaQuery.of(
+                                                                        context)
+                                                                    .textScaler,
+                                                            text: TextSpan(
+                                                              children: [
+                                                                TextSpan(
+                                                                  text:
+                                                                      'Qty:   ',
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyLarge
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Plus Jakarta Sans',
+                                                                        color:
+                                                                            FlutterFlowTheme.of(context).primaryText,
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        letterSpacing:
+                                                                            0.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
+                                                                TextSpan(
+                                                                  text: valueOrDefault<
+                                                                      String>(
+                                                                    bolProductsListItem
+                                                                        .quantity
+                                                                        .toString(),
+                                                                    'qty',
+                                                                  ),
+                                                                  style:
+                                                                      TextStyle(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .accent2,
+                                                                  ),
+                                                                )
+                                                              ],
+                                                              style: FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    fontSize:
+                                                                        16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                          ),
+                                                        ),
+                                                        RichText(
+                                                          textScaler:
+                                                              MediaQuery.of(
+                                                                      context)
+                                                                  .textScaler,
+                                                          text: TextSpan(
+                                                            children: [
+                                                              TextSpan(
+                                                                text:
+                                                                    'Weight:   ',
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyLarge
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Plus Jakarta Sans',
+                                                                      color: FlutterFlowTheme.of(context)
+                                                                          .primaryText,
+                                                                      fontSize:
+                                                                          16.0,
+                                                                      letterSpacing:
+                                                                          0.0,
+                                                                      fontWeight:
+                                                                          FontWeight.w500,
+                                                                    ),
+                                                              ),
+                                                              TextSpan(
+                                                                text: valueOrDefault<
+                                                                    String>(
+                                                                  bolProductsListItem
+                                                                      .weight
+                                                                      .toString(),
+                                                                  'wt',
+                                                                ),
+                                                                style:
+                                                                    TextStyle(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .accent2,
+                                                                ),
+                                                              ),
+                                                              const TextSpan(
+                                                                text: ' lbs',
+                                                                style:
+                                                                    TextStyle(),
+                                                              )
+                                                            ],
                                                             style: FlutterFlowTheme
                                                                     .of(context)
                                                                 .bodyLarge
@@ -1235,100 +1407,87 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                                       .primaryText,
                                                                   fontSize:
                                                                       16.0,
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .w500,
                                                                 ),
                                                           ),
-                                                          TextSpan(
-                                                            text: '12',
-                                                            style: TextStyle(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .accent2,
-                                                            ),
-                                                          ),
-                                                          const TextSpan(
-                                                            text: ' lbs',
-                                                            style: TextStyle(),
-                                                          )
-                                                        ],
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                      ),
+                                                        ),
+                                                      ],
                                                     ),
+                                                    if (bolProductsListItem
+                                                                .message !=
+                                                            '')
+                                                      RichText(
+                                                        textScaler:
+                                                            MediaQuery.of(
+                                                                    context)
+                                                                .textScaler,
+                                                        text: TextSpan(
+                                                          children: [
+                                                            TextSpan(
+                                                              text: 'Msg:   ',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Plus Jakarta Sans',
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primaryText,
+                                                                    fontSize:
+                                                                        16.0,
+                                                                    letterSpacing:
+                                                                        0.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                            ),
+                                                            TextSpan(
+                                                              text:
+                                                                  valueOrDefault<
+                                                                      String>(
+                                                                bolProductsListItem
+                                                                    .message,
+                                                                'msg',
+                                                              ),
+                                                              style: TextStyle(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent2,
+                                                              ),
+                                                            )
+                                                          ],
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Plus Jakarta Sans',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primaryText,
+                                                                fontSize: 16.0,
+                                                                letterSpacing:
+                                                                    0.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
+                                                        ),
+                                                      ),
                                                   ],
                                                 ),
-                                                RichText(
-                                                  textScaler:
-                                                      MediaQuery.of(context)
-                                                          .textScaler,
-                                                  text: TextSpan(
-                                                    children: [
-                                                      TextSpan(
-                                                        text: 'Msg:   ',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyLarge
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Plus Jakarta Sans',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                                  fontSize:
-                                                                      16.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w500,
-                                                                ),
-                                                      ),
-                                                      TextSpan(
-                                                        text:
-                                                            'This is a test message placeholder.',
-                                                        style: TextStyle(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .accent2,
-                                                        ),
-                                                      )
-                                                    ],
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyLarge
-                                                        .override(
-                                                          fontFamily:
-                                                              'Plus Jakarta Sans',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                          fontSize: 16.0,
-                                                          fontWeight:
-                                                              FontWeight.w500,
-                                                        ),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ).animateOnPageLoad(animationsMap[
-                                            'containerOnPageLoadAnimation4']!),
-                                      ].divide(const SizedBox(height: 3.0)),
+                                              ),
+                                            ).animateOnPageLoad(animationsMap[
+                                                'containerOnPageLoadAnimation4']!);
+                                          }).divide(const SizedBox(height: 3.0)),
+                                        );
+                                      },
                                     ),
                                   ].divide(const SizedBox(height: 5.0)),
                                 ),
@@ -1338,39 +1497,64 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         12.0, 12.0, 12.0, 12.0),
                                     child: FFButtonWidget(
-                                      onPressed: () async {
-                                        _model.newBillOfLadingDoc =
-                                            await BillOfLadingTable().insert({
-                                          'transporter': '',
-                                          'status': '',
-                                          'sender': '',
-                                          'recipient': '',
-                                          'marked_paid': false,
-                                          'marked_received': false,
-                                        });
-                                        ScaffoldMessenger.of(context)
-                                            .showSnackBar(
-                                          SnackBar(
-                                            content: Text(
-                                              'Bill of Lading has been sent!',
-                                              style: TextStyle(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                              ),
-                                            ),
-                                            duration:
-                                                const Duration(milliseconds: 4000),
-                                            backgroundColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .accent2,
-                                          ),
-                                        );
+                                      onPressed:
+                                          ((FFAppState()
+                                                              .bolRecipient ==
+                                                          '') ||
+                                                  (FFAppState()
+                                                              .bolTransporter ==
+                                                          '') ||
+                                                  !(FFAppState()
+                                                      .bolProducts
+                                                      .isNotEmpty))
+                                              ? null
+                                              : () async {
+                                                  _model.newBillOfLadingDoc =
+                                                      await BillOfLadingTable()
+                                                          .insert({
+                                                    'transporter': FFAppState()
+                                                        .bolTransporter,
+                                                    'sender':
+                                                        FFAppState().bolSender,
+                                                    'recipient': FFAppState()
+                                                        .bolRecipient,
+                                                    'products': FFAppState()
+                                                        .bolProducts
+                                                        .map((e) => e.toMap())
+                                                        .toList()
+                                                        .map(
+                                                            (e) => e.toString())
+                                                        .toList(),
+                                                    'status': BillOfLadingStatus
+                                                        .In_Progress.name,
+                                                    'invoice_url': FFAppState()
+                                                        .uploadedInvoice,
+                                                  });
+                                                  ScaffoldMessenger.of(context)
+                                                      .showSnackBar(
+                                                    SnackBar(
+                                                      content: Text(
+                                                        'Bill of Lading has been sent!',
+                                                        style: TextStyle(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                        ),
+                                                      ),
+                                                      duration: const Duration(
+                                                          milliseconds: 4000),
+                                                      backgroundColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .accent2,
+                                                    ),
+                                                  );
 
-                                        context.pushNamed('userHomePage');
+                                                  context.pushNamed(
+                                                      'userHomePage');
 
-                                        setState(() {});
-                                      },
+                                                  setState(() {});
+                                                },
                                       text: 'Send B.O.L.',
                                       options: FFButtonOptions(
                                         width: double.infinity,
@@ -1390,6 +1574,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                   FlutterFlowTheme.of(context)
                                                       .primaryText,
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.normal,
                                             ),
                                         elevation: 2.0,
@@ -1399,6 +1584,9 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(24.0),
+                                        disabledColor:
+                                            FlutterFlowTheme.of(context)
+                                                .secondaryText,
                                       ),
                                     ),
                                   ),
@@ -1412,7 +1600,9 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                             12.0, 0.0, 12.0, 32.0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
-                                            setState(() {});
+                                            setState(() {
+                                              FFAppState().bolProducts = [];
+                                            });
                                           },
                                           text: 'Clear Products',
                                           options: FFButtonOptions(
@@ -1434,6 +1624,7 @@ class _NewBillOfLadingWidgetState extends State<NewBillOfLadingWidget>
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .alternate,
+                                                      letterSpacing: 0.0,
                                                     ),
                                             elevation: 0.0,
                                             borderSide: const BorderSide(

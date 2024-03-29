@@ -55,7 +55,11 @@ class _PickupWidgetState extends State<PickupWidget> {
                   children: [
                     Text(
                       'PICKUP',
-                      style: FlutterFlowTheme.of(context).headlineMedium,
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Outfit',
+                                letterSpacing: 0.0,
+                              ),
                     ),
                     Padding(
                       padding:

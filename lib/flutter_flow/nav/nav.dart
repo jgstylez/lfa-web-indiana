@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '/backend/schema/structs/index.dart';
+
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
@@ -73,14 +75,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
           ? const SignUpQuestionsContactInfoWidget()
-          : const Auth2CreateWidget(),
+          : const LfaWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? const SignUpQuestionsContactInfoWidget()
-              : const Auth2CreateWidget(),
+              : const LfaWidget(),
         ),
         FFRoute(
           name: 'userHomePage',
@@ -138,7 +140,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/auth2Profile',
           requireAuth: true,
           builder: (context, params) => Auth2ProfileWidget(
-            displayName: params.getParam('displayName', ParamType.String),
+            displayName: params.getParam(
+              'displayName',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -158,7 +163,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/receiveSignature',
           requireAuth: true,
           builder: (context, params) => ReceiveSignatureWidget(
-            signature: params.getParam('signature', ParamType.String),
+            signature: params.getParam(
+              'signature',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -166,7 +174,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/signatureConfirmation',
           requireAuth: true,
           builder: (context, params) => SignatureConfirmationWidget(
-            checkSignature: params.getParam('checkSignature', ParamType.String),
+            checkSignature: params.getParam(
+              'checkSignature',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -255,7 +266,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/productPhotoConfirmation',
           requireAuth: true,
           builder: (context, params) => ProductPhotoConfirmationWidget(
-            checkSignature: params.getParam('checkSignature', ParamType.String),
+            checkSignature: params.getParam(
+              'checkSignature',
+              ParamType.String,
+            ),
           ),
         ),
         FFRoute(
@@ -305,6 +319,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/pickupTransporter',
           requireAuth: true,
           builder: (context, params) => const PickupWidget(),
+        ),
+        FFRoute(
+          name: 'lfa',
+          path: '/lfa',
+          builder: (context, params) => const LfaWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -423,6 +442,7 @@ class FFParameters {
     String paramName,
     ParamType type, [
     bool isList = false,
+    StructBuilder<T>? structBuilder,
   ]) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
@@ -440,6 +460,7 @@ class FFParameters {
       param,
       type,
       isList,
+      structBuilder: structBuilder,
     );
   }
 }
@@ -473,7 +494,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/auth2Create';
+            return '/lfa';
           }
           return null;
         },
