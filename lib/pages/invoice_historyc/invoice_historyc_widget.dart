@@ -55,7 +55,11 @@ class _InvoiceHistorycWidgetState extends State<InvoiceHistorycWidget> {
                   children: [
                     Text(
                       'INVOICES',
-                      style: FlutterFlowTheme.of(context).headlineMedium,
+                      style:
+                          FlutterFlowTheme.of(context).headlineMedium.override(
+                                fontFamily: 'Outfit',
+                                letterSpacing: 0.0,
+                              ),
                     ),
                     Padding(
                       padding:

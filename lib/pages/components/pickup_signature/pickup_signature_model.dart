@@ -13,8 +13,6 @@ class PickupSignatureModel extends FlutterFlowModel<PickupSignatureWidget> {
       FFUploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl = '';
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -22,8 +20,4 @@ class PickupSignatureModel extends FlutterFlowModel<PickupSignatureWidget> {
   void dispose() {
     signatureController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

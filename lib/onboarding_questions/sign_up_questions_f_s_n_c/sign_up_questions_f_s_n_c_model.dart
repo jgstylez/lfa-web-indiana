@@ -41,8 +41,6 @@ class SignUpQuestionsFSNCModel
     return null;
   }
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     connectionsTextFieldControllerValidator =
@@ -61,10 +59,7 @@ class SignUpQuestionsFSNCModel
     existingProgramsTextFieldController?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get hasDonatedRadioButtonValue =>
       hasDonatedRadioButtonValueController?.value;
   String? get hasSoldRadioButtonValue =>

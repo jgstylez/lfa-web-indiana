@@ -25,7 +25,6 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
     'containerOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
-        VisibilityEffect(duration: 1.ms),
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
@@ -123,8 +122,12 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                               child: Text(
                                 'LOCAL FOOD ACCESS',
                                 textAlign: TextAlign.center,
-                                style:
-                                    FlutterFlowTheme.of(context).headlineMedium,
+                                style: FlutterFlowTheme.of(context)
+                                    .headlineMedium
+                                    .override(
+                                      fontFamily: 'Outfit',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                             ),
                           ],
@@ -145,7 +148,10 @@ class _Auth2CreateProfileWidgetState extends State<Auth2CreateProfileWidget>
                             BoxShadow(
                               blurRadius: 4.0,
                               color: Color(0x33000000),
-                              offset: Offset(0.0, 2.0),
+                              offset: Offset(
+                                0.0,
+                                2.0,
+                              ),
                             )
                           ],
                           borderRadius: BorderRadius.circular(12.0),

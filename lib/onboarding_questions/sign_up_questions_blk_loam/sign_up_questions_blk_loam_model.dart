@@ -31,8 +31,6 @@ class SignUpQuestionsBlkLoamModel
   TextEditingController? additionalNotesController;
   String? Function(BuildContext, String?)? additionalNotesControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -42,8 +40,4 @@ class SignUpQuestionsBlkLoamModel
     additionalNotesFocusNode?.dispose();
     additionalNotesController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

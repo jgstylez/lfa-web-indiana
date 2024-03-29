@@ -40,8 +40,6 @@ class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
     return null;
   }
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     emailAddressControllerValidator = _emailAddressControllerValidator;
@@ -58,8 +56,4 @@ class Auth2CreateModel extends FlutterFlowModel<Auth2CreateWidget> {
     passwordFocusNode?.dispose();
     passwordController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

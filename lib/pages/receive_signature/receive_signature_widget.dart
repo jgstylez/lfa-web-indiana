@@ -59,7 +59,10 @@ class _ReceiveSignatureWidgetState extends State<ReceiveSignatureWidget> {
                 automaticallyImplyLeading: true,
                 title: Text(
                   'SIGN HERE',
-                  style: FlutterFlowTheme.of(context).headlineMedium,
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Outfit',
+                        letterSpacing: 0.0,
+                      ),
                 ),
                 actions: const [],
                 centerTitle: true,
@@ -196,6 +199,7 @@ class _ReceiveSignatureWidgetState extends State<ReceiveSignatureWidget> {
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                         ),
                                     elevation: 1.0,
                                     borderSide: const BorderSide(

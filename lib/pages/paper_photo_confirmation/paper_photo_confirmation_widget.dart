@@ -53,7 +53,10 @@ class _PaperPhotoConfirmationWidgetState
                 automaticallyImplyLeading: true,
                 title: Text(
                   'REVIEW',
-                  style: FlutterFlowTheme.of(context).headlineMedium,
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Outfit',
+                        letterSpacing: 0.0,
+                      ),
                 ),
                 actions: const [],
                 centerTitle: true,
@@ -69,7 +72,10 @@ class _PaperPhotoConfirmationWidgetState
                 children: [
                   Text(
                     'Do you want to keep this:',
-                    style: FlutterFlowTheme.of(context).titleSmall,
+                    style: FlutterFlowTheme.of(context).titleSmall.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                   Expanded(
                     child: Align(
@@ -129,6 +135,7 @@ class _PaperPhotoConfirmationWidgetState
                                           .override(
                                             fontFamily: 'Readex Pro',
                                             color: Colors.white,
+                                            letterSpacing: 0.0,
                                           ),
                                       elevation: 1.0,
                                       borderSide: const BorderSide(
@@ -160,6 +167,7 @@ class _PaperPhotoConfirmationWidgetState
                                         .override(
                                           fontFamily: 'Readex Pro',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                         ),
                                     elevation: 1.0,
                                     borderSide: const BorderSide(

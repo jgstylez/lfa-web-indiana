@@ -51,7 +51,10 @@ class _EntityDataTableWidgetState extends State<EntityDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Entity',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
             ),
@@ -60,7 +63,10 @@ class _EntityDataTableWidgetState extends State<EntityDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Business',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
             ),
@@ -69,7 +75,10 @@ class _EntityDataTableWidgetState extends State<EntityDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Owner',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
             ),
@@ -84,7 +93,10 @@ class _EntityDataTableWidgetState extends State<EntityDataTableWidget> {
                   ),
                   child: Text(
                     'Joined',
-                    style: FlutterFlowTheme.of(context).labelLarge,
+                    style: FlutterFlowTheme.of(context).labelLarge.override(
+                          fontFamily: 'Readex Pro',
+                          letterSpacing: 0.0,
+                        ),
                   ),
                 ),
               ),
@@ -95,7 +107,10 @@ class _EntityDataTableWidgetState extends State<EntityDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'County',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               onSort: onSortChanged,
@@ -105,7 +120,10 @@ class _EntityDataTableWidgetState extends State<EntityDataTableWidget> {
                 softWrap: true,
                 child: Text(
                   'Region',
-                  style: FlutterFlowTheme.of(context).labelLarge,
+                  style: FlutterFlowTheme.of(context).labelLarge.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               onSort: onSortChanged,
@@ -121,15 +139,24 @@ class _EntityDataTableWidgetState extends State<EntityDataTableWidget> {
             cells: [
               Text(
                 'Entity Type',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Text(
                 'Business Name',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Text(
                 'Display Name',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Visibility(
                 visible: responsiveVisibility(
@@ -139,16 +166,25 @@ class _EntityDataTableWidgetState extends State<EntityDataTableWidget> {
                 ),
                 child: Text(
                   'Date',
-                  style: FlutterFlowTheme.of(context).bodyMedium,
+                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
                 ),
               ),
               Text(
                 'County',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
               Text(
                 'Region',
-                style: FlutterFlowTheme.of(context).bodyMedium,
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
             ].map((c) => DataCell(c)).toList(),
           ),

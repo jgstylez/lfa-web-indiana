@@ -10,8 +10,6 @@ class DashboardModel extends FlutterFlowModel<DashboardWidget> {
   // Model for sideNav component.
   late SideNavModel sideNavModel;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     sideNavModel = createModel(context, () => SideNavModel());
@@ -22,8 +20,4 @@ class DashboardModel extends FlutterFlowModel<DashboardWidget> {
     unfocusNode.dispose();
     sideNavModel.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

@@ -92,7 +92,11 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                     child: Text(
                                       'Bill of Ladings',
                                       style: FlutterFlowTheme.of(context)
-                                          .displayMedium,
+                                          .displayMedium
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                   if (responsiveVisibility(
@@ -179,7 +183,11 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                       child: Text(
                                         'Filter by:',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Readex Pro',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                   ),
@@ -194,8 +202,12 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                         () => _model.statusDropDownValue = val),
                                     width: 150.0,
                                     height: 50.0,
-                                    textStyle:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                     hintText: 'Status',
                                     icon: Icon(
                                       Icons.keyboard_arrow_down_rounded,
@@ -259,7 +271,11 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                         child: Text(
                                           'Recipient',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                       Expanded(
@@ -267,7 +283,11 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                         child: Text(
                                           'Status',
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Readex Pro',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                       if (responsiveVisibility(
@@ -280,7 +300,11 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                           child: Text(
                                             'Product',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       if (responsiveVisibility(
@@ -293,7 +317,11 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                           child: Text(
                                             'Created',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyMedium,
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Readex Pro',
+                                                  letterSpacing: 0.0,
+                                                ),
                                           ),
                                         ),
                                       Opacity(
@@ -406,10 +434,14 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                                             .recipient,
                                                         'recipient',
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ),
                                                   Expanded(
@@ -420,10 +452,14 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                                             .status,
                                                         'status',
                                                       ),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium,
+                                                      style: FlutterFlowTheme
+                                                              .of(context)
+                                                          .bodyMedium
+                                                          .override(
+                                                            fontFamily:
+                                                                'Readex Pro',
+                                                            letterSpacing: 0.0,
+                                                          ),
                                                     ),
                                                   ),
                                                   if (responsiveVisibility(
@@ -438,7 +474,13 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   if (responsiveVisibility(
@@ -455,7 +497,13 @@ class _BillOfLadingsWidgetState extends State<BillOfLadingsWidget> {
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .bodyMedium,
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ),
                                                   Icon(

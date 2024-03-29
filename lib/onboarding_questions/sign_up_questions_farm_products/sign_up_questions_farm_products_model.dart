@@ -64,8 +64,6 @@ class SignUpQuestionsFarmProductsModel
   String? farmingStatusDropDownValue;
   FormFieldController<String>? farmingStatusDropDownValueController;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {
     productsOfferedTextFieldControllerValidator =
@@ -89,10 +87,7 @@ class SignUpQuestionsFarmProductsModel
     productQuantityTextFieldController?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get certifiedRadioButtonValue =>
       certifiedRadioButtonValueController?.value;
 }

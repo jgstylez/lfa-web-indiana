@@ -22,8 +22,6 @@ class SignUpQuestionsTechnicalAssistanceModel
   TextEditingController? otherController;
   String? Function(BuildContext, String?)? otherControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -33,8 +31,4 @@ class SignUpQuestionsTechnicalAssistanceModel
     otherFocusNode?.dispose();
     otherController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

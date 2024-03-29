@@ -23,8 +23,6 @@ class SignUpQuestionsSDHUModel
   String? Function(BuildContext, String?)?
       additionalTextFieldControllerValidator;
 
-  /// Initialization and disposal methods.
-
   @override
   void initState(BuildContext context) {}
 
@@ -35,10 +33,7 @@ class SignUpQuestionsSDHUModel
     additionalTextFieldController?.dispose();
   }
 
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
-
+  /// Additional helper methods.
   String? get bipocRadioButtonValue => bipocRadioButtonValueController?.value;
   String? get sdRadioButtonValue => sdRadioButtonValueController?.value;
   String? get huRadioButtonValue => huRadioButtonValueController?.value;

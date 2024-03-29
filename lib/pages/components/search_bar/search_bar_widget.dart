@@ -52,9 +52,13 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
           labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                 fontFamily: 'Readex Pro',
                 color: FlutterFlowTheme.of(context).primaryBackground,
+                letterSpacing: 0.0,
               ),
           alignLabelWithHint: false,
-          hintStyle: FlutterFlowTheme.of(context).titleSmall,
+          hintStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                fontFamily: 'Readex Pro',
+                letterSpacing: 0.0,
+              ),
           enabledBorder: UnderlineInputBorder(
             borderSide: BorderSide(
               color: FlutterFlowTheme.of(context).secondary,
@@ -94,7 +98,11 @@ class _SearchBarWidgetState extends State<SearchBarWidget> {
             color: FlutterFlowTheme.of(context).secondaryText,
           ),
         ),
-        style: FlutterFlowTheme.of(context).bodyMedium,
+        style: FlutterFlowTheme.of(context).bodyMedium.override(
+              fontFamily: 'Readex Pro',
+              letterSpacing: 0.0,
+            ),
+        minLines: null,
         validator: _model.textControllerValidator.asValidator(context),
       ),
     );

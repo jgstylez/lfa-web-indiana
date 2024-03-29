@@ -80,7 +80,10 @@ class _PickupSignatureWidgetState extends State<PickupSignatureWidget> {
             children: [
               Text(
                 'Sign for Pickup',
-                style: FlutterFlowTheme.of(context).titleMedium,
+                style: FlutterFlowTheme.of(context).titleMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
               ),
             ],
           ),
@@ -174,6 +177,7 @@ class _PickupSignatureWidgetState extends State<PickupSignatureWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Readex Pro',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
                     borderSide: const BorderSide(
@@ -203,6 +207,7 @@ class _PickupSignatureWidgetState extends State<PickupSignatureWidget> {
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Readex Pro',
                           color: Colors.white,
+                          letterSpacing: 0.0,
                         ),
                     elevation: 3.0,
                     borderSide: BorderSide(

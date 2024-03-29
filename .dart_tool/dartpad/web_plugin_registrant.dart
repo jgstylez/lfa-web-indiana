@@ -6,7 +6,7 @@
 // @dart = 2.13
 // ignore_for_file: type=lint
 
-import 'package:app_links/src/app_links_web.dart';
+import 'package:app_links/app_links_web.dart';
 import 'package:file_picker/_internal/file_picker_web.dart';
 import 'package:image_picker_for_web/image_picker_for_web.dart';
 import 'package:shared_preferences_web/shared_preferences_web.dart';

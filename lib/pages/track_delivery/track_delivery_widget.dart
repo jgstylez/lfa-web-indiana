@@ -1,7 +1,5 @@
-import '/flutter_flow/flutter_flow_static_map.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import 'package:mapbox_search/mapbox_search.dart' as mapbox;
 import 'package:flutter/material.dart';
 import 'track_delivery_model.dart';
 export 'track_delivery_model.dart';
@@ -52,7 +50,10 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                 automaticallyImplyLeading: true,
                 title: Text(
                   'TRACK DELIVERY',
-                  style: FlutterFlowTheme.of(context).headlineMedium,
+                  style: FlutterFlowTheme.of(context).headlineMedium.override(
+                        fontFamily: 'Outfit',
+                        letterSpacing: 0.0,
+                      ),
                 ),
                 actions: const [],
                 centerTitle: true,
@@ -101,30 +102,17 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
-                                  const FlutterFlowStaticMap(
-                                    location: LatLng(9.341465, -79.891704),
-                                    apiKey: 'ENTER_YOUR_MAPBOX_API_KEY_HERE',
-                                    style: mapbox.MapBoxStyle.Light,
-                                    width: 300.0,
-                                    height: 150.0,
-                                    fit: BoxFit.cover,
-                                    borderRadius: BorderRadius.only(
-                                      bottomLeft: Radius.circular(0.0),
-                                      bottomRight: Radius.circular(0.0),
-                                      topLeft: Radius.circular(0.0),
-                                      topRight: Radius.circular(0.0),
-                                    ),
-                                    zoom: 12,
-                                    tilt: 0,
-                                    rotation: 0,
-                                  ),
                                   Padding(
                                     padding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 12.0, 0.0),
                                     child: Text(
                                       'Delivery Status',
                                       style: FlutterFlowTheme.of(context)
-                                          .headlineSmall,
+                                          .headlineSmall
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                   Padding(
@@ -133,7 +121,11 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                     child: Text(
                                       ' ',
                                       style: FlutterFlowTheme.of(context)
-                                          .labelMedium,
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                   ),
                                   ListView(
@@ -229,6 +221,7 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Readex Pro',
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                           ),
@@ -239,7 +232,12 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                   '12d ago',
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .labelSmall,
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                 ),
                                               ],
                                             ),
@@ -260,7 +258,10 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      offset: const Offset(-2.0, 0.0),
+                                                      offset: const Offset(
+                                                        -2.0,
+                                                        0.0,
+                                                      ),
                                                     )
                                                   ],
                                                   border: Border.all(
@@ -313,6 +314,8 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
@@ -321,7 +324,13 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                             ],
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .labelMedium,
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
                                                         ),
                                                       ),
@@ -426,6 +435,7 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Readex Pro',
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                           ),
@@ -436,7 +446,12 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                   '5d ago',
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .labelSmall,
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                 ),
                                               ],
                                             ),
@@ -457,7 +472,10 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      offset: const Offset(-2.0, 0.0),
+                                                      offset: const Offset(
+                                                        -2.0,
+                                                        0.0,
+                                                      ),
                                                     )
                                                   ],
                                                   border: Border.all(
@@ -510,6 +528,8 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .primary,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
@@ -518,7 +538,13 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                             ],
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .labelMedium,
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
                                                         ),
                                                       ),
@@ -623,6 +649,7 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                           .override(
                                                             fontFamily:
                                                                 'Readex Pro',
+                                                            letterSpacing: 0.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                           ),
@@ -633,7 +660,12 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                   '1d ago',
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .labelSmall,
+                                                      .labelSmall
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        letterSpacing: 0.0,
+                                                      ),
                                                 ),
                                               ],
                                             ),
@@ -654,7 +686,10 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                           FlutterFlowTheme.of(
                                                                   context)
                                                               .primary,
-                                                      offset: const Offset(-2.0, 0.0),
+                                                      offset: const Offset(
+                                                        -2.0,
+                                                        0.0,
+                                                      ),
                                                     )
                                                   ],
                                                   border: Border.all(
@@ -707,6 +742,8 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                                       color: FlutterFlowTheme.of(
                                                                               context)
                                                                           .secondary,
+                                                                      letterSpacing:
+                                                                          0.0,
                                                                       fontWeight:
                                                                           FontWeight
                                                                               .bold,
@@ -732,7 +769,13 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                             ],
                                                             style: FlutterFlowTheme
                                                                     .of(context)
-                                                                .labelMedium,
+                                                                .labelMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                           ),
                                                         ),
                                                       ),
@@ -768,7 +811,10 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .alternate,
-                                              offset: const Offset(0.0, 1.0),
+                                              offset: const Offset(
+                                                0.0,
+                                                1.0,
+                                              ),
                                             )
                                           ],
                                         ),
@@ -856,6 +902,8 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
                                                                   fontWeight:
                                                                       FontWeight
                                                                           .bold,
@@ -866,7 +914,13 @@ class _TrackDeliveryWidgetState extends State<TrackDeliveryWidget> {
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
-                                                                .labelSmall,
+                                                                .labelSmall
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Readex Pro',
+                                                                  letterSpacing:
+                                                                      0.0,
+                                                                ),
                                                       ),
                                                     ],
                                                   ),
