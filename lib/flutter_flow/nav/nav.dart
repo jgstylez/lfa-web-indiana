@@ -75,14 +75,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       refreshListenable: appStateNotifier,
       errorBuilder: (context, state) => appStateNotifier.loggedIn
           ? const SignUpQuestionsContactInfoWidget()
-          : const Auth2CreateWidget(),
+          : const LfaWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
               ? const SignUpQuestionsContactInfoWidget()
-              : const Auth2CreateWidget(),
+              : const LfaWidget(),
         ),
         FFRoute(
           name: 'userHomePage',
@@ -319,6 +319,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/pickupTransporter',
           requireAuth: true,
           builder: (context, params) => const PickupWidget(),
+        ),
+        FFRoute(
+          name: 'lfa',
+          path: '/lfa',
+          builder: (context, params) => const LfaWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -489,7 +494,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/auth2Create';
+            return '/lfa';
           }
           return null;
         },
