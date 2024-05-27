@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/backend/schema/structs/index.dart';
+import '/backend/supabase/supabase.dart';
 
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -73,16 +73,15 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => appStateNotifier.loggedIn
-          ? const SignUpQuestionsContactInfoWidget()
-          : const LfaWidget(),
+      errorBuilder: (context, state) =>
+          appStateNotifier.loggedIn ? const UserHomePageWidget() : const WelcomeWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) => appStateNotifier.loggedIn
-              ? const SignUpQuestionsContactInfoWidget()
-              : const LfaWidget(),
+              ? const UserHomePageWidget()
+              : const WelcomeWidget(),
         ),
         FFRoute(
           name: 'userHomePage',
@@ -115,19 +114,19 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const BillOfLadingsWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Create',
-          path: '/auth2Create',
-          builder: (context, params) => const Auth2CreateWidget(),
+          name: 'createAccount',
+          path: '/createAccount',
+          builder: (context, params) => const CreateAccountWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Login',
-          path: '/auth2Login',
-          builder: (context, params) => const Auth2LoginWidget(),
+          name: 'loginAccount',
+          path: '/loginAccount',
+          builder: (context, params) => const LoginAccountWidget(),
         ),
         FFRoute(
-          name: 'auth_2_ForgotPassword',
-          path: '/auth2ForgotPassword',
-          builder: (context, params) => const Auth2ForgotPasswordWidget(),
+          name: 'forgotPassword',
+          path: '/forgotPassword',
+          builder: (context, params) => const ForgotPasswordWidget(),
         ),
         FFRoute(
           name: 'auth_2_createProfile',
@@ -136,10 +135,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const Auth2CreateProfileWidget(),
         ),
         FFRoute(
-          name: 'auth_2_Profile',
-          path: '/auth2Profile',
+          name: 'userProfile',
+          path: '/userProfile',
           requireAuth: true,
-          builder: (context, params) => Auth2ProfileWidget(
+          builder: (context, params) => UserProfileWidget(
             displayName: params.getParam(
               'displayName',
               ParamType.String,
@@ -147,95 +146,27 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'userProfile',
-          path: '/userProfile',
+          name: 'userProfile_old',
+          path: '/userProfile_old',
           requireAuth: true,
-          builder: (context, params) => const UserProfileWidget(),
+          builder: (context, params) => const UserProfileOldWidget(),
         ),
         FFRoute(
-          name: 'getSignatureAndPhotos',
+          name: 'pickupSignAndPhoto',
           path: '/getSignatureAndPhotos',
           requireAuth: true,
-          builder: (context, params) => const GetSignatureAndPhotosWidget(),
-        ),
-        FFRoute(
-          name: 'receiveSignature',
-          path: '/receiveSignature',
-          requireAuth: true,
-          builder: (context, params) => ReceiveSignatureWidget(
-            signature: params.getParam(
-              'signature',
-              ParamType.String,
+          builder: (context, params) => PickupSignAndPhotoWidget(
+            deliveryConfirmations: params.getParam<DeliveryRow>(
+              'deliveryConfirmations',
+              ParamType.SupabaseRow,
             ),
           ),
         ),
         FFRoute(
-          name: 'signatureConfirmation',
-          path: '/signatureConfirmation',
+          name: 'onboardingComplete',
+          path: '/onboardingComplete',
           requireAuth: true,
-          builder: (context, params) => SignatureConfirmationWidget(
-            checkSignature: params.getParam(
-              'checkSignature',
-              ParamType.String,
-            ),
-          ),
-        ),
-        FFRoute(
-          name: 'SignUpQuestions_SDHU',
-          path: '/signUpQuestionsSDHU',
-          requireAuth: true,
-          builder: (context, params) => const SignUpQuestionsSDHUWidget(),
-        ),
-        FFRoute(
-          name: 'SignUpQuestions_ContactInfo',
-          path: '/signUpQuestionsContactInfo',
-          requireAuth: true,
-          builder: (context, params) => const SignUpQuestionsContactInfoWidget(),
-        ),
-        FFRoute(
-          name: 'SignUpQuestions_FarmProducts',
-          path: '/signUpQuestionsFarmProducts',
-          requireAuth: true,
-          builder: (context, params) => const SignUpQuestionsFarmProductsWidget(),
-        ),
-        FFRoute(
-          name: 'SignUpQuestions_ProductDistribution',
-          path: '/signUpQuestionsProductDistribution',
-          requireAuth: true,
-          builder: (context, params) =>
-              const SignUpQuestionsProductDistributionWidget(),
-        ),
-        FFRoute(
-          name: 'SignUpQuestions_TechnicalAssistance',
-          path: '/signUpQuestionsTechnicalAssistance',
-          requireAuth: true,
-          builder: (context, params) =>
-              const SignUpQuestionsTechnicalAssistanceWidget(),
-        ),
-        FFRoute(
-          name: 'SignUpQuestions_ImpactOfParticipation',
-          path: '/signUpQuestionsImpactOfParticipation',
-          requireAuth: true,
-          builder: (context, params) =>
-              const SignUpQuestionsImpactOfParticipationWidget(),
-        ),
-        FFRoute(
-          name: 'SignUpQuestions_FSNC',
-          path: '/signUpQuestionsFSNC',
-          requireAuth: true,
-          builder: (context, params) => const SignUpQuestionsFSNCWidget(),
-        ),
-        FFRoute(
-          name: 'SignUpQuestions_BlkLoam',
-          path: '/signUpQuestionsBlkLoam',
-          requireAuth: true,
-          builder: (context, params) => const SignUpQuestionsBlkLoamWidget(),
-        ),
-        FFRoute(
-          name: 'SignUpQuestions_Complete',
-          path: '/signUpQuestionsComplete',
-          requireAuth: true,
-          builder: (context, params) => const SignUpQuestionsCompleteWidget(),
+          builder: (context, params) => const OnboardingCompleteWidget(),
         ),
         FFRoute(
           name: 'trackDelivery',
@@ -244,10 +175,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const TrackDeliveryWidget(),
         ),
         FFRoute(
-          name: 'invoiceHistoryc',
-          path: '/invoiceHistory',
+          name: 'bols',
+          path: '/bols',
           requireAuth: true,
-          builder: (context, params) => const InvoiceHistorycWidget(),
+          builder: (context, params) => const BolsWidget(),
         ),
         FFRoute(
           name: 'newBillOfLading',
@@ -256,27 +187,10 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const NewBillOfLadingWidget(),
         ),
         FFRoute(
-          name: 'deliveries',
-          path: '/deliveries',
+          name: 'deliveries_old',
+          path: '/deliveries_old',
           requireAuth: true,
-          builder: (context, params) => const DeliveriesWidget(),
-        ),
-        FFRoute(
-          name: 'productPhotoConfirmation',
-          path: '/productPhotoConfirmation',
-          requireAuth: true,
-          builder: (context, params) => ProductPhotoConfirmationWidget(
-            checkSignature: params.getParam(
-              'checkSignature',
-              ParamType.String,
-            ),
-          ),
-        ),
-        FFRoute(
-          name: 'paperPhotoConfirmation',
-          path: '/paperPhotoConfirmation',
-          requireAuth: true,
-          builder: (context, params) => const PaperPhotoConfirmationWidget(),
+          builder: (context, params) => const DeliveriesOldWidget(),
         ),
         FFRoute(
           name: 'notificationsList',
@@ -291,39 +205,65 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => const NotifySettingsWidget(),
         ),
         FFRoute(
-          name: 'bolMarkedPaid',
-          path: '/bolMarkedPaid',
+          name: 'bolDetails',
+          path: '/bolDetails',
           requireAuth: true,
-          builder: (context, params) => const BolMarkedPaidWidget(),
-        ),
-        FFRoute(
-          name: 'orderDetails',
-          path: '/orderDetails',
-          requireAuth: true,
-          builder: (context, params) => const OrderDetailsWidget(),
-        ),
-        FFRoute(
-          name: 'bolMarkedReceived',
-          path: '/bolMarkedReceived',
-          requireAuth: true,
-          builder: (context, params) => const BolMarkedReceivedWidget(),
-        ),
-        FFRoute(
-          name: 'caseStudy',
-          path: '/caseStudy',
-          requireAuth: true,
-          builder: (context, params) => const CaseStudyWidget(),
+          builder: (context, params) => BolDetailsWidget(
+            bolDetailReceipt: params.getParam<BillOfLadingRow>(
+              'bolDetailReceipt',
+              ParamType.SupabaseRow,
+            ),
+          ),
         ),
         FFRoute(
           name: 'pickup',
-          path: '/pickupTransporter',
+          path: '/pickup',
           requireAuth: true,
           builder: (context, params) => const PickupWidget(),
         ),
         FFRoute(
-          name: 'lfa',
-          path: '/lfa',
-          builder: (context, params) => const LfaWidget(),
+          name: 'welcome_old',
+          path: '/welcomeOld',
+          builder: (context, params) => const WelcomeOldWidget(),
+        ),
+        FFRoute(
+          name: 'deliveryDetails',
+          path: '/rowDetails',
+          requireAuth: true,
+          builder: (context, params) => DeliveryDetailsWidget(
+            rowDetails: params.getParam<DeliveryRow>(
+              'rowDetails',
+              ParamType.SupabaseRow,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'adminMobileMenu',
+          path: '/adminMobileMenu',
+          requireAuth: true,
+          builder: (context, params) => const AdminMobileMenuWidget(),
+        ),
+        FFRoute(
+          name: 'entityOnboarding',
+          path: '/entityOnboarding',
+          builder: (context, params) => const EntityOnboardingWidget(),
+        ),
+        FFRoute(
+          name: 'error_404',
+          path: '/error404',
+          requireAuth: true,
+          builder: (context, params) => const Error404Widget(),
+        ),
+        FFRoute(
+          name: 'deliveries',
+          path: '/deliveries',
+          requireAuth: true,
+          builder: (context, params) => const DeliveriesWidget(),
+        ),
+        FFRoute(
+          name: 'welcome',
+          path: '/welcome',
+          builder: (context, params) => const WelcomeWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
@@ -400,7 +340,7 @@ extension _GoRouterStateExtensions on GoRouterState {
       extra != null ? extra as Map<String, dynamic> : {};
   Map<String, dynamic> get allParams => <String, dynamic>{}
     ..addAll(pathParameters)
-    ..addAll(queryParameters)
+    ..addAll(uri.queryParameters)
     ..addAll(extraMap);
   TransitionInfo get transitionInfo => extraMap.containsKey(kTransitionInfoKey)
       ? extraMap[kTransitionInfoKey] as TransitionInfo
@@ -419,7 +359,7 @@ class FFParameters {
   // present is the special extra parameter reserved for the transition info.
   bool get isEmpty =>
       state.allParams.isEmpty ||
-      (state.extraMap.length == 1 &&
+      (state.allParams.length == 1 &&
           state.extraMap.containsKey(kTransitionInfoKey));
   bool isAsyncParam(MapEntry<String, dynamic> param) =>
       asyncParams.containsKey(param.key) && param.value is String;
@@ -440,10 +380,10 @@ class FFParameters {
 
   dynamic getParam<T>(
     String paramName,
-    ParamType type, [
+    ParamType type, {
     bool isList = false,
     StructBuilder<T>? structBuilder,
-  ]) {
+  }) {
     if (futureParamValues.containsKey(paramName)) {
       return futureParamValues[paramName];
     }
@@ -493,8 +433,8 @@ class FFRoute {
           }
 
           if (requireAuth && !appStateNotifier.loggedIn) {
-            appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/lfa';
+            appStateNotifier.setRedirectLocationIfUnset(state.uri.toString());
+            return '/welcome';
           }
           return null;
         },
@@ -508,17 +448,15 @@ class FFRoute {
                 )
               : builder(context, ffParams);
           final child = appStateNotifier.loading
-              ? Center(
-                  child: SizedBox(
-                    width: 50.0,
-                    height: 50.0,
-                    child: CircularProgressIndicator(
-                      valueColor: AlwaysStoppedAnimation<Color>(
-                        FlutterFlowTheme.of(context).primary,
+              ? isWeb
+                  ? Container()
+                  : Container(
+                      color: Colors.transparent,
+                      child: Image.asset(
+                        'assets/images/lfa-home.jpg',
+                        fit: BoxFit.cover,
                       ),
-                    ),
-                  ),
-                )
+                    )
               : page;
 
           final transitionInfo = state.transitionInfo;
@@ -572,7 +510,7 @@ class RootPageContext {
   static bool isInactiveRootPage(BuildContext context) {
     final rootPageContext = context.read<RootPageContext?>();
     final isRootPage = rootPageContext?.isRootPage ?? false;
-    final location = GoRouter.of(context).location;
+    final location = GoRouterState.of(context).uri.toString();
     return isRootPage &&
         location != '/' &&
         location != rootPageContext?.errorRoute;
@@ -582,4 +520,14 @@ class RootPageContext {
         value: RootPageContext(true, errorRoute),
         child: child,
       );
+}
+
+extension GoRouterLocationExtension on GoRouter {
+  String getCurrentLocation() {
+    final RouteMatch lastMatch = routerDelegate.currentConfiguration.last;
+    final RouteMatchList matchList = lastMatch is ImperativeRouteMatch
+        ? lastMatch.matches
+        : routerDelegate.currentConfiguration;
+    return matchList.uri.toString();
+  }
 }

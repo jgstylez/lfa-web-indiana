@@ -18,9 +18,9 @@ class CsFarmProductRow extends SupabaseDataRow {
   String get id => getField<String>('id')!;
   set id(String value) => setField<String>('id', value);
 
-  String? get productsOffered => getField<String>('products_offered');
-  set productsOffered(String? value) =>
-      setField<String>('products_offered', value);
+  List<String> get productsOffered => getListField<String>('products_offered');
+  set productsOffered(List<String>? value) =>
+      setListField<String>('products_offered', value);
 
   String? get farmingYearsExp => getField<String>('farming_years_exp');
   set farmingYearsExp(String? value) =>
@@ -30,13 +30,9 @@ class CsFarmProductRow extends SupabaseDataRow {
   set productionDuration(String? value) =>
       setField<String>('production_duration', value);
 
-  String? get marketLocations => getField<String>('market_locations');
-  set marketLocations(String? value) =>
-      setField<String>('market_locations', value);
-
-  String? get programQuantity => getField<String>('program_quantity');
-  set programQuantity(String? value) =>
-      setField<String>('program_quantity', value);
+  List<String> get marketLocations => getListField<String>('market_locations');
+  set marketLocations(List<String>? value) =>
+      setListField<String>('market_locations', value);
 
   String? get farmingStatus => getField<String>('farming_status');
   set farmingStatus(String? value) => setField<String>('farming_status', value);
@@ -47,4 +43,12 @@ class CsFarmProductRow extends SupabaseDataRow {
 
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
+
+  List<String> get supplyOfferings => getListField<String>('supply_offerings');
+  set supplyOfferings(List<String>? value) =>
+      setListField<String>('supply_offerings', value);
+
+  String? get supplyQuantity => getField<String>('supply_quantity');
+  set supplyQuantity(String? value) =>
+      setField<String>('supply_quantity', value);
 }

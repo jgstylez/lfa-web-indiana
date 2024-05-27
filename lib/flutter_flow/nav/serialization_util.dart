@@ -221,28 +221,54 @@ dynamic deserializeParam<T>(
             return CsBlkLoamRow(data);
           case ProfileRow:
             return ProfileRow(data);
+          case CountyWithMostDeliveriesRow:
+            return CountyWithMostDeliveriesRow(data);
           case CsTechAssistRow:
             return CsTechAssistRow(data);
           case CsDistributionRow:
             return CsDistributionRow(data);
-          case BolProductsRow:
-            return BolProductsRow(data);
+          case SenderWithMostDeliveriesRow:
+            return SenderWithMostDeliveriesRow(data);
+          case NotificationsRow:
+            return NotificationsRow(data);
+          case InCitiesRow:
+            return InCitiesRow(data);
+          case TotalBillOfLadingsRow:
+            return TotalBillOfLadingsRow(data);
+          case OnboardCheckRow:
+            return OnboardCheckRow(data);
           case InCountiesRow:
             return InCountiesRow(data);
           case CsImpactRow:
             return CsImpactRow(data);
+          case RegionDeliveryCountsRow:
+            return RegionDeliveryCountsRow(data);
           case RegionsRow:
             return RegionsRow(data);
+          case InZipCodesRow:
+            return InZipCodesRow(data);
+          case TotalUsersRow:
+            return TotalUsersRow(data);
+          case DeliveryCountPerDayRow:
+            return DeliveryCountPerDayRow(data);
           case BillOfLadingRow:
             return BillOfLadingRow(data);
           case DeliveryRow:
             return DeliveryRow(data);
+          case DeliveriesPerDayRow:
+            return DeliveriesPerDayRow(data);
           case CsFsncRow:
             return CsFsncRow(data);
+          case InZipCodesOnlyRow:
+            return InZipCodesOnlyRow(data);
           case UsersRow:
             return UsersRow(data);
           case CsSdhuRow:
             return CsSdhuRow(data);
+          case TotalDeliveryRow:
+            return TotalDeliveryRow(data);
+          case RegionWithMostDeliveriesRow:
+            return RegionWithMostDeliveriesRow(data);
           case CsFarmProductRow:
             return CsFarmProductRow(data);
           default:

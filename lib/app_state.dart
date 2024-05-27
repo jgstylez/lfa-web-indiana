@@ -18,9 +18,6 @@ class FFAppState extends ChangeNotifier {
   Future initializePersistedState() async {
     prefs = await SharedPreferences.getInstance();
     _safeInit(() {
-      _isFarmer = prefs.getBool('ff_isFarmer') ?? _isFarmer;
-    });
-    _safeInit(() {
       _bolSender = prefs.getString('ff_bolSender') ?? _bolSender;
     });
     _safeInit(() {
@@ -28,6 +25,25 @@ class FFAppState extends ChangeNotifier {
     });
     _safeInit(() {
       _displayName = prefs.getString('ff_displayName') ?? _displayName;
+    });
+    _safeInit(() {
+      _senderID = prefs.getString('ff_senderID') ?? _senderID;
+    });
+    _safeInit(() {
+      _firstName = prefs.getString('ff_firstName') ?? _firstName;
+    });
+    _safeInit(() {
+      _hasAdminAccess = prefs.getBool('ff_hasAdminAccess') ?? _hasAdminAccess;
+    });
+    _safeInit(() {
+      _onboardingStage =
+          prefs.getString('ff_onboardingStage') ?? _onboardingStage;
+    });
+    _safeInit(() {
+      _notifications = prefs.getInt('ff_notifications') ?? _notifications;
+    });
+    _safeInit(() {
+      _apiKey = prefs.getString('ff_apiKey') ?? _apiKey;
     });
   }
 
@@ -42,7 +58,6 @@ class FFAppState extends ChangeNotifier {
   bool get isFarmer => _isFarmer;
   set isFarmer(bool value) {
     _isFarmer = value;
-    prefs.setBool('ff_isFarmer', value);
   }
 
   String _bolStatus = '';
@@ -88,6 +103,12 @@ class FFAppState extends ChangeNotifier {
     _bolTransporter = value;
   }
 
+  String _recipientEmail = '';
+  String get recipientEmail => _recipientEmail;
+  set recipientEmail(String value) {
+    _recipientEmail = value;
+  }
+
   List<String> _multipleRecipients = [];
   List<String> get multipleRecipients => _multipleRecipients;
   set multipleRecipients(List<String> value) {
@@ -117,7 +138,8 @@ class FFAppState extends ChangeNotifier {
     _multipleRecipients.insert(index, value);
   }
 
-  String _avatar = '';
+  String _avatar =
+      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/lfa-supa-x42c0t/assets/qdeakbmcx1gb/default-avatar-img.svg';
   String get avatar => _avatar;
   set avatar(String value) {
     _avatar = value;
@@ -164,6 +186,213 @@ class FFAppState extends ChangeNotifier {
 
   void insertAtIndexInBolProducts(int index, BolProductStruct value) {
     _bolProducts.insert(index, value);
+  }
+
+  List<BolProductStruct> _getProductList = [];
+  List<BolProductStruct> get getProductList => _getProductList;
+  set getProductList(List<BolProductStruct> value) {
+    _getProductList = value;
+  }
+
+  void addToGetProductList(BolProductStruct value) {
+    _getProductList.add(value);
+  }
+
+  void removeFromGetProductList(BolProductStruct value) {
+    _getProductList.remove(value);
+  }
+
+  void removeAtIndexFromGetProductList(int index) {
+    _getProductList.removeAt(index);
+  }
+
+  void updateGetProductListAtIndex(
+    int index,
+    BolProductStruct Function(BolProductStruct) updateFn,
+  ) {
+    _getProductList[index] = updateFn(_getProductList[index]);
+  }
+
+  void insertAtIndexInGetProductList(int index, BolProductStruct value) {
+    _getProductList.insert(index, value);
+  }
+
+  List<DateTime> _dashboardDateChart = [
+    DateTime.fromMillisecondsSinceEpoch(1709311020000),
+    DateTime.fromMillisecondsSinceEpoch(1709397420000),
+    DateTime.fromMillisecondsSinceEpoch(1709483820000),
+    DateTime.fromMillisecondsSinceEpoch(1709656620000),
+    DateTime.fromMillisecondsSinceEpoch(1709743080000),
+    DateTime.fromMillisecondsSinceEpoch(1709829480000)
+  ];
+  List<DateTime> get dashboardDateChart => _dashboardDateChart;
+  set dashboardDateChart(List<DateTime> value) {
+    _dashboardDateChart = value;
+  }
+
+  void addToDashboardDateChart(DateTime value) {
+    _dashboardDateChart.add(value);
+  }
+
+  void removeFromDashboardDateChart(DateTime value) {
+    _dashboardDateChart.remove(value);
+  }
+
+  void removeAtIndexFromDashboardDateChart(int index) {
+    _dashboardDateChart.removeAt(index);
+  }
+
+  void updateDashboardDateChartAtIndex(
+    int index,
+    DateTime Function(DateTime) updateFn,
+  ) {
+    _dashboardDateChart[index] = updateFn(_dashboardDateChart[index]);
+  }
+
+  void insertAtIndexInDashboardDateChart(int index, DateTime value) {
+    _dashboardDateChart.insert(index, value);
+  }
+
+  List<int> _dashboardCountChart = [345, 35, 355, 34, 757, 45];
+  List<int> get dashboardCountChart => _dashboardCountChart;
+  set dashboardCountChart(List<int> value) {
+    _dashboardCountChart = value;
+  }
+
+  void addToDashboardCountChart(int value) {
+    _dashboardCountChart.add(value);
+  }
+
+  void removeFromDashboardCountChart(int value) {
+    _dashboardCountChart.remove(value);
+  }
+
+  void removeAtIndexFromDashboardCountChart(int index) {
+    _dashboardCountChart.removeAt(index);
+  }
+
+  void updateDashboardCountChartAtIndex(
+    int index,
+    int Function(int) updateFn,
+  ) {
+    _dashboardCountChart[index] = updateFn(_dashboardCountChart[index]);
+  }
+
+  void insertAtIndexInDashboardCountChart(int index, int value) {
+    _dashboardCountChart.insert(index, value);
+  }
+
+  String _senderID = '2741e497-50e4-4f80-9cc2-cc1cb50095a1';
+  String get senderID => _senderID;
+  set senderID(String value) {
+    _senderID = value;
+    prefs.setString('ff_senderID', value);
+  }
+
+  String _recipientID = '';
+  String get recipientID => _recipientID;
+  set recipientID(String value) {
+    _recipientID = value;
+  }
+
+  String _transporterID = '';
+  String get transporterID => _transporterID;
+  set transporterID(String value) {
+    _transporterID = value;
+  }
+
+  String _firstName = '';
+  String get firstName => _firstName;
+  set firstName(String value) {
+    _firstName = value;
+    prefs.setString('ff_firstName', value);
+  }
+
+  bool _hasAdminAccess = false;
+  bool get hasAdminAccess => _hasAdminAccess;
+  set hasAdminAccess(bool value) {
+    _hasAdminAccess = value;
+    prefs.setBool('ff_hasAdminAccess', value);
+  }
+
+  String _searchQuery = '';
+  String get searchQuery => _searchQuery;
+  set searchQuery(String value) {
+    _searchQuery = value;
+  }
+
+  String _onboardingStage = '';
+  String get onboardingStage => _onboardingStage;
+  set onboardingStage(String value) {
+    _onboardingStage = value;
+    prefs.setString('ff_onboardingStage', value);
+  }
+
+  String _transporterEmail = '';
+  String get transporterEmail => _transporterEmail;
+  set transporterEmail(String value) {
+    _transporterEmail = value;
+  }
+
+  int _notifications = 0;
+  int get notifications => _notifications;
+  set notifications(int value) {
+    _notifications = value;
+    prefs.setInt('ff_notifications', value);
+  }
+
+  String _apiKey = '';
+  String get apiKey => _apiKey;
+  set apiKey(String value) {
+    _apiKey = value;
+    prefs.setString('ff_apiKey', value);
+  }
+
+  String _entityFilterKey = '';
+  String get entityFilterKey => _entityFilterKey;
+  set entityFilterKey(String value) {
+    _entityFilterKey = value;
+  }
+
+  String _countyFilterKey = '';
+  String get countyFilterKey => _countyFilterKey;
+  set countyFilterKey(String value) {
+    _countyFilterKey = value;
+  }
+
+  String _regionFilterKey = '';
+  String get regionFilterKey => _regionFilterKey;
+  set regionFilterKey(String value) {
+    _regionFilterKey = value;
+  }
+
+  List<String> _queryFilter = [];
+  List<String> get queryFilter => _queryFilter;
+  set queryFilter(List<String> value) {
+    _queryFilter = value;
+  }
+
+  void addToQueryFilter(String value) {
+    _queryFilter.add(value);
+  }
+
+  void removeFromQueryFilter(String value) {
+    _queryFilter.remove(value);
+  }
+
+  void removeAtIndexFromQueryFilter(int index) {
+    _queryFilter.removeAt(index);
+  }
+
+  void updateQueryFilterAtIndex(
+    int index,
+    String Function(String) updateFn,
+  ) {
+    _queryFilter[index] = updateFn(_queryFilter[index]);
+  }
+
+  void insertAtIndexInQueryFilter(int index, String value) {
+    _queryFilter.insert(index, value);
   }
 }
 

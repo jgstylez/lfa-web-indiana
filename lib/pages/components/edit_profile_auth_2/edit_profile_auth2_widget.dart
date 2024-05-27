@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -50,11 +51,14 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
     super.initState();
     _model = createModel(context, () => EditProfileAuth2Model());
 
-    _model.yourNameController ??=
-        TextEditingController(text: widget.displayName);
+    _model.yourNameTextController ??= TextEditingController(
+        text: valueOrDefault<String>(
+      FFAppState().displayName,
+      'Display Name',
+    ));
     _model.yourNameFocusNode ??= FocusNode();
 
-    _model.myBioController ??= TextEditingController(
+    _model.myBioTextController ??= TextEditingController(
         text: valueOrDefault<String>(
       widget.shortDescription,
       'Short bio',
@@ -137,7 +141,10 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                           child: CachedNetworkImage(
                             fadeInDuration: const Duration(milliseconds: 200),
                             fadeOutDuration: const Duration(milliseconds: 200),
-                            imageUrl: FFAppState().avatar,
+                            imageUrl: valueOrDefault<String>(
+                              FFAppState().avatar,
+                              'https://diqkwxzcspfoijdshesk.supabase.co/storage/v1/object/public/images/default-avatar-img.svg',
+                            ),
                             width: 100.0,
                             height: 100.0,
                             fit: BoxFit.fill,
@@ -155,8 +162,55 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
             child: Padding(
               padding: const EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 32.0),
               child: FFButtonWidget(
-                onPressed: () {
-                  print('Button pressed ...');
+                onPressed: () async {
+                  final selectedMedia = await selectMediaWithSourceBottomSheet(
+                    context: context,
+                    storageFolderPath: 'avatars',
+                    maxWidth: 1000.00,
+                    maxHeight: 1000.00,
+                    imageQuality: 90,
+                    allowPhoto: true,
+                  );
+                  if (selectedMedia != null &&
+                      selectedMedia.every(
+                          (m) => validateFileFormat(m.storagePath, context))) {
+                    setState(() => _model.isDataUploading = true);
+                    var selectedUploadedFiles = <FFUploadedFile>[];
+
+                    var downloadUrls = <String>[];
+                    try {
+                      selectedUploadedFiles = selectedMedia
+                          .map((m) => FFUploadedFile(
+                                name: m.storagePath.split('/').last,
+                                bytes: m.bytes,
+                                height: m.dimensions?.height,
+                                width: m.dimensions?.width,
+                                blurHash: m.blurHash,
+                              ))
+                          .toList();
+
+                      downloadUrls = await uploadSupabaseStorageFiles(
+                        bucketName: 'profiles',
+                        selectedFiles: selectedMedia,
+                      );
+                    } finally {
+                      _model.isDataUploading = false;
+                    }
+                    if (selectedUploadedFiles.length == selectedMedia.length &&
+                        downloadUrls.length == selectedMedia.length) {
+                      setState(() {
+                        _model.uploadedLocalFile = selectedUploadedFiles.first;
+                        _model.uploadedFileUrl = downloadUrls.first;
+                      });
+                    } else {
+                      setState(() {});
+                      return;
+                    }
+                  }
+
+                  setState(() {
+                    FFAppState().avatar = _model.uploadedFileUrl;
+                  });
                 },
                 text: 'Change Photo',
                 options: FFButtonOptions(
@@ -183,13 +237,13 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
           Padding(
             padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
             child: TextFormField(
-              controller: _model.yourNameController,
+              controller: _model.yourNameTextController,
               focusNode: _model.yourNameFocusNode,
               autofillHints: const [AutofillHints.name],
               textCapitalization: TextCapitalization.words,
               obscureText: false,
               decoration: InputDecoration(
-                labelText: 'Full Name',
+                labelText: 'Edit Display Name',
                 labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
                       fontFamily: 'Readex Pro',
                       letterSpacing: 0.0,
@@ -241,109 +295,122 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
                   ),
-              minLines: null,
               cursorColor: FlutterFlowTheme.of(context).primary,
               validator:
-                  _model.yourNameControllerValidator.asValidator(context),
+                  _model.yourNameTextControllerValidator.asValidator(context),
             ),
           ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
-            child: FlutterFlowDropDown<String>(
-              controller: _model.roleValueController ??=
-                  FormFieldController<String>(null),
-              options: FFAppConstants.entity,
-              onChanged: (val) => setState(() => _model.roleValue = val),
-              width: double.infinity,
-              height: 44.0,
-              textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
-                    letterSpacing: 0.0,
-                  ),
-              hintText: 'Entity',
-              icon: Icon(
-                Icons.keyboard_arrow_down_rounded,
-                color: FlutterFlowTheme.of(context).secondaryText,
-                size: 24.0,
-              ),
-              fillColor: FlutterFlowTheme.of(context).primaryBackground,
-              elevation: 2.0,
-              borderColor: FlutterFlowTheme.of(context).alternate,
-              borderWidth: 2.0,
-              borderRadius: 8.0,
-              margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
-              hidesUnderline: true,
-              isSearchable: false,
-              isMultiSelect: false,
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
-            child: TextFormField(
-              controller: _model.myBioController,
-              focusNode: _model.myBioFocusNode,
-              textCapitalization: TextCapitalization.sentences,
-              obscureText: false,
-              decoration: InputDecoration(
-                labelText: 'About Me',
-                labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+          if (responsiveVisibility(
+            context: context,
+            phone: false,
+            tablet: false,
+            tabletLandscape: false,
+            desktop: false,
+          ))
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
+              child: FlutterFlowDropDown<String>(
+                controller: _model.roleValueController ??=
+                    FormFieldController<String>(null),
+                options: FFAppConstants.entity,
+                onChanged: (val) => setState(() => _model.roleValue = val),
+                width: double.infinity,
+                height: 44.0,
+                textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
                       fontFamily: 'Readex Pro',
                       letterSpacing: 0.0,
                     ),
-                hintText: 'A little about you...',
-                hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                      fontFamily: 'Readex Pro',
-                      letterSpacing: 0.0,
-                    ),
-                errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
-                      fontFamily: 'Readex Pro',
-                      color: FlutterFlowTheme.of(context).error,
-                      letterSpacing: 0.0,
-                    ),
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).alternate,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
+                hintText: 'Entity',
+                icon: Icon(
+                  Icons.keyboard_arrow_down_rounded,
+                  color: FlutterFlowTheme.of(context).secondaryText,
+                  size: 24.0,
                 ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).primary,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                errorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).error,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                focusedErrorBorder: OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).error,
-                    width: 2.0,
-                  ),
-                  borderRadius: BorderRadius.circular(8.0),
-                ),
-                filled: true,
                 fillColor: FlutterFlowTheme.of(context).primaryBackground,
-                contentPadding:
-                    const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
+                elevation: 2.0,
+                borderColor: FlutterFlowTheme.of(context).alternate,
+                borderWidth: 2.0,
+                borderRadius: 8.0,
+                margin: const EdgeInsetsDirectional.fromSTEB(16.0, 4.0, 16.0, 4.0),
+                hidesUnderline: true,
+                isSearchable: false,
+                isMultiSelect: false,
               ),
-              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                    fontFamily: 'Readex Pro',
-                    letterSpacing: 0.0,
-                  ),
-              textAlign: TextAlign.start,
-              maxLines: 3,
-              minLines: null,
-              cursorColor: FlutterFlowTheme.of(context).primary,
-              validator: _model.myBioControllerValidator.asValidator(context),
             ),
-          ),
+          if (responsiveVisibility(
+            context: context,
+            phone: false,
+            tablet: false,
+            tabletLandscape: false,
+            desktop: false,
+          ))
+            Padding(
+              padding: const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 12.0),
+              child: TextFormField(
+                controller: _model.myBioTextController,
+                focusNode: _model.myBioFocusNode,
+                textCapitalization: TextCapitalization.sentences,
+                obscureText: false,
+                decoration: InputDecoration(
+                  labelText: 'About Me',
+                  labelStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
+                  hintText: 'A little about you...',
+                  hintStyle: FlutterFlowTheme.of(context).labelMedium.override(
+                        fontFamily: 'Readex Pro',
+                        letterSpacing: 0.0,
+                      ),
+                  errorStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Readex Pro',
+                        color: FlutterFlowTheme.of(context).error,
+                        letterSpacing: 0.0,
+                      ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).alternate,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).primary,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  errorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).error,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  focusedErrorBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).error,
+                      width: 2.0,
+                    ),
+                    borderRadius: BorderRadius.circular(8.0),
+                  ),
+                  filled: true,
+                  fillColor: FlutterFlowTheme.of(context).primaryBackground,
+                  contentPadding:
+                      const EdgeInsetsDirectional.fromSTEB(16.0, 12.0, 0.0, 12.0),
+                ),
+                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                      fontFamily: 'Readex Pro',
+                      letterSpacing: 0.0,
+                    ),
+                textAlign: TextAlign.start,
+                maxLines: 3,
+                cursorColor: FlutterFlowTheme.of(context).primary,
+                validator:
+                    _model.myBioTextControllerValidator.asValidator(context),
+              ),
+            ),
           Align(
             alignment: const AlignmentDirectional(0.0, 0.0),
             child: Padding(
@@ -356,7 +423,8 @@ class _EditProfileAuth2WidgetState extends State<EditProfileAuth2Widget> {
                   }
                   await ProfileTable().update(
                     data: {
-                      'display_name': _model.yourNameController.text,
+                      'display_name': _model.yourNameTextController.text,
+                      'photo_url': FFAppState().avatar,
                     },
                     matchingRows: (rows) => rows,
                   );

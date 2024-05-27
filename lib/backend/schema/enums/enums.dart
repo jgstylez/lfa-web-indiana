@@ -1,12 +1,5 @@
 import 'package:collection/collection.dart';
 
-enum BillOfLadingStatus {
-  In_Progress,
-  Paid,
-  Cancelled,
-  Received,
-}
-
 enum OrderDeliveryStatus {
   Pending,
   In_Progress,
@@ -34,8 +27,6 @@ extension FFEnumListExtensions<T extends Enum> on Iterable<T> {
 
 T? deserializeEnum<T>(String? value) {
   switch (T) {
-    case (BillOfLadingStatus):
-      return BillOfLadingStatus.values.deserialize(value) as T?;
     case (OrderDeliveryStatus):
       return OrderDeliveryStatus.values.deserialize(value) as T?;
     case (Notification):

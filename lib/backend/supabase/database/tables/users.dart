@@ -34,4 +34,10 @@ class UsersRow extends SupabaseDataRow {
 
   bool? get hasAdminAccess => getField<bool>('has_admin_access');
   set hasAdminAccess(bool? value) => setField<bool>('has_admin_access', value);
+
+  bool get onboardCheck => getField<bool>('onboard_check')!;
+  set onboardCheck(bool value) => setField<bool>('onboard_check', value);
+
+  String? get fcmToken => getField<String>('fcm_token');
+  set fcmToken(String? value) => setField<String>('fcm_token', value);
 }

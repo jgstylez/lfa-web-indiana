@@ -21,8 +21,9 @@ class CsTechAssistRow extends SupabaseDataRow {
   set technicalAssist(List<String>? value) =>
       setListField<String>('technical_assist', value);
 
-  String? get other => getField<String>('other');
-  set other(String? value) => setField<String>('other', value);
+  String? get techAssistOther => getField<String>('tech_assist_other');
+  set techAssistOther(String? value) =>
+      setField<String>('tech_assist_other', value);
 
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);

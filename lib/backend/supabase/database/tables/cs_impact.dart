@@ -17,9 +17,13 @@ class CsImpactRow extends SupabaseDataRow {
   String get id => getField<String>('id')!;
   set id(String value) => setField<String>('id', value);
 
-  String? get participation => getField<String>('participation');
-  set participation(String? value) => setField<String>('participation', value);
+  List<String> get participation => getListField<String>('participation');
+  set participation(List<String>? value) =>
+      setListField<String>('participation', value);
 
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
+
+  String? get impactScore => getField<String>('impact_score');
+  set impactScore(String? value) => setField<String>('impact_score', value);
 }

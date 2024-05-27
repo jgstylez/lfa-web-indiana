@@ -15,7 +15,7 @@ class NewBillOfLadingModel extends FlutterFlowModel<NewBillOfLadingWidget> {
   // State field(s) for deliverSwitch widget.
   bool? deliverSwitchValue;
   // Stores action output result for [Backend Call - Insert Row] action in SendButton widget.
-  BillOfLadingRow? newBillOfLadingDoc;
+  BillOfLadingRow? bolOutput;
 
   @override
   void initState(BuildContext context) {}

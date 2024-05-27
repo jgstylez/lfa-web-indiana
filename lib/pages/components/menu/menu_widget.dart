@@ -73,55 +73,55 @@ class _MenuWidgetState extends State<MenuWidget> {
           onEnter: ((event) async {
             setState(() => _model.mouseRegionHovered = true);
 
-            context.pushNamed('userProfile');
+            context.goNamed('userProfile_old');
           }),
           onExit: ((event) async {
             setState(() => _model.mouseRegionHovered = false);
           }),
-          child: Row(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: 60.0,
-                height: 60.0,
-                clipBehavior: Clip.antiAlias,
-                decoration: const BoxDecoration(
-                  shape: BoxShape.circle,
-                ),
-                child: Image.network(
-                  FFAppState().avatar,
-                  fit: BoxFit.cover,
-                ),
-              ),
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    FFAppState().displayName,
-                    style: FlutterFlowTheme.of(context).titleLarge.override(
-                          fontFamily: 'Outfit',
-                          letterSpacing: 0.0,
-                        ),
+          child: InkWell(
+            splashColor: Colors.transparent,
+            focusColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            onTap: () async {
+              context.goNamed('userProfile_old');
+            },
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  width: 60.0,
+                  height: 60.0,
+                  clipBehavior: Clip.antiAlias,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
                   ),
-                  Text(
-                    currentUserEmail,
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Readex Pro',
-                          letterSpacing: 0.0,
-                        ),
+                  child: Image.network(
+                    FFAppState().avatar,
+                    fit: BoxFit.cover,
                   ),
-                  InkWell(
-                    splashColor: Colors.transparent,
-                    focusColor: Colors.transparent,
-                    hoverColor: Colors.transparent,
-                    highlightColor: Colors.transparent,
-                    onTap: () async {
-                      context.pushNamed('userProfile');
-                    },
-                    child: Text(
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      FFAppState().displayName,
+                      style: FlutterFlowTheme.of(context).titleLarge.override(
+                            fontFamily: 'Outfit',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                    Text(
+                      currentUserEmail,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                    Text(
                       'Edit Profile',
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Readex Pro',
@@ -129,10 +129,10 @@ class _MenuWidgetState extends State<MenuWidget> {
                             letterSpacing: 0.0,
                           ),
                     ),
-                  ),
-                ],
-              ),
-            ].divide(const SizedBox(width: 16.0)),
+                  ],
+                ),
+              ].divide(const SizedBox(width: 16.0)),
+            ),
           ),
         ),
         Padding(
@@ -143,7 +143,7 @@ class _MenuWidgetState extends State<MenuWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
-              context.pushNamed('dashboard');
+              context.goNamed('dashboard');
             },
             child: ListTile(
               leading: const Icon(
@@ -172,7 +172,7 @@ class _MenuWidgetState extends State<MenuWidget> {
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () async {
-            context.pushNamed('entities');
+            context.goNamed('entities');
           },
           child: ListTile(
             leading: const Icon(
@@ -200,7 +200,7 @@ class _MenuWidgetState extends State<MenuWidget> {
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () async {
-            context.pushNamed('billOfLadings');
+            context.goNamed('billOfLadings');
           },
           child: ListTile(
             leading: const FaIcon(
@@ -230,7 +230,7 @@ class _MenuWidgetState extends State<MenuWidget> {
             hoverColor: Colors.transparent,
             highlightColor: Colors.transparent,
             onTap: () async {
-              context.pushNamed('orders');
+              context.goNamed('orders');
             },
             child: ListTile(
               leading: const Icon(
@@ -259,14 +259,14 @@ class _MenuWidgetState extends State<MenuWidget> {
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () async {
-            context.pushNamed('userHomePage');
+            context.goNamed('userHomePage');
           },
           child: ListTile(
             leading: const FaIcon(
               FontAwesomeIcons.truck,
             ),
             title: Text(
-              'New Delivery',
+              'User Dashboard',
               style: FlutterFlowTheme.of(context).titleMedium.override(
                     fontFamily: 'Readex Pro',
                     letterSpacing: 0.0,
@@ -287,7 +287,7 @@ class _MenuWidgetState extends State<MenuWidget> {
           hoverColor: Colors.transparent,
           highlightColor: Colors.transparent,
           onTap: () async {
-            context.pushNamed('notificationsList');
+            context.goNamed('notificationsList');
           },
           child: ListTile(
             leading: const Icon(
@@ -316,33 +316,24 @@ class _MenuWidgetState extends State<MenuWidget> {
           tabletLandscape: false,
           desktop: false,
         ))
-          InkWell(
-            splashColor: Colors.transparent,
-            focusColor: Colors.transparent,
-            hoverColor: Colors.transparent,
-            highlightColor: Colors.transparent,
-            onTap: () async {
-              context.pushNamed('caseStudy');
-            },
-            child: ListTile(
-              leading: const FaIcon(
-                FontAwesomeIcons.database,
-              ),
-              title: Text(
-                'Case Study',
-                style: FlutterFlowTheme.of(context).titleMedium.override(
-                      fontFamily: 'Readex Pro',
-                      letterSpacing: 0.0,
-                    ),
-              ),
-              trailing: Icon(
-                Icons.arrow_forward_ios,
-                color: FlutterFlowTheme.of(context).secondaryText,
-                size: 20.0,
-              ),
-              tileColor: FlutterFlowTheme.of(context).secondaryBackground,
-              dense: false,
+          ListTile(
+            leading: const FaIcon(
+              FontAwesomeIcons.database,
             ),
+            title: Text(
+              'Case Study',
+              style: FlutterFlowTheme.of(context).titleMedium.override(
+                    fontFamily: 'Readex Pro',
+                    letterSpacing: 0.0,
+                  ),
+            ),
+            trailing: Icon(
+              Icons.arrow_forward_ios,
+              color: FlutterFlowTheme.of(context).secondaryText,
+              size: 20.0,
+            ),
+            tileColor: FlutterFlowTheme.of(context).secondaryBackground,
+            dense: false,
           ),
         const Spacer(),
       ].divide(const SizedBox(height: 2.0)),

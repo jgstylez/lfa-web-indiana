@@ -65,7 +65,7 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
             children: [
               Row(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   InkWell(
                     splashColor: Colors.transparent,
@@ -81,12 +81,6 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                       size: 32.0,
                     ),
                   ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
                   Padding(
                     padding: const EdgeInsets.all(24.0),
                     child: Text(
@@ -97,6 +91,13 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                                 fontFamily: 'Outfit',
                                 letterSpacing: 0.0,
                               ),
+                    ),
+                  ),
+                  Container(
+                    width: 24.0,
+                    height: 24.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                   ),
                 ],
@@ -139,7 +140,7 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                   Text(
                     valueOrDefault<String>(
                       widget.deliveryInfo?.status,
-                      'status',
+                      'Status',
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Readex Pro',
@@ -162,7 +163,7 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                   Text(
                     valueOrDefault<String>(
                       widget.deliveryInfo?.transporter,
-                      'transporter',
+                      'Transporter',
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Readex Pro',
@@ -185,7 +186,7 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                   Text(
                     valueOrDefault<String>(
                       widget.deliveryInfo?.sender,
-                      'sender',
+                      'Sender',
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Readex Pro',
@@ -208,7 +209,7 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                   Text(
                     valueOrDefault<String>(
                       widget.deliveryInfo?.recipient,
-                      'recipient',
+                      'Recipient',
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Readex Pro',
@@ -229,10 +230,13 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                         ),
                   ),
                   Text(
-                    dateTimeFormat(
-                      'yMMMd',
-                      widget.deliveryInfo!.createdAt,
-                      locale: FFLocalizations.of(context).languageCode,
+                    valueOrDefault<String>(
+                      dateTimeFormat(
+                        'yMMMd',
+                        widget.deliveryInfo?.createdAt,
+                        locale: FFLocalizations.of(context).languageCode,
+                      ),
+                      'date',
                     ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Readex Pro',
@@ -253,7 +257,10 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                         ),
                   ),
                   Text(
-                    'Central',
+                    valueOrDefault<String>(
+                      widget.deliveryInfo?.region,
+                      'Region',
+                    ),
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Readex Pro',
                           letterSpacing: 0.0,
@@ -273,60 +280,73 @@ class _ViewDeliveryDetailsWidgetState extends State<ViewDeliveryDetailsWidget> {
                         ),
                   ),
                   Text(
-                    'Allen',
-                    style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Readex Pro',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Product:',
-                    style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Readex Pro',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      widget.deliveryInfo!.productImage!,
-                      width: 100.0,
-                      height: 80.0,
-                      fit: BoxFit.fill,
+                    valueOrDefault<String>(
+                      widget.deliveryInfo?.county,
+                      'County',
                     ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Signature:',
                     style: FlutterFlowTheme.of(context).bodyLarge.override(
                           fontFamily: 'Readex Pro',
                           letterSpacing: 0.0,
                         ),
                   ),
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(8.0),
-                    child: Image.network(
-                      widget.deliveryInfo!.signatureImage!,
-                      width: 100.0,
-                      height: 80.0,
-                      fit: BoxFit.fill,
-                    ),
-                  ),
                 ],
               ),
+              if (widget.deliveryInfo?.productImage != null &&
+                  widget.deliveryInfo?.productImage != '')
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Product:',
+                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network(
+                        valueOrDefault<String>(
+                          widget.deliveryInfo?.productImage,
+                          'product_image',
+                        ),
+                        width: 80.0,
+                        height: 80.0,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ],
+                ),
+              if (widget.deliveryInfo?.signatureImage != null &&
+                  widget.deliveryInfo?.signatureImage != '')
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Signature:',
+                      style: FlutterFlowTheme.of(context).bodyLarge.override(
+                            fontFamily: 'Readex Pro',
+                            letterSpacing: 0.0,
+                          ),
+                    ),
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(8.0),
+                      child: Image.network(
+                        valueOrDefault<String>(
+                          widget.deliveryInfo?.signatureImage,
+                          'signature_image',
+                        ),
+                        width: 80.0,
+                        height: 80.0,
+                        fit: BoxFit.fill,
+                      ),
+                    ),
+                  ],
+                ),
               const Spacer(),
               Padding(
                 padding: const EdgeInsets.all(24.0),

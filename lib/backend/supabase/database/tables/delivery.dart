@@ -46,6 +46,36 @@ class DeliveryRow extends SupabaseDataRow {
   String? get status => getField<String>('status');
   set status(String? value) => setField<String>('status', value);
 
-  String? get userId => getField<String>('user_id');
-  set userId(String? value) => setField<String>('user_id', value);
+  String? get county => getField<String>('county');
+  set county(String? value) => setField<String>('county', value);
+
+  String? get recipientId => getField<String>('recipient_id');
+  set recipientId(String? value) => setField<String>('recipient_id', value);
+
+  String? get region => getField<String>('region');
+  set region(String? value) => setField<String>('region', value);
+
+  String? get senderId => getField<String>('sender_id');
+  set senderId(String? value) => setField<String>('sender_id', value);
+
+  String? get transporterId => getField<String>('transporter_id');
+  set transporterId(String? value) => setField<String>('transporter_id', value);
+
+  List<String> get pickupSlots => getListField<String>('pickup_slots');
+  set pickupSlots(List<String>? value) =>
+      setListField<String>('pickup_slots', value);
+
+  String? get deliveryTime => getField<String>('delivery_time');
+  set deliveryTime(String? value) => setField<String>('delivery_time', value);
+
+  String? get senderEmail => getField<String>('sender_email');
+  set senderEmail(String? value) => setField<String>('sender_email', value);
+
+  String? get recipientEmail => getField<String>('recipient_email');
+  set recipientEmail(String? value) =>
+      setField<String>('recipient_email', value);
+
+  String? get transporterEmail => getField<String>('transporter_email');
+  set transporterEmail(String? value) =>
+      setField<String>('transporter_email', value);
 }

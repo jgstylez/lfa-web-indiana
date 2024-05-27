@@ -77,4 +77,7 @@ class ProfileRow extends SupabaseDataRow {
 
   List<String> get entity => getListField<String>('entity');
   set entity(List<String>? value) => setListField<String>('entity', value);
+
+  String? get fcmToken => getField<String>('fcm_token');
+  set fcmToken(String? value) => setField<String>('fcm_token', value);
 }

@@ -31,4 +31,8 @@ class CsSdhuRow extends SupabaseDataRow {
 
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
+
+  String? get otherEthnicity => getField<String>('other_ethnicity');
+  set otherEthnicity(String? value) =>
+      setField<String>('other_ethnicity', value);
 }

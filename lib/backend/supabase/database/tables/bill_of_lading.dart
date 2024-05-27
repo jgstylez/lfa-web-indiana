@@ -14,9 +14,6 @@ class BillOfLadingRow extends SupabaseDataRow {
   @override
   SupabaseTable get table => BillOfLadingTable();
 
-  int get id => getField<int>('id')!;
-  set id(int value) => setField<int>('id', value);
-
   DateTime get createdAt => getField<DateTime>('created_at')!;
   set createdAt(DateTime value) => setField<DateTime>('created_at', value);
 
@@ -44,6 +41,29 @@ class BillOfLadingRow extends SupabaseDataRow {
   String? get invoiceUrl => getField<String>('invoice_url');
   set invoiceUrl(String? value) => setField<String>('invoice_url', value);
 
-  String? get userId => getField<String>('user_id');
-  set userId(String? value) => setField<String>('user_id', value);
+  int get bolId => getField<int>('bol_id')!;
+  set bolId(int value) => setField<int>('bol_id', value);
+
+  String? get recipientId => getField<String>('recipient_id');
+  set recipientId(String? value) => setField<String>('recipient_id', value);
+
+  String? get senderId => getField<String>('sender_id');
+  set senderId(String? value) => setField<String>('sender_id', value);
+
+  String? get transporterId => getField<String>('transporter_id');
+  set transporterId(String? value) => setField<String>('transporter_id', value);
+
+  dynamic get bolProducts => getField<dynamic>('bol_products');
+  set bolProducts(dynamic value) => setField<dynamic>('bol_products', value);
+
+  String? get senderEmail => getField<String>('sender_email');
+  set senderEmail(String? value) => setField<String>('sender_email', value);
+
+  String? get recipientEmail => getField<String>('recipient_email');
+  set recipientEmail(String? value) =>
+      setField<String>('recipient_email', value);
+
+  String? get transporterEmail => getField<String>('transporter_email');
+  set transporterEmail(String? value) =>
+      setField<String>('transporter_email', value);
 }

@@ -9,12 +9,12 @@ class SearchBottomSheetRecipientModel
     extends FlutterFlowModel<SearchBottomSheetRecipientWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // State field(s) for TextField widget.
-  final textFieldKey = GlobalKey();
-  FocusNode? textFieldFocusNode;
-  TextEditingController? textController;
-  String? textFieldSelectedOption;
-  String? Function(BuildContext, String?)? textControllerValidator;
+  // State field(s) for SearchTF widget.
+  final searchTFKey = GlobalKey();
+  FocusNode? searchTFFocusNode;
+  TextEditingController? searchTFTextController;
+  String? searchTFSelectedOption;
+  String? Function(BuildContext, String?)? searchTFTextControllerValidator;
   Completer<List<ProfileRow>>? requestCompleter;
 
   @override
@@ -22,7 +22,7 @@ class SearchBottomSheetRecipientModel
 
   @override
   void dispose() {
-    textFieldFocusNode?.dispose();
+    searchTFFocusNode?.dispose();
   }
 
   /// Additional helper methods.

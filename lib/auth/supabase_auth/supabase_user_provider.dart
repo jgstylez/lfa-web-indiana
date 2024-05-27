@@ -5,8 +5,8 @@ import '../base_auth_user_provider.dart';
 
 export '../base_auth_user_provider.dart';
 
-class LfaSupaSupabaseUser extends BaseAuthUser {
-  LfaSupaSupabaseUser(this.user);
+class LfaSupaStagingSupabaseUser extends BaseAuthUser {
+  LfaSupaStagingSupabaseUser(this.user);
   User? user;
   @override
   bool get loggedIn => user != null;
@@ -57,7 +57,7 @@ class LfaSupaSupabaseUser extends BaseAuthUser {
 /// [SupaFlow.client.auth.onAuthStateChange] does not yield any values until the
 /// user is already authenticated. So we add a default null user to the stream,
 /// if we need to interact with the [currentUser] before logging in.
-Stream<BaseAuthUser> lfaSupaSupabaseUserStream() {
+Stream<BaseAuthUser> lfaSupaStagingSupabaseUserStream() {
   final supabaseAuthStream = SupaFlow.client.auth.onAuthStateChange.debounce(
       (authState) => authState.event == AuthChangeEvent.tokenRefreshed
           ? TimerStream(authState, const Duration(seconds: 1))
@@ -67,7 +67,7 @@ Stream<BaseAuthUser> lfaSupaSupabaseUserStream() {
           : supabaseAuthStream)
       .map<BaseAuthUser>(
     (authState) {
-      currentUser = LfaSupaSupabaseUser(authState?.session?.user);
+      currentUser = LfaSupaStagingSupabaseUser(authState?.session?.user);
       return currentUser!;
     },
   );

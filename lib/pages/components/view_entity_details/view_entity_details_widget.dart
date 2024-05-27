@@ -2,9 +2,7 @@ import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import 'view_entity_details_model.dart';
 export 'view_entity_details_model.dart';
 
@@ -47,8 +45,6 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    context.watch<FFAppState>();
-
     return Align(
       alignment: const AlignmentDirectional(1.0, -1.0),
       child: Container(
@@ -69,7 +65,7 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
             children: [
               Row(
                 mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   InkWell(
                     splashColor: Colors.transparent,
@@ -85,12 +81,6 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                       size: 32.0,
                     ),
                   ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
                   Padding(
                     padding: const EdgeInsets.all(24.0),
                     child: Text(
@@ -103,28 +93,11 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                               ),
                     ),
                   ),
-                ],
-              ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 20.0),
-                    child: Container(
-                      width: 60.0,
-                      height: 60.0,
-                      clipBehavior: Clip.antiAlias,
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                      ),
-                      child: CachedNetworkImage(
-                        fadeInDuration: const Duration(milliseconds: 500),
-                        fadeOutDuration: const Duration(milliseconds: 500),
-                        imageUrl: FFAppState().avatar,
-                        fit: BoxFit.cover,
-                      ),
+                  Container(
+                    width: 24.0,
+                    height: 24.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
                     ),
                   ),
                 ],
@@ -176,35 +149,36 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                   ),
                 ],
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Expanded(
-                    child: Text(
-                      'Business Address:',
-                      style: FlutterFlowTheme.of(context).bodyLarge.override(
-                            fontFamily: 'Readex Pro',
-                            letterSpacing: 0.0,
-                          ),
-                    ),
-                  ),
-                  Expanded(
-                    child: Text(
-                      valueOrDefault<String>(
-                        widget.entityProfile?.businessAddress,
-                        'biz_address',
+              if (widget.entityProfile?.businessAddress != 'biz_address')
+                Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Text(
+                        'Business Address:',
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
                       ),
-                      textAlign: TextAlign.end,
-                      style: FlutterFlowTheme.of(context).bodyLarge.override(
-                            fontFamily: 'Readex Pro',
-                            letterSpacing: 0.0,
-                          ),
                     ),
-                  ),
-                ],
-              ),
+                    Expanded(
+                      child: Text(
+                        valueOrDefault<String>(
+                          widget.entityProfile?.businessAddress,
+                          'biz_address',
+                        ),
+                        textAlign: TextAlign.end,
+                        style: FlutterFlowTheme.of(context).bodyLarge.override(
+                              fontFamily: 'Readex Pro',
+                              letterSpacing: 0.0,
+                            ),
+                      ),
+                    ),
+                  ],
+                ),
               Row(
                 mainAxisSize: MainAxisSize.max,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -225,10 +199,7 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                       '${valueOrDefault<String>(
                         widget.entityProfile?.address,
                         'address1',
-                      )} ${valueOrDefault<String>(
-                        widget.entityProfile?.addressOptional,
-                        'address2',
-                      )} ${valueOrDefault<String>(
+                      )} ${widget.entityProfile?.addressOptional} ${valueOrDefault<String>(
                         widget.entityProfile?.city,
                         'city',
                       )}, ${valueOrDefault<String>(
@@ -389,44 +360,24 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                   ),
                 ],
               ),
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Best Form of Contact:',
-                    style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Readex Pro',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                  Text(
-                    valueOrDefault<String>(
-                      widget.entityProfile?.bestContactForm,
-                      'contact_form',
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyLarge.override(
-                          fontFamily: 'Readex Pro',
-                          letterSpacing: 0.0,
-                        ),
-                  ),
-                ],
-              ),
-              Opacity(
-                opacity: 0.0,
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Admin:',
+                      'Best Form of Contact:',
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Readex Pro',
                             letterSpacing: 0.0,
                           ),
                     ),
                     Text(
-                      'No',
+                      valueOrDefault<String>(
+                        widget.entityProfile?.bestContactForm,
+                        'contact_form',
+                      ),
                       style: FlutterFlowTheme.of(context).bodyLarge.override(
                             fontFamily: 'Readex Pro',
                             letterSpacing: 0.0,
@@ -434,6 +385,54 @@ class _ViewEntityDetailsWidgetState extends State<ViewEntityDetailsWidget> {
                     ),
                   ],
                 ),
+              ),
+              if (responsiveVisibility(
+                context: context,
+                phone: false,
+                tablet: false,
+                tabletLandscape: false,
+                desktop: false,
+              ))
+                Divider(
+                  thickness: 1.0,
+                  color: FlutterFlowTheme.of(context).secondary,
+                ),
+              Row(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Expanded(
+                    child: Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0.0, 24.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () {
+                          print('Button pressed ...');
+                        },
+                        text: 'View Onboading Details',
+                        options: FFButtonOptions(
+                          height: 50.0,
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).accent2,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Readex Pro',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: const BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
               const Spacer(),
               Padding(

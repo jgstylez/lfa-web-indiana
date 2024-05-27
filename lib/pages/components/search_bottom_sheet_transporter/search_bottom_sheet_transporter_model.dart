@@ -1,7 +1,5 @@
 import '/backend/supabase/supabase.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/flutter_flow/request_manager.dart';
-
 import 'dart:async';
 import 'search_bottom_sheet_transporter_widget.dart'
     show SearchBottomSheetTransporterWidget;
@@ -17,25 +15,7 @@ class SearchBottomSheetTransporterModel
   TextEditingController? textController;
   String? textFieldSelectedOption;
   String? Function(BuildContext, String?)? textControllerValidator;
-  bool requestCompleted = false;
-  String? requestLastUniqueKey;
-
-  /// Query cache managers for this widget.
-
-  final _searchRecipientManager = FutureRequestManager<List<ProfileRow>>();
-  Future<List<ProfileRow>> searchRecipient({
-    String? uniqueQueryKey,
-    bool? overrideCache,
-    required Future<List<ProfileRow>> Function() requestFn,
-  }) =>
-      _searchRecipientManager.performRequest(
-        uniqueQueryKey: uniqueQueryKey,
-        overrideCache: overrideCache,
-        requestFn: requestFn,
-      );
-  void clearSearchRecipientCache() => _searchRecipientManager.clear();
-  void clearSearchRecipientCacheKey(String? uniqueKey) =>
-      _searchRecipientManager.clearRequest(uniqueKey);
+  Completer<List<ProfileRow>>? requestCompleter;
 
   @override
   void initState(BuildContext context) {}
@@ -43,10 +23,6 @@ class SearchBottomSheetTransporterModel
   @override
   void dispose() {
     textFieldFocusNode?.dispose();
-
-    /// Dispose query cache managers for this widget.
-
-    clearSearchRecipientCache();
   }
 
   /// Additional helper methods.
@@ -58,7 +34,7 @@ class SearchBottomSheetTransporterModel
     while (true) {
       await Future.delayed(const Duration(milliseconds: 50));
       final timeElapsed = stopwatch.elapsedMilliseconds;
-      final requestComplete = requestCompleted;
+      final requestComplete = requestCompleter?.isCompleted ?? false;
       if (timeElapsed > maxWait || (requestComplete && timeElapsed > minWait)) {
         break;
       }

@@ -13,7 +13,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>lfa-supa</string>
+	<string>lfa-supa-staging</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 
@@ -26,10 +26,10 @@
         <key>CFBundleTypeRole</key>
         <string>Editor</string>
         <key>CFBundleURLName</key>
-        <string>lfasupa.com</string>
+        <string>lfasupastaging.com</string>
         <key>CFBundleURLSchemes</key>
         <array>
-        <string>lfasupa</string>
+        <string>lfasupastaging</string>
         </array>
         </dict>
     </array>
